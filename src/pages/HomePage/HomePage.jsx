@@ -21,7 +21,7 @@ export default function HomePage() {
             <div key={index}>
               <h1>{item.name}</h1>
               <h1>{item.email}</h1>
-              <img src={'http://localhost:3001' + item.img} alt="" />
+              <img src={item.img} alt="" />
             </div>
           );
           
