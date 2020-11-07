@@ -1,5 +1,9 @@
-import React from "react";
+import React from 'react'
 
 export default function ChatPage() {
-  return <div></div>;
+  return (
+    <div>
+      <h1>página del chat</h1>
+    </div>
+  )
 }
