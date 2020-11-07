@@ -3,9 +3,24 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+  border: none;
+  color: rgb(255, 255, 255); //naranja
+  border-radius: 1em;
+
+  .btn-Page {
+    width: 2em;
+  }
+
+  .btn-search {
+    height: 2em;
+  }
 }
+
+// code {
+//   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+//     monospace;
+// }
