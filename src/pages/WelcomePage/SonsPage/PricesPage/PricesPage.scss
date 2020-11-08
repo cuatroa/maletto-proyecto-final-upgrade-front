@@ -1,0 +1,88 @@
+.p-prices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+     
+}
+
+  
+
+.p-prices-selection{
+    &__text{
+        font-family: Montserrat;
+        font-size: 15pt;
+        color:black;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    &__select{
+        width: 180pt;
+        font-family: Montserrat;
+        font-size: 8pt;
+        color:#1eb2a6;
+        padding: 10pt;
+        align-items: center;
+        border: none;
+    }
+}
+
+.p-prices-prices{
+
+    &__card{
+        width: 142pt;
+        height: 81pt;
+        margin-bottom: 20pt;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        border-radius: 2px;
+    }
+    &__title{
+        font-family: Montserrat;
+        font-size: 15pt;
+        color:black;
+        margin-bottom: 4pt;
+        text-align: center;
+    }
+    
+}
+.p-prices-card{
+    width: 100%;
+   
+    &__text1{
+        font-family: Montserrat;
+        font-size: 10pt;
+        color:white;
+        margin: 0 auto;
+    }
+    &__text2{
+        font-family: Montserrat;
+        font-size: 25pt;
+        color:white;
+        margin:0 auto;
+    }
+}
+
+.blue{
+    background-color: #1eb2a6;
+}
+.red{
+    background-color: #f67575;
+}
+
+.p-returnback-prices{
+ 
+    &__iconback {
+      font-size: 25pt;
+     
+      color: black;
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      z-index: 1;
+
+    }
+  }

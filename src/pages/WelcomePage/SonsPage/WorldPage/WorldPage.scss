@@ -1,0 +1,103 @@
+.c-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #1eb2a6;
+    background: linear-gradient(
+      0deg,
+      #1eb2a6 10%,
+      #d4f8e8 100%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  
+    &__background {
+      height: 80%;
+      width: 80%;
+      background-color: white;
+      border: 1px solid white;
+      border-radius: 10px;
+      max-width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  
+    &__background-element {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    &__background-image {
+      max-width: 60%;
+    }
+  
+    &__background-heading {
+      font-family: Montserrat;
+      font-size: 22px;
+      text-align: left;
+      padding: 20px;
+      margin-top: -10px;
+    }
+  
+    &__background-text {
+      font-family: Montserrat;
+      font-size: 16px;
+      text-align: left;
+      margin-top: -30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-bottom: 60px;
+    }
+  
+    &__bottom {
+      margin-bottom: 0px;
+      margin-top: 0px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    &__background-button {
+        font-family: Montserrat;
+        border: none;
+        width: 15rem;
+        height: 3rem;
+        background-color: #1eb2a6;
+        color: white;
+        text-align: center;
+        border-radius: 3pt;
+        border-color: #1eb2a6;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+  
+    &__background-span {
+      font-family: Montserrat;
+      margin-top: 20px;
+      font-size: 12px;
+      color: black;
+      a {
+        text-decoration: none !important;
+      }
+      :visited {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+  

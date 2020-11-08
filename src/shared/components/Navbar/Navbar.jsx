@@ -5,11 +5,11 @@ import './Navbar.scss';
 
 export default function Navbar() {
     return (
-        <nav>
-             <Link className="" to="/">Home</Link>
-             <Link className="" to="/search">Buscar</Link>
-             <Link className="" to="/chat">Chat</Link>
-             <Link className="" to="/user">Usuario</Link>
+        <nav className="c-navbar">
+             <Link className="c-navbar__element" to="/">Home</Link>
+             <Link className="c-navbar__element">Buscar</Link>
+             <Link className="c-navbar__element">Chat</Link>
+             <Link className="c-navbar__element">Usuario</Link>
         </nav>
     )
 }
