@@ -1,0 +1,35 @@
+.c-allexp{
+    max-width:100%;
+    text-align: center;
+
+.c-experience{
+    width: 100%;
+    margin-left: 0rem;
+    &__img{
+        // min-width: 100%;
+        max-height: 90%;
+        height: 13rem;
+        border-radius: 2px;
+        object-fit: cover;
+    }
+}
+
+.c-experience-caption{
+    width: 100%;
+    margin: 0.1rem;
+    
+    &__title{
+        font-family: Montserrat;
+        font-size: 10pt;
+        font-weight: bold;
+        margin-top: 2.5pt;
+        margin-bottom: 2.5pt;
+    }
+    &__text{
+        font-family: Montserrat;
+        font-size: 7pt;
+        margin-top: 2.5pt;
+        margin-bottom: 7pt;
+    }
+}
+}

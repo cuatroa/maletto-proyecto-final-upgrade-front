@@ -2,10 +2,11 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import ChatPage from "./pages/ChatPage/ChatPage";
 import HomePage from "./pages/HomePage/HomePage";
-import Navbar from "./shared/components/Navbar/Navbar";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import WorldPage from "./pages/WelcomePage/SonsPage/WorldPage/WorldPage"
 import PricesPage from "./pages/WelcomePage/SonsPage/PricesPage/PricesPage";
+import MoreExperiences from "./pages/HomePage/SonsPage/MoreExperiences/MoreExperiences";
+import Experiences from "./pages/HomePage/SonsPage/Experiences/Experiences";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <Router>
           <div>
             <Switch>
+              <Route path="/experiences">
+                <MoreExperiences />
+              </Route>
               <Route path="/prices">
                 <PricesPage />
               </Route>
