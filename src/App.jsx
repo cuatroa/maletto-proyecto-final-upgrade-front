@@ -3,9 +3,10 @@ import "./App.css";
 import ChatPage from "./pages/ChatPage/ChatPage";
 import HomePage from "./pages/HomePage/HomePage";
 import Navbar from "./shared/components/Navbar/Navbar";
-import WelcomePage from "./pages/WelcomePage/WelcomePage";
-import WorldPage from "./pages/WelcomePage/SonsPage/WorldPage/WorldPage"
-import PricesPage from "./pages/WelcomePage/SonsPage/PricesPage/PricesPage";
+// import WelcomePage from "./pages/WelcomePage/WelcomePage";
+// import WorldPage from "./pages/WelcomePage/SonsPage/WorldPage/WorldPage"
+// import PricesPage from "./pages/WelcomePage/SonsPage/PricesPage/PricesPage";
+import {LoginPage} from "./pages/LoginPage/LoginPage";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
             <Switch>
               <Route path="/prices">
                 <PricesPage />
+              </Route>
+              <Route path="/login">
+              <LoginPage isLogged={isLogged} fnSetIsLogged={setIsLogged} />
               </Route>
               <Route path="/world">
                 <WorldPage />
