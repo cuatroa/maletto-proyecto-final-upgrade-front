@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useContext } from "react";
 import "./HomePage.scss";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Navbar from "../../shared/components/Navbar/Navbar";
+import Experiences from "./SonsPage/Experiences/Experiences";
+import MoreExperiences from "./SonsPage/MoreExperiences/MoreExperiences"
 import { CalendarScroll } from "../../shared/components/Calendar/CalendarScroll";
+import { InfoContext } from "../../shared/contexts/InfoContext";
+import { PositionContext } from "../../shared/contexts/PositionContext";
 
 // import "../shared/components/Navbar/Navbar.scss";
 // import Card from "../../components/card/Card";
@@ -11,29 +15,27 @@ import { CalendarScroll } from "../../shared/components/Calendar/CalendarScroll"
 // import { Carousel } from "../../components/carousel/Carousel";
 // import { PositionContext } from "../../shared/contexts/PositionContext";
 // import { PetitionInfoContext } from "../../shared/contexts/PetitionInfoContext";
-// import MoreExperience from "../../components/MoreExperiences/MoreExperiences";
-
 
 
 export default function HomePage() {
-  const [ownPosition, setOwnPosition] = useContext(PositionContext);
-  const [petitionInfo, setPetitionInfo] = useContext(PetitionInfoContext);
+  const [ownPosition, setownPosition] = useContext(PositionContext);
+  const [Info, setInfo] = useContext(InfoContext);
   const history = useHistory();
   const [date1, setDate1] = useState(
-    petitionInfo.entryDate ? new Date(petitionInfo.entryDate) : ""
+    Info.entryDate ? new Date(Info.entryDate) : ""
   );
   const [date2, setDate2] = useState(
-    petitionInfo.departureDate ? new Date(petitionInfo.departureDate) : ""
+    Info.departureDate ? new Date(Info.departureDate) : ""
   );
   const [cases, setCases] = useState(
-    petitionInfo.cases ? petitionInfo.cases : ""
+    Info.cases ? Info.cases : ""
   );
   const [showMore, setShowMore] = useState(true);
 
-
+  //Alude a la fecha actual y fecha de recogia + el nº de maletas y estipula según tu ubicación los guardianes
   const handleSearch = () => {
     if (date1 && date2 && ownPosition.name && cases !== "") {
-      setPetitionInfo({
+      setInfo({
         entryDate: date1,
         departureDate: date2,
         cases: cases,
@@ -76,26 +78,30 @@ export default function HomePage() {
             </section>
 
             <section className="home__suitcase">
-              <div className="c-home-formData__cases">
+              <div className="suitcase__cases">
                 <span className="icon-suitcase"></span>
-                {/* Creamos unos styles que aluden a la functionde JS de arriba para dar opciones de nº de maletas */}
+                {/* Creamos unos styles que aluden a la function de JS de arriba para dar opciones de nº de maletas según ubicación */}
                 <input
-                  type="number"
+                  type="hyden"
+                  name="number"
+                  min="1"
+                  max="20"
                   id="cases"
-                  className="c-home__case-element-number"
+                  className="suitcase__cases-number"
                   placeholder="Nº de piezas"
                   value={cases}
                   onChange={(e) => setCases(e.target.value)}
-                  defaultValue={petitionInfo.cases ? petitionInfo.cases : ""}
+                  defaultValue={Info.cases ? Info.cases : ""}
                 />
               </div>
-              <div className="home__buttonSuitcase">
+
+              <div className="home__buttonSearch">
                 <button
                   onClick={(e) => {
                     e.preventDefault();
                     handleSearch();
                   }}
-                  className="shortbutton c-home__button"
+                  className="shortbutton home__buttonSearch"
                 >
                   Buscar
                 </button>
@@ -103,22 +109,24 @@ export default function HomePage() {
             </section>
           </form>
         </div>
-        <div className="c-home-novelty">
+
+        {/* <div className="c-home-novelty">
           <h2 className="c-home-novelty__title">Novedades</h2>
           <Carousel />
-          {/* <img className="c-home__novelty-carousel-image" src="assets/images/rectangle_2@3x.png" alt="" /> */}
-        </div>
+          {/* <img className="c-home__novelty-carousel-image" src="assets/images/rectangle_2@3x.png" alt="" /> *
+        </div> */}
+
         <div className="c-home-novelty">
           <h2 className="c-home-novelty__title">Experiencias</h2>
           <div className="c-home__experience">
-            <Experience />
+            <Experiences />
           </div>
         </div>
 
         {/*Generamos el btn para dar la opción de ver más o menos cantidad en la web*/}
         <div className="HomeBtnOption">
-          {!showMore && <MoreExperience>
-          </MoreExperience>}
+          {!showMore && <MoreExperiences>
+          </MoreExperiences>}
           <button
             className="c-home__button-more"
             //se alude a la función de JS -- para que se aplique en btn que queremos que se ejecute en dos funcionalidades.

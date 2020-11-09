@@ -1,3 +1,3 @@
 import React from 'react';
 
-export const PetitionInfoContext = React.createContext({});
+export const InfoContext = React.createContext({});

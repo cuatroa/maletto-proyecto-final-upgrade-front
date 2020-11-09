@@ -1,3 +1,3 @@
 import React from 'react';
 
-export const SpaceIdContext = React.createContext([]);
+export const UbicationContext = React.createContext([]);

@@ -102,6 +102,27 @@
             justify-content: space-between;
             margin-left: 15px;
 
+            &__cases {
+                width: 100%;
+                display: flex;
+                border: 0.5pt solid rgb(200, 200, 200);
+                padding: 5pt;
+                background-color: rgba(250, 250, 250, 0.5);
+                border-radius: 2pt;
+                height: 2rem;
+                margin-left: -1rem;
+                margin-right: 1.7rem;
+            }
+
+            //Styles para el Input
+            &-number {
+                font-size: 7.5pt;
+                font-family: NotoSans;
+                width: 85%;
+                border: 0px;
+                background-color: rgba(250, 250, 250, 0.5);
+            }
+
             &-pic {
                 width: 12.5pt;
                 height: 16pt;
@@ -113,23 +134,17 @@
                 margin-right: 7.5pt;
             }
 
-            &-number {
-                font-size: 7.5pt;
-                font-family: NotoSans;
-                width: 85%;
-                border: 0px;
-                background-color: rgba(250, 250, 250, 0.5);
-            }
+
         }
 
-
-
-        &__button {
+        //Button of the search map 
+        &__buttonSearch {
             width: 100%;
             height: 2rem;
             margin-right: -1rem;
         }
 
+        //Alude al btn del search que aparece
         &__button-2 {
             margin-top: 30px;
             display: flex;
@@ -141,6 +156,7 @@
             margin-bottom: 80px;
         }
 
+        //Styles Experience
         &__experience {
             align-content: center;
             justify-content: left;
@@ -173,22 +189,6 @@
             border-color: #ff8300;
             font-weight: bold;
             cursor: pointer;
-        }
-
-
-
-
-
-        &__cases {
-            width: 100%;
-            display: flex;
-            border: 0.5pt solid rgb(200, 200, 200);
-            padding: 5pt;
-            background-color: rgba(250, 250, 250, 0.5);
-            border-radius: 2pt;
-            height: 2rem;
-            margin-left: -1rem;
-            margin-right: 1.7rem;
         }
     }
 

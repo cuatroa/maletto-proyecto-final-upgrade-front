@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Calendar } from "primereact/calendar";
 import "./CalendarScroll.scss";
-import { InfoContext } from "../../../shared/contexts/InfoContext"
+import { InfoContext } from "../../../shared/contexts/InfoContext";
 
 
 export const CalendarScroll = (props) => {
@@ -72,7 +72,7 @@ export const CalendarScroll = (props) => {
       <div className="calendar__structure">
         {/*Establecemos los parámetros que afectaran a nuestros calendarios*/}
         <section className="calendar__format">
-          <CalendarScroll
+          <Calendar
             className="calendar1  icon-calendar"
             value={date1}
             placeholder="Depósito"
@@ -85,8 +85,8 @@ export const CalendarScroll = (props) => {
             stepMinute={date1 ? date1.getMinutes() % 5 == 0 ? 5 : 1 : 1}
           />
         </section>
-        <section className="c-calendar__styles">
-          <CalendarScroll
+        <section className="calendar__format">
+          <Calendar
             className="calendar2 icon-calendar"
             value={date2}
             onChange={(e) => { setDate2(e.value); setCalendar1(true); }}
