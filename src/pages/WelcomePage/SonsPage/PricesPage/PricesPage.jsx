@@ -8,7 +8,7 @@ export default function PricesPage() {
     <div className="p-prices">
     <div>
       <Link to="/world">
-        <span className="icon-circle-left p-returnback-prices__iconback"></span>
+        <span className="icon-atras p-returnback-prices__iconback"></span>
       </Link>
     </div>
 
