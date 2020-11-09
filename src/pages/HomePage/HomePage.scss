@@ -1,0 +1,200 @@
+.StructureHome {
+    background-color: #1eb2a6;
+    width: 95%;
+    margin-bottom: 56px;
+    margin: 1rem;
+
+    .HomeFormData {
+        width: 100%;
+
+        //style h2 - home_title
+        &__title {
+            margin-top: 35pt;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 25pt;
+        }
+
+        //Structure of Search Form
+        &_formSearch {
+            justify-content: space-between;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+            width: 90%;
+            height: 2rem;
+            border: 0.5pt solid rgb(200, 200, 200);
+            padding: 5pt;
+            background-color: rgba(250, 250, 250, 0.5);
+            border-radius: 2pt;
+            padding-right: 1rem;
+        }
+
+        //Structure-Style of the ubication search
+        &_search_ {
+            margin-left: 10px;
+            width: 100%;
+            background-color: rgba(250, 250, 250, 0.5);
+            border: none;
+            font-family: NotoSans;
+            font-size: 7.5pt;
+            text-decoration: none;
+            color: black;
+
+            &_ubication {
+                width: 9pt;
+                height: 9pt;
+            }
+        }
+
+        //Calendar Structure and Style 
+        &__calendar {
+            margin-left: 10px;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+
+            .home_calendar {
+                display: flex;
+                flex-direction: row;
+                width: 80%;
+                justify-content: space-between;
+                // sería la clase del tag head - probar si se puede omitir dicha class &__all {}
+            }
+
+            //Duda de dónde sale el .p-inputtext = es un controlador de los formularios -- ?¿
+            .home_calendar .p-inputtext {
+                width: 100%;
+                height: 2rem;
+                font-size: 7pt;
+                color: black;
+                background: #ffffff;
+                padding: 0.429em;
+                border: 1px solid #ff8300;
+                transition: border-color 0.2s, box-shadow 0.2s;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                border-radius: 3px;
+            }
+
+            .calendar2 .p-inputtext {
+                width: 100%;
+                height: 2rem;
+                font-size: 7pt;
+                color: black;
+                background: #ffffff;
+                padding: 0.429em;
+                border: 1px solid #ff8300;
+                transition: border-color 0.2s, box-shadow 0.2s;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                border-radius: 3px;
+            }
+        }
+
+        &__suitcase {
+            width: 82%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+            justify-content: space-between;
+            margin-left: 15px;
+
+            &-pic {
+                width: 12.5pt;
+                height: 16pt;
+            }
+
+            &-text {
+                font-family: NotoSans;
+                font-size: 7.5pt;
+                margin-right: 7.5pt;
+            }
+
+            &-number {
+                font-size: 7.5pt;
+                font-family: NotoSans;
+                width: 85%;
+                border: 0px;
+                background-color: rgba(250, 250, 250, 0.5);
+            }
+        }
+
+
+
+        &__button {
+            width: 100%;
+            height: 2rem;
+            margin-right: -1rem;
+        }
+
+        &__button-2 {
+            margin-top: 30px;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+
+        &__margin {
+            margin-bottom: 80px;
+        }
+
+        &__experience {
+            align-content: center;
+            justify-content: left;
+        }
+
+        &-novelty {
+            &__title {
+                margin-top: 20pt;
+                font-family: CatamaranMedium;
+                font-size: 15pt;
+                margin-bottom: 0pt;
+            }
+
+            &-carousel-image {
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        &__button-more {
+            font-family: NotoSans;
+            border: 0.5pt;
+            width: 16rem;
+            height: 3rem;
+            background-color: #ffffff;
+            color: #ff8300;
+            text-align: center;
+            border-radius: 3pt;
+            border-style: solid;
+            border-color: #ff8300;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+
+
+
+        &__cases {
+            width: 100%;
+            display: flex;
+            border: 0.5pt solid rgb(200, 200, 200);
+            padding: 5pt;
+            background-color: rgba(250, 250, 250, 0.5);
+            border-radius: 2pt;
+            height: 2rem;
+            margin-left: -1rem;
+            margin-right: 1.7rem;
+        }
+    }
+
+    .HomeBtnOption {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+}
