@@ -3,11 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(249, 165, 25);
+    background-color: #1eb2a6;
     background: linear-gradient(
       0deg,
-      rgb(249, 165, 25) 10%,
-      rgb(255, 206, 50) 100%
+      #1eb2a6,
+      #d4f8e8 100%
     );
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,12 +15,15 @@
     width: 100%;
   
     &__maleta {
+      color: white;
+      font-size: 150px;
       margin: 20px;
-      max-width: 40%;
     }
   
     &__texto-maleteo {
+      color: white;
       margin: 20px;
-      max-width: 70%;
+      font-size: 40px;
+      letter-spacing: 16px;
     }
   }
