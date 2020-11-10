@@ -5,8 +5,12 @@ import HomePage from "./pages/HomePage/HomePage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import WorldPage from "./pages/WelcomePage/SonsPage/WorldPage/WorldPage"
 import PricesPage from "./pages/WelcomePage/SonsPage/PricesPage/PricesPage";
-import MoreExperiences from "./pages/HomePage/SonsPage/MoreExperiences/MoreExperiences";
+// import MoreExperiences from "./pages/HomePage/SonsPage/MoreExperiences/MoreExperiences";
 import Experiences from "./pages/HomePage/SonsPage/Experiences/Experiences";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+
+
 
 function App() {
   return (
@@ -14,8 +18,11 @@ function App() {
         <Router>
           <div>
             <Switch>
+              <Route path="/login">
+                <LoginPage />
+              </Route>
               <Route path="/experiences">
-                <MoreExperiences />
+                <Experiences />
               </Route>
               <Route path="/prices">
                 <PricesPage />
@@ -32,14 +39,13 @@ function App() {
               <Route path="/chat">
                 <ChatPage />
               </Route>
-              <Route path="/buscar">
+              <Route path="/home">
                 <HomePage />
               </Route>
-              <Route path="/">
-                <HomePage />
-              </Route>
+              <Route exact path="/">
+              <LandingPage />
+            </Route>
             </Switch>
-            {/* <Navbar /> */}
           </div>
         </Router>
     </div>
