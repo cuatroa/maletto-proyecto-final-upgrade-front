@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import "./HomePage.scss";
-import axios from "axios";
-import { Link } from "react-router-dom";
+// import axios from "axios";
+// import { Link } from "react-router-dom";
 import Navbar from "../../shared/components/Navbar/Navbar";
-import Experiences from "./SonsPage/Experiences/Experiences";
-import MoreExperiences from "./SonsPage/MoreExperiences/MoreExperiences"
-import { CalendarScroll } from "../../shared/components/Calendar/CalendarScroll";
-// import { InfoContext } from "../../shared/contexts/InfoContext";
-// import { PositionContext } from "../../shared/contexts/PositionContext";
+import CalendarScroll from "../../shared/components/Calendar/CalendarScroll";
+import MoreExperiences from "./SonsPage/MoreExperiences/MoreExperiences";
+import Experiences from "./SonsPage/Experiences/Experiences"
 
 
 export default function HomePage() {
 
-  return (
-    <head>
-      <main className="StructureHome">
+  const [showMore, setShowMore] = useState(true);
 
+  return (
+    <div>
+      <main className="StructureHome">
         <div className="HomeFormData">
           <h2 className="home_title">Encuentra tu guardián</h2>
 
@@ -23,29 +22,27 @@ export default function HomePage() {
           <form>
 
             {/* Search Ubication */}
-            <section className="home__formSearch">
-              <span className="home_search_ubication icon-search"></span>
-              <input type="search" placeholder="Búsqueda" size="40"></input>
+            <section className="inner-addon right-addon">
+              <i className="glyphicon icon-search"></i>
+              <input type="text" class="form-control" placeholder="Búsqueda..." />
             </section>
 
             {/* Calendario */}
             <section className="home__calendar">
-              <CalendarScroll className="home__calendar icon-calendar" />
-              <input type="datetime-local" name="Depósito"></input>
+              {/* <CalendarScroll className="home__calendar icon-calendar" /> */}
+              <input type="datetime-local" className="icon-calendar" name="Depósito"></input>
             </section>
 
-            <section className="home__calendar">
-              <CalendarScroll className="home__calendar icon-calendar" />
-              <input type="datetime-local" name="Retirada"></input>
+            <section className="home__calendar ">
+              {/* <CalendarScroll className="home__calendar icon-calendar" /> */}
+              <input type="datetime-local" className="icon-calendar" name="Retirada"></input>
             </section>
 
             {/* Nº de maletas */}
-            <section className="home__suitcase">
-              <div className="suitcase__cases">
-                <span className="icon-suitcase"></span>
-                <label></label>
-                <select name="menu">
-                  <option value="0">...</option>
+            <section className="suitcase">
+              <div className="suitcase">
+                <select name="menu" >
+                  <option value="0" ><i className="icon-suitcase" aria-hidden="true"></i>...</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -58,12 +55,13 @@ export default function HomePage() {
                   <option value="10">10</option>
                 </select>
               </div>
-
-              {/* Btn Buscar -- se redirecciona al Maps  */}
-              <div className="buttonSearch">
-                <button className="home__buttonSearch">Buscar</button>
-              </div>
             </section>
+            <section className="buttonSearch">
+              {/* Btn Buscar -- se redirecciona al Maps  */}
+              <button className="home__buttonSearch">Buscar</button>
+            </section>
+
+
           </form>
         </div>
 
@@ -75,23 +73,33 @@ export default function HomePage() {
 
           <article>
             <h2 className="home__title">Experiencias</h2>
-            <div className="c-home__experience">
+            <div className="home__experience">
               <Experiences />
             </div>
           </article>
 
           {/*Generamos el btn para dar la opción de ver más o menos cantidad en la web*/}
-          <button className="Home_btnExperiences">
-            <MoreExperiences />
-          </button>
+          <button className="piki">hi</button>
 
+          {/* <div className="home_buttonMore">
+            {!showMore && <MoreExperiences />}
+            <button
+              className="home_btnExperiences"
+              onClick={() => setShowMore(!showMore)}
+            >
+              {showMore ? "Mostrar más" : "Mostrar menos"}
+            </button>
+
+          </div> */}
         </section>
 
       </main>
+
       <div>
         <Navbar />
       </div>
-    </head>
+
+    </div >
   );
 }
 

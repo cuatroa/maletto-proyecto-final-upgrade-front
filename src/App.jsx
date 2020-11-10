@@ -41,9 +41,6 @@ function App() {
             <Route path="/welcome">
               <WelcomePage />
             </Route>
-            <Route path="/usuario">
-              <HomePage />
-            </Route>
             <Route path="/chat">
               <ChatPage />
             </Route>
