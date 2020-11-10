@@ -3,7 +3,7 @@ import { TabView, TabPanel } from "primereact/tabview";
 
 // import "../../shared/styles/LongButton/LongButton.scss";
 import { Link, useHistory } from "react-router-dom";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 // import { API } from "../../shared/services/api";
 // import "./loginRegister.scss";
 import LoginForm from '../../shared/components/LoginForm/LoginForm';

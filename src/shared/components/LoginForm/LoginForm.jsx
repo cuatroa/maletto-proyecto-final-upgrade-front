@@ -6,32 +6,7 @@ import IsLoggedContext from "./../../Contexts/IsLoggedContext";
 import axios from 'axios';
 
 export default function LoginForm() {
-  const { register, handleSubmit, errors } = useForm();
-  const history = useHistory();
-  const [reqError, setReqError] = useState("");
-  const [isLogged, setIsLogged] = useContext(IsLoggedContext);
-
-  const onSubmit = (formData) => {
-    console.log(formData);
-
-    API.post("login", formData)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.error) {
-          setReqError(res.data.message);
-        } else {
-          localStorage.setItem("token", res.data.token);
-          localStorage.setItem("id", res.data.id);
-          setIsLogged(true);
-          updateAPIToken(res.data.token);
-          history.push("/home");
-        }
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  };
-
+ 
   return (
     <form className="p-login-register__form" onSubmit={handleSubmit(onSubmit)}>
       <div>

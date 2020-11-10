@@ -1,0 +1,150 @@
+//structure calendar
+.calendar__structure {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+
+    //Investigar enlace
+    .b-font {
+        font-family: NotoSans;
+        font-size: 16px;
+    }
+
+    .b-style {
+        margin: 10px;
+    }
+
+}
+
+
+.calendar1 {
+    width: 100%;
+    height: auto;
+    color: white;
+    text-align: center;
+    border-color: #ff8300;
+
+    &_format {
+        width: 43%;
+    }
+
+    .p-button {
+        margin: 0;
+        color: #ffffff;
+        background-color: #ff8300;
+        border: 1px solid #ff8300;
+        font-size: 10pt;
+        -webkit-transition: background-color 0.2s, box-shadow 0.2s;
+        -webkit-transition: background-color 0.2s, -webkit-box-shadow 0.2s;
+        transition: background-color 0.2s, -webkit-box-shadow 0.2s;
+        transition: background-color 0.2s, box-shadow 0.2s;
+        transition: background-color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+        border-radius: 3px;
+    }
+
+    .p-button:enabled:hover {
+        background-color: #ff8300;
+        color: #ffffff;
+        border-color: #ff8300;
+    }
+
+    .p-inputtext {
+        width: 63pt;
+        font-size: 7pt;
+        color: black;
+        background: #ffffff;
+        padding: 0.429em;
+        border: 1px solid #ff8300;
+        -webkit-transition: border-color 0.2s, box-shadow 0.2s;
+        -webkit-transition: border-color 0.2s, -webkit-box-shadow 0.2s;
+        transition: border-color 0.2s, -webkit-box-shadow 0.2s;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        transition: border-color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 3px;
+    }
+
+    .p-datepicker {
+        padding: 0.857em;
+        min-width: 100%;
+        background-color: #ffffff;
+        color: #ff8300;
+        border: 1px solid #a6a6a6;
+        border-radius: 3px;
+    }
+
+    .p-datepicker table td>span.p-highlight {
+        color: #ffffff;
+        background-color: #ff8300;
+    }
+}
+
+.c-calendar2 {
+    width: 96%;
+    height: auto;
+    color: white;
+    text-align: center;
+    border-color: #ff8300;
+    margin-left: 10%;
+
+    &__format {
+        width: 40%;
+    }
+
+    .p-button {
+        margin: 0;
+        color: #ffffff;
+        background-color: #ff8300;
+        border: 1px solid #ff8300;
+        font-size: 10pt;
+        -webkit-transition: background-color 0.2s, box-shadow 0.2s;
+        -webkit-transition: background-color 0.2s, -webkit-box-shadow 0.2s;
+        transition: background-color 0.2s, -webkit-box-shadow 0.2s;
+        transition: background-color 0.2s, box-shadow 0.2s;
+        transition: background-color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+        border-radius: 3px;
+    }
+
+    .p-button:enabled:hover {
+        background-color: #ff8300;
+        color: #ffffff;
+        border-color: #ff8300;
+    }
+
+    .p-inputtext {
+        width: 63pt;
+        font-size: 7pt;
+        color: black;
+        background: #ffffff;
+        padding: 0.429em;
+        border: 1px solid #ff8300;
+        -webkit-transition: border-color 0.2s, box-shadow 0.2s;
+        -webkit-transition: border-color 0.2s, -webkit-box-shadow 0.2s;
+        transition: border-color 0.2s, -webkit-box-shadow 0.2s;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        transition: border-color 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 3px;
+    }
+
+    .p-datepicker {
+        padding: 0.857em;
+        min-width: 100%;
+        background-color: #ffffff;
+        color: #ff8300;
+        border: 1px solid #a6a6a6;
+        border-radius: 3px;
+        left: -140px !important;
+    }
+
+    .p-datepicker table td>span.p-highlight {
+        color: #ffffff;
+        background-color: #ff8300;
+    }
+}

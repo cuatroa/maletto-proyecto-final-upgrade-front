@@ -1,47 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 // import { API, updateAPIToken } from "../../shared/services/api";
 import IsLoggedContext from "../../Contexts/IsLoggedContext";
 
 export default function RegisterForm() {
-  const { register, handleSubmit, errors } = useForm();
-  const history = useHistory();
-  const [reqError, setReqError] = useState("");
-  const [isLogged, setIsLogged] = useContext(IsLoggedContext);
-
-  useEffect(() => {
-    if (localStorage.getItem("error")) {
-      const error = localStorage.getItem("error");
-      setReqError(error);
-      localStorage.clear();
-    }
-  }, []);
-
-  const date = new Date();
-  const currentYear = date.getFullYear();
-  date.setFullYear(currentYear - 18);
-  const years18 = date.toISOString().slice(0, 10);
-
-  const onSubmitRegister = (formData) => {
-    // console.log(formData);
-    API.post("register", formData)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.error) {
-          setReqError(res.data.message);
-        } else {
-          // console.log(formData);
-          localStorage.setItem("token", res.data.token);
-          localStorage.setItem("id", res.data.id);
-          setIsLogged(true);
-          updateAPIToken(res.data.token);
-          history.push("/home");
-        }
-      })
-      .catch((error) => console.log(error));
-  };
-
   return (
     <form onSubmit={handleSubmit(onSubmitRegister)}>
       <div className="">
