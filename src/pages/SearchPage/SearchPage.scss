@@ -1,31 +1,33 @@
-.card{
-	box-shadow: 0 0px 2px rgba(0, 0, 0, 0.10), 0 3px 3px rgba(0, 0, 0, 0.10);
-	background: #fff;
+.card {
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.10), 0 3px 3px rgba(0, 0, 0, 0.10);
+    background: #fff;
     border-radius: 5px;
-    display:flex;
+    display: flex;
     flex-direction: column;
-    
-    .card-body{
-        display:flex;
+
+    .card-body {
+        display: flex;
         flex-flow: row wrap;
         padding: 10px 30px;
-        
+
     }
-    header{
+
+    header {
         flex: 100%;
     }
-    .meta{
+
+    .meta {
         margin-bottom: 22px;
     }
-  
-    .featured-image{
+
+    .featured-image {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
 
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
-        overflow:hidden;
+        overflow: hidden;
         width: 100%;
         height: 300px; // only for mobile, vertical cards: flex-direction: column;
     }
@@ -37,50 +39,55 @@
 
 // Horizontal kicks in
 @media only screen and (min-width: 268px) {
-	.card{
+    .card {
         flex-direction: row;
         max-height: 279px; // desktop horizontal cards with featured image
-        h3{
+
+        h3 {
             font-size: calc(100% + 1vw);
         }
-        .featured-image{
+
+        .featured-image {
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
             border-top-right-radius: 0;
             max-width: 390px;
             max-height: 279px; // desktop horizontal cards with featured image
         }
-	}
+    }
 }
 
 // monitor screen sizes
 @media only screen and (min-width: 1280px) {
-	.card{
-        h3{
+    .card {
+        h3 {
             font-size: 32px;
         }
     }
 }
 
 
-h3{
+h3 {
     font-size: 32px;
     line-height: 1.2;
     font-weight: bold;
     color: #222;
     margin: .5em 0;
 }
+
 .pre-heading {
     color: #444;
     font-size: 20px;
     font-weight: 400;
     text-transform: uppercase;
 }
+
 .meta {
     color: #555;
     font-size: 16px;
     text-transform: uppercase;
 }
+
 .author {
     text-transform: uppercase;
 }
@@ -88,42 +95,42 @@ h3{
 
 
 // NON-CARD STYLES
-ul{
-    display:flex;
+ul {
+    display: flex;
     justify-content: center;
     margin: 0 auto;
     max-width: 1160px;
-    
-    padding:30px;
+
+    padding: 30px;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
 
 
 .title img {
-  width:110px;
-  height: 110px;
-  border-radius: 5px;
+    width: 110px;
+    height: 110px;
+    border-radius: 5px;
 }
 
 .icon-star-full {
-  color: orange;
+    color: orange;
 }
 
 .icon-star-empty {
-  color:gray;
+    color: gray;
 }
 
 
 .right-action {
-   display: flex;
-   flex-direction: row
-   
+    display: flex;
+    flex-direction: row
 }
+
 .text {
-   display: flex;
-   flex-direction: row
-   
+    display: flex;
+    flex-direction: row
 }
