@@ -68,3 +68,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+// import "../shared/components/Navbar/Navbar.scss";
+// import Card from "../../components/card/Card";
+// import { CalendarDemo } from "../../components/calendar/Calendar";
+// import { Carousel } from "../../components/carousel/Carousel";
+// import { PositionContext } from "../../shared/contexts/PositionContext";
+// import { PetitionInfoContext } from "../../shared/contexts/PetitionInfoContext";
