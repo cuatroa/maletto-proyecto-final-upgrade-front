@@ -16,7 +16,7 @@
 
 .p-login-register__label {
   font-size: 8pt;
-  font-family: NotoSans;
+  font-family: Montserrat;
   font-weight: bold;
   font-stretch: normal;
   font-style: normal;
@@ -32,7 +32,7 @@
   border-width: 0 0 1px;
   border-color: #a7a7a7;
   font-size: 8pt;
-  font-family: NotoSans;
+  font-family: Montserrat;
   line-height: 17.5pt;
   font-weight: normal;
   font-stretch: normal;
@@ -44,7 +44,7 @@
 
 .p-login-register__label-check {
   font-size: 6pt;
-  font-family: NotoSans;
+  font-family: Montserrat;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -161,7 +161,7 @@ li.p-highlight a:hover {
   font-size: 8pt;
   margin-bottom: 6pt;
   margin: 1pt;
-  font-family: NotoSans;
+  font-family: Montserrat;
 }
 /*# sourceMappingURL=loginRegister.css.map */
 
@@ -177,7 +177,7 @@ li.p-highlight a:hover {
   }
   &__label {
     font-size: 8pt;
-    font-family: NotoSans;
+    font-family: Montserrat;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -193,7 +193,7 @@ li.p-highlight a:hover {
     border-width: 0 0 1px;
     border-color: rgb(167, 167, 167);
     font-size: 8pt;
-    font-family: NotoSans;
+    font-family: Montserrat;
     line-height: 17.5pt;
     font-weight: normal;
     font-stretch: normal;
@@ -207,7 +207,7 @@ li.p-highlight a:hover {
   // }
   &__label-check {
     font-size: 6pt;
-    font-family: NotoSans;
+    font-family: Montserrat;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
@@ -238,6 +238,7 @@ li.p-highlight a:hover {
     border-radius: 3pt !important;
   }
 }
+
 .fb:hover {
   opacity: 1;
   color: white;
@@ -248,7 +249,21 @@ li.p-highlight a:hover {
   justify-content: space-between;
   cursor: pointer;
 }
+ul {
+  display: flex;
+  justify-content: space-between;
 
+  list-style: none;
+  li {
+    box-sizing: border-box;
+  }
+  &focus {
+    outline: 0;
+  }
+  &:hover {
+    border: none;
+  }
+}
 .fb {
   background-color: #3b5998;
   color: white;
@@ -306,7 +321,7 @@ li.p-highlight a:hover {
   font-size: 8pt;
   margin-bottom: 6pt;
   margin: 1pt;
-  font-family: NotoSans;
+  font-family: Montserrat;
 }
 
 .p-returnback-login {

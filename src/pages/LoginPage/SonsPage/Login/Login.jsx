@@ -87,7 +87,7 @@ export default function Login() {
       <input
         value="Iniciar Sesión"
         type="submit"
-        className="p-login-register__submit longbutton"
+        className=" p-login-register__submit longbutton"
       ></input>
     </form>
   );
