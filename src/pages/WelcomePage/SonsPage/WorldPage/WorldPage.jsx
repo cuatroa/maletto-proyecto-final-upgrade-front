@@ -35,7 +35,7 @@ export default function WorldPage() {
 
         <div className="c-page__bottom">
            <Link to="/login" onClick={alertLog}>
-            <button className="">Empezar ya</button>
+            <button className="c-page__background-button">Empezar ya</button>
           </Link>
           <Link to="/prices">
             <span className="c-page__background-span">
