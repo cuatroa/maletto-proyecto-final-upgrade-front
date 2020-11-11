@@ -5,7 +5,13 @@
     flex-direction: column;
     margin: 2rem;
 
+
+
     .HomeFormData {}
+
+    i {
+        color: #1eb2a6;
+    }
 
     .structure_application {
         margin-bottom: 2rem;
@@ -15,10 +21,32 @@
         width: 5em;
 
         .menu {
-            background: none;
+            text-decoration: none;
         }
     }
 
+    .Search {
+        background-color: #1eb2a6;
+
+    }
+
+    select,
+    input {
+        background: transparent;
+        background-color: rgba(240, 239, 239, 0.5);
+        color: rgba(29, 28, 28, 0.5);
+        border: none;
+        margin: 1rem;
+
+        &:hover {}
+
+        &:focus {
+            outline: 0;
+        }
+
+    }
+
+    .HomeSuitcase {}
 
 
 

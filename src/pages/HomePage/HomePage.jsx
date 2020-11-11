@@ -19,7 +19,7 @@ export default function HomePage() {
           <h2 className="home_title">Encuentra tu guardián</h2>
 
           {/* Se hace la 1º cajita para el form */}
-          <form>
+          <form class="structure_application">
 
             {/* Search Ubication */}
             <section className="inner-addon right-addon">
@@ -30,35 +30,37 @@ export default function HomePage() {
             {/* Calendario */}
             <section className="home__calendar">
               {/* <CalendarScroll className="home__calendar icon-calendar" /> */}
-              <input type="datetime-local" className="icon-calendar" name="Depósito"></input>
+              <i className="icon-calendar"></i>
+              <input type="datetime-local" name="Depósito"></input>
             </section>
 
             <section className="home__calendar ">
               {/* <CalendarScroll className="home__calendar icon-calendar" /> */}
-              <input type="datetime-local" className="icon-calendar" name="Retirada"></input>
+              <i className="icon-calendar"></i>
+              <input type="datetime-local" name="Retirada"></input>
             </section>
 
             {/* Nº de maletas */}
-            <section className="suitcase">
-              <div className="suitcase">
-                <select name="menu" >
-                  <option value="0" ><i className="icon-suitcase" aria-hidden="true"></i>...</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
-              </div>
+            <section className="Homesuitcase">
+              <i className="icon-suitcase" aria-hidden="true"></i>
+              <select type="menu" >
+                <option value="0" >...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+
             </section>
-            <section className="buttonSearch">
+            <section className="HomeSearch">
               {/* Btn Buscar -- se redirecciona al Maps  */}
-              <button className="home__buttonSearch">Buscar</button>
+              <button className="Search">Buscar</button>
             </section>
 
 
@@ -67,13 +69,13 @@ export default function HomePage() {
 
         <section className="home_extras">
           <article>
-            <h2 className="home__title">Novedades</h2>
-            {/* Se ha de vincular con el carrusel */}
+            <h2 className="title">Novedades</h2>
+
           </article>
 
           <article>
-            <h2 className="home__title">Experiencias</h2>
-            <div className="home__experience">
+            <h2 className="title">Experiencias</h2>
+            <div className="experience">
               <Experiences />
             </div>
           </article>
