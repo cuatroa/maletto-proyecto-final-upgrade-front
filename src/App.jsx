@@ -11,6 +11,8 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import UserPage from "./pages/UserPage/UserPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import {LoginPage} from "./pages/LoginPage/LoginPage";
+import Login from "./pages/LoginPage/SonsPage/Login/Login";
+import Register from "./pages/LoginPage/SonsPage/Register/Register";
 
 
 
@@ -28,6 +30,7 @@ function App() {
             </Route>
             <Route path="/login">
               <LoginPage />
+              {/* isLogged={isLogged} fnSetIsLogged={setIsLogged} */}
             </Route>
             <Route path="/experiences">
               <Experiences />
@@ -47,6 +50,12 @@ function App() {
             <Route path="/chat">
               <ChatPage />
             </Route>
+            {/* <Route path="/register-form">
+              <RegisterForm />
+            </Route>
+            <Route path="/login-form">
+              <Login /> */}
+            {/* </Route> */}
             <Route path="/home">
               <HomePage />
             </Route>
