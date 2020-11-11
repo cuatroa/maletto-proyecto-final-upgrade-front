@@ -4,6 +4,7 @@
 
 // export default class Test extends React.Component {
 
+<<<<<<< HEAD
 //     componentWillMount() {
 //         this.setState({
 //             children: [],
@@ -16,6 +17,20 @@
 //             })
 //         }, 100);
 //     }
+=======
+//     // componentWillMount() {
+//     //     this.setState({
+//     //         children: [],
+//     //         activeItemIndex: 0,
+//     //     });
+
+//     //     setTimeout(() => {
+//     //         this.setState({
+//     //             children: createChildren(20),
+//     //         })
+//     //     }, 100);
+//     // }
+>>>>>>> 8b18431445560471c3b37649722e5023fc6111c8
 
 //     createChildren = n => range(n).map(i => <div key={i} style={{ height: 200, background: '#333' }}>{i}</div>);
 
