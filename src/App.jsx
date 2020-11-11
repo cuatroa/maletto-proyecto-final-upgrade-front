@@ -11,6 +11,7 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import UserPage from "./pages/UserPage/UserPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import {LoginPage} from "./pages/LoginPage/LoginPage";
+import BookingCompletePage from "./pages/SearchPage/SonsPage/BookingCompletePage/BookingCompletePage";
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
 // import Register from "./pages/LoginPage/SonsPage/Register/Register";
 
@@ -22,6 +23,9 @@ function App() {
       <Router>
         <div>
           <Switch>
+            <Route path="/booking-complete">
+              <BookingCompletePage />
+            </Route>
             <Route path="/search">
               <SearchPage />
             </Route>
