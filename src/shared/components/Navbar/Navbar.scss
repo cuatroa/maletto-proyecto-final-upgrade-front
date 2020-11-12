@@ -12,14 +12,13 @@
   height: 6vh;
   background-color: white;
 
- 
-  
-    &__element {
-      margin: 5px;
-      display: flex;
-      align-content: center;
-      font-size: 20px;
-      color: black;
-      text-decoration: none;
-    }
+  &__element {
+    margin: 5px;
+    display: flex;
+    align-content: center;
+    font-size: 20px;
+    color: #2c3e50;
+    text-decoration: none;
+
   }
+}

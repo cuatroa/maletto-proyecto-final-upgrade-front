@@ -146,7 +146,7 @@ export default function Register() {
             novedades y otro correos electrónicos de Maleteo
           </label>
         </div>
-        <button type="submit" className=" p-login-register__submit longbutton ">
+        <button type="submit" className="p-login-register__btn longbutton ">
           Registrarse
         </button>
       </div>
