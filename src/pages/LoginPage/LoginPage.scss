@@ -113,13 +113,14 @@
 
 }
 
+.p-tabview-nav {
+  display: flex;
+}
 
 .p-tabview-nav li a[aria-selected="true"]{
     border: 0px !important;
     border-bottom: 1.5pt solid #1eb2a6 !important;
   }
-
- 
 
 .error{
     color: red;
@@ -140,5 +141,6 @@
     left: 1rem;
     top: 1rem;
     z-index: 1;
+
   }
 }
