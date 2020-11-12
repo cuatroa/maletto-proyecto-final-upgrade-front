@@ -1,21 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { TabView, TabPanel } from "primereact/tabview";
-
-// import "../../shared/styles/LongButton/LongButton.scss";
-import { Link, useHistory } from "react-router-dom";
-// import { useForm } from "react-hook-form";
-// import { API } from "../../shared/services/api";
-// import "./loginPage.scss";
-
+import { Link } from "react-router-dom";
 import Register from "./SonsPage/Register/Register";
 import Login from "./SonsPage/Login/Login";
+import "./LoginPage.scss"
 
 export const LoginPage = () => {
   return (
     <div className="p-login-register">
       <div>
         <Link to="/world">
-          <span className="icon-circle-left p-returnback-login__iconback"></span>
+          <span className="icon-atras p-returnback-login__iconback"></span>
         </Link>
       </div>
       <TabView renderActiveOnly={true}>

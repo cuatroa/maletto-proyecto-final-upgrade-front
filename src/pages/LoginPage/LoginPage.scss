@@ -1,175 +1,8 @@
 .p-login-register {
   width: 188.5pt;
   margin: 0 auto;
-}
+  margin-top: 3rem;
 
-.p-login-register__form {
-  width: 188.5pt;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.p-login-register__label {
-  font-size: 8pt;
-  font-family: Montserrat;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  line-height: 17.5pt;
-  color: #474747;
-}
-
-.p-login-register__input {
-  width: 176.5pt;
-  outline: 0;
-  border-width: 0 0 1px;
-  border-color: #a7a7a7;
-  font-size: 8pt;
-  font-family: Montserrat;
-  line-height: 17.5pt;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  margin-bottom: 6pt;
-}
-
-.p-login-register__label-check {
-  font-size: 6pt;
-  font-family: Montserrat;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 8pt;
-  letter-spacing: -0.05pt;
-  color: black;
-}
-
-.p-login-register__btn {
-  width: 84pt;
-  height: 25pt;
-  border: none;
-  border-radius: 4px;
-  opacity: 0.85;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-size: 9pt;
-  text-decoration: none;
-  /* remove underline from anchors */
-  display: flex;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
-}
-
-.p-login-register__submit {
-  margin: 0 auto;
-  margin-bottom: 26pt;
-  border-radius: 3pt !important;
-}
-
-.fb:hover {
-  opacity: 1;
-  color: white;
-}
-
-.p-login-register-social {
-  width: 176.5pt;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.fb {
-  background-color: #3b5998;
-  color: white;
-}
-
-.google {
-  background-color: white;
-  color: black;
-  border: 1pt solid #6d6d6d;
-}
-
-.google:hover {
-  opacity: 1;
-  color: black;
-  background-color: azure;
-}
-
-.google-icon {
-  width: 15pt;
-}
-
-.p-login-register-ads {
-  width: 100%;
-  height: 16pt;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-bottom: 19.5pt;
-}
-
-.p-tabview-panels {
-  width: 100% !important;
-  padding: 0px !important;
-  border: 0px !important;
-}
-
-.p-tabview.p-tabview-top,
-.p-tabview-nav li a,
-.p-tabview-nav,
-li.p-highlight a,
-li.p-highlight a:hover {
-  background-color: white !important;
-  border: 0px !important;
-  color: black !important;
-  border-top-left-radius: 0px !important;
-  border-top-right-radius: 0px !important;
-  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75) !important;
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75) !important;
-}
-
-.p-tabview-nav li a[aria-selected="true"] {
-  border: 0px !important;
-  border-bottom: 1.5pt solid #1eb2a6 !important;
-}
-
-.error {
-  color: red;
-  font-size: 8pt;
-  margin-bottom: 6pt;
-  margin: 1pt;
-  font-family: Montserrat;
-}
-/*# sourceMappingURL=loginRegister.css.map */
-
-.p-login-register {
-  width: 188.5pt;
-  margin: 0 auto;
-  margin-top: 5rem;
-  //background-color: azure;
   &__form {
     width: 188.5pt;
     display: flex;
@@ -179,11 +12,6 @@ li.p-highlight a:hover {
     font-size: 8pt;
     font-family: Montserrat;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    line-height: 17.5pt;
     color: rgb(71, 71, 71);
   }
 
@@ -194,79 +22,56 @@ li.p-highlight a:hover {
     border-color: rgb(167, 167, 167);
     font-size: 8pt;
     font-family: Montserrat;
-    line-height: 17.5pt;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
     margin-bottom: 6pt;
   }
-  // &__input:focus{
-  //     border-color: green
-  // }
+
   &__label-check {
     font-size: 6pt;
     font-family: Montserrat;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 8pt;
     letter-spacing: -0.05pt;
     color: black;
   }
 
   &__btn {
-    font-family: Montserrat;
+    width: 84pt;
+    height: 25pt;
     border: none;
-    width: 15rem;
-    height: 3rem;
-    background-color: #1eb2a6;
-    color: white;
-    text-align: center;
-    border-radius: 3pt;
-    border-color: #1eb2a6;
+    border-radius: 4px;
+    opacity: 0.85;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    font-size: 9pt;
     text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
   }
 
-  &__submit {
-    margin: 0 auto;
-    margin-bottom: 26pt;
-    border-radius: 3pt !important;
+  &__submit{
+      margin: 0 auto;
+      margin-bottom: 26pt;
+      border-radius: 3pt !important;
   }
+  
 }
-
-.fb:hover {
-  opacity: 1;
-  color: white;
-}
+.fb:hover{
+    opacity: 1;
+    color:white;
+  }
 .p-login-register-social {
-  width: 176.5pt;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
+    width: 176.5pt;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding-left: 0.5rem;
 }
-p-login-register {
-  display: flex;
-  justify-content: space-between;
 
-  list-style: none;
-  li {
-    box-sizing: border-box;
-  }
-  &focus {
-    outline: 0;
-  }
-  &:hover {
-    border: none;
-  }
-}
 .fb {
   background-color: #3b5998;
   color: white;
+  border: 1pt solid #3b5998;
 }
 
 .google {
@@ -274,57 +79,58 @@ p-login-register {
   color: black;
   border: 1pt solid rgb(109, 109, 109);
 }
-.google:hover {
-  opacity: 1;
-  color: black;
-  background-color: azure;
-}
+.google:hover{
+    opacity: 1;
+    color:black;
+    background-color: azure;
+  }
 
-.google-icon {
+.google-icon{
   width: 15pt;
 }
 
-.p-login-register-ads {
-  width: 100%;
-  height: 16pt;
-  display: flex;
-  margin-bottom: 19.5pt;
+.p-login-register-ads{
+    width: 100%;
+    height: 16pt;
+    display: flex;
+    margin-bottom: 19.5pt;
 }
 
-.p-tabview-panels {
-  width: 100% !important;
-  padding: 0px !important;
-  border: 0px !important;
+.p-tabview-panels{
+    width: 100% !important;
+    padding: 0px !important;
+    border: 0px !important;
 }
-.p-tabview.p-tabview-top,
-.p-tabview-nav li a,
-.p-tabview-nav,
-li.p-highlight a,
-li.p-highlight a:hover {
-  background-color: white !important;
-  border: 0px !important;
-  color: black !important;
-  border-top-left-radius: 0px !important;
-  border-top-right-radius: 0px !important;
-  -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75) !important;
-  -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75) !important;
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.75) !important;
+.p-tabview.p-tabview-top, .p-tabview-nav li a, .p-tabview-nav, li.p-highlight a, li.p-highlight a:hover{
+    background-color: white !important;
+    border: 0px !important; 
+    color: black !important;
+    list-style: none;
+    justify-content: space-around;
+    margin: 0;
+    padding:1rem;
+    padding-left: 1.5rem;
+
 }
 
-.p-tabview-nav li a[aria-selected="true"] {
-  border: 0px !important;
-  border-bottom: 1.5pt solid #1eb2a6 !important;
+
+.p-tabview-nav li a[aria-selected="true"]{
+    border: 0px !important;
+    border-bottom: 1.5pt solid #1eb2a6 !important;
+  }
+
+ 
+
+.error{
+    color: red;
+    font-size: 8pt;
+    margin-bottom: 6pt;
+    margin:1pt;
+    font-family: Montserrat;
 }
 
-.error {
-  color: red;
-  font-size: 8pt;
-  margin-bottom: 6pt;
-  margin: 1pt;
-  font-family: Montserrat;
-}
-
-.p-returnback-login {
+.p-returnback-login{
+ 
   &__iconback {
     font-size: 25pt;
     height: 20px;
