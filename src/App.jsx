@@ -11,6 +11,7 @@ import SearchPage from "./pages/SearchPage/SearchPage";
 import UserPage from "./pages/UserPage/UserPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import {LoginPage} from "./pages/LoginPage/LoginPage";
+import SearchInfoPage from "./pages/SearchPage/SearchInfoPage/SearchInfoPage";
 import BookingCompletePage from "./pages/SearchPage/SonsPage/BookingCompletePage/BookingCompletePage";
 import BookingDetailPage from "./pages/SearchPage/SonsPage/BookingDetailPage/BookingDetailPage";
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
@@ -28,7 +29,10 @@ function App() {
               <BookingDetailPage />
             </Route>
             <Route path="/booking/complete">
-              <BookingCompletePage />
+            <BookingCompletePage/>
+            </Route>
+            <Route path="/search/info">
+              <SearchInfoPage />
             </Route>
             <Route path="/search">
               <SearchPage />

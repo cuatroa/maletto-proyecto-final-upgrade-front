@@ -4,18 +4,18 @@
 
 // export default class Test extends React.Component {
 
-//     // componentWillMount() {
-//     //     this.setState({
-//     //         children: [],
-//     //         activeItemIndex: 0,
-//     //     });
+//     componentWillMount() {
+//         this.setState({
+//             children: [],
+//             activeItemIndex: 0,
+//         });
 
-//     //     setTimeout(() => {
-//     //         this.setState({
-//     //             children: createChildren(20),
-//     //         })
-//     //     }, 100);
-//     // }
+//         setTimeout(() => {
+//             this.setState({
+//                 children: createChildren(20),
+//             })
+//         }, 100);
+//     }
 
 //     createChildren = n => range(n).map(i => <div key={i} style={{ height: 200, background: '#333' }}>{i}</div>);
 

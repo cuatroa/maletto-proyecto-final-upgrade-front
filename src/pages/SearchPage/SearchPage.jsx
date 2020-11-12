@@ -1,10 +1,7 @@
-import { findByLabelText } from "@testing-library/react";
 import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import Navbar from "../../shared/components/Navbar/Navbar";
 import "./SearchPage.scss";
-import { Accordion, AccordionTab } from "primereact/accordion";
-
 
 
 export default function SearchPage() {
