@@ -10,14 +10,10 @@ import Experiences from "./pages/HomePage/SonsPage/Experiences/Experiences";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import UserPage from "./pages/UserPage/UserPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
-<<<<<<< HEAD
 import { LoginPage } from "./pages/LoginPage/LoginPage";
-=======
-import {LoginPage} from "./pages/LoginPage/LoginPage";
 import SearchInfoPage from "./pages/SearchPage/SearchInfoPage/SearchInfoPage";
 import BookingCompletePage from "./pages/SearchPage/SonsPage/BookingCompletePage/BookingCompletePage";
 import BookingDetailPage from "./pages/SearchPage/SonsPage/BookingDetailPage/BookingDetailPage";
->>>>>>> c40658909d4f661bc98d7d9269ef640c07091657
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
 // import Register from "./pages/LoginPage/SonsPage/Register/Register";
 
@@ -33,7 +29,7 @@ function App() {
               <BookingDetailPage />
             </Route>
             <Route path="/booking/complete">
-            <BookingCompletePage/>
+              <BookingCompletePage />
             </Route>
             <Route path="/search/info">
               <SearchInfoPage />
