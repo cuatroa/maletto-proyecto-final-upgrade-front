@@ -1,10 +1,7 @@
-import { findByLabelText } from "@testing-library/react";
 import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import Navbar from "../../shared/components/Navbar/Navbar";
 import "./SearchPage.scss";
-import { Accordion, AccordionTab } from "primereact/accordion";
-
 
 
 export default function SearchPage() {
@@ -17,6 +14,8 @@ export default function SearchPage() {
     height: "60vh",
     zoom: 6,
   });
+
+
 
 
   return (
@@ -33,10 +32,11 @@ export default function SearchPage() {
           mapStyle="mapbox://styles/coritah44/ckhcn7gg01n4a19o4kembizsi"
         ></ReactMapGL>
       </div>
-      <ul>
-        <li class="card">
+      <ul className="card-general"
+      >
+        <li className="card">
           <a
-            href="#"
+            href="http://localhost:3000/search/info"
             class="featured-image"
             style={{
               backgroundImage:
@@ -45,7 +45,7 @@ export default function SearchPage() {
           />
           <article class="card-body">
             <header>
-              <a href="utilidata-national-governors-association-meeting">
+              <a href="">
                 <div class="title">
                   <h3>Sara García</h3>
                   <img
@@ -74,16 +74,6 @@ export default function SearchPage() {
         </li>
       </ul>
 
-      {/* <div className="right-action">
-        <div className="text">
-          <h4>titulo1</h4>
-        </div>
-        <div>
-          <span className="icon-star-full"></span>
-        </div>
-      </div> */}
-
-      <br />
       <br />
       <br />
       <br />

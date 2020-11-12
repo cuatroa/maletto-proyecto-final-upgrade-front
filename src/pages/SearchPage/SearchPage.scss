@@ -1,15 +1,16 @@
+
 .card{
-	box-shadow: 0 0px 2px rgba(0, 0, 0, 0.10), 0 3px 3px rgba(0, 0, 0, 0.10);
+	box-shadow: 0 4px 4px -2px rgba(0,0,0,0.3);
 	background: #fff;
     border-radius: 5px;
     display:flex;
     flex-direction: column;
+    display: flex;
     
     .card-body{
         display:flex;
         flex-flow: row wrap;
-        padding: 10px 30px;
-        
+        padding: 10px 30px;      
     }
     header{
         flex: 100%;
@@ -34,7 +35,6 @@
 
 
 
-
 // Horizontal kicks in
 @media only screen and (min-width: 268px) {
 	.card{
@@ -54,10 +54,10 @@
 }
 
 // monitor screen sizes
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1200px) {
 	.card{
         h3{
-            font-size: 32px;
+            font-size: 29px;
         }
     }
 }
@@ -88,16 +88,19 @@ h3{
 
 
 // NON-CARD STYLES
-ul{
+.card-general{
     display:flex;
     justify-content: center;
     margin: 0 auto;
-    max-width: 1160px;
-    
-    padding:30px;
+    max-width: 626px;
+    padding:20px;
 }
 a{
     text-decoration: none;
+}
+
+.card-general li {
+  width: 100%; 
 }
 
 
@@ -119,11 +122,12 @@ a{
 
 .right-action {
    display: flex;
-   flex-direction: row
-   
+   flex-direction: row   
 }
 .text {
    display: flex;
-   flex-direction: row
-   
+   flex-direction: row 
 }
+
+
+

@@ -12,19 +12,7 @@
   height: 6vh;
   background-color: white;
 
-  &__element {
-    margin: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 100%;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top: 0.5pt solid rgba(193, 193, 193, 0.5);
-    height:6vh;
-    background-color: white;
+ 
   
     &__element {
       margin: 5px;
@@ -35,4 +23,3 @@
       text-decoration: none;
     }
   }
-}
