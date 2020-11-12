@@ -163,18 +163,21 @@ li.p-highlight a:hover {
   margin: 1pt;
   font-family: Montserrat;
 }
+
 /*# sourceMappingURL=loginRegister.css.map */
 
 .p-login-register {
   width: 188.5pt;
   margin: 0 auto;
   margin-top: 5rem;
+
   //background-color: azure;
   &__form {
     width: 188.5pt;
     display: flex;
     flex-direction: column;
   }
+
   &__label {
     font-size: 8pt;
     font-family: Montserrat;
@@ -202,6 +205,7 @@ li.p-highlight a:hover {
     letter-spacing: normal;
     margin-bottom: 6pt;
   }
+
   // &__input:focus{
   //     border-color: green
   // }
@@ -227,7 +231,8 @@ li.p-highlight a:hover {
     align-content: center;
     justify-content: center;
     font-size: 9pt;
-    text-decoration: none; /* remove underline from anchors */
+    text-decoration: none;
+    /* remove underline from anchors */
     display: flex;
     justify-content: space-evenly;
   }
@@ -243,27 +248,33 @@ li.p-highlight a:hover {
   opacity: 1;
   color: white;
 }
+
 .p-login-register-social {
   width: 176.5pt;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
 }
-ul {
+
+.p-tabview-nav {
   display: flex;
   justify-content: space-between;
 
   list-style: none;
+
   li {
     box-sizing: border-box;
   }
+
   &focus {
     outline: 0;
   }
+
   &:hover {
     border: none;
   }
 }
+
 .fb {
   background-color: #3b5998;
   color: white;
@@ -274,6 +285,7 @@ ul {
   color: black;
   border: 1pt solid rgb(109, 109, 109);
 }
+
 .google:hover {
   opacity: 1;
   color: black;
@@ -296,6 +308,7 @@ ul {
   padding: 0px !important;
   border: 0px !important;
 }
+
 .p-tabview.p-tabview-top,
 .p-tabview-nav li a,
 .p-tabview-nav,
