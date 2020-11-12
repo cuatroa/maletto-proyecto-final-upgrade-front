@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './WorldPage.scss'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './WorldPage.scss';
 import world from '../../../../assets/icons/world@3x.png'
 
 export default function WorldPage() {
