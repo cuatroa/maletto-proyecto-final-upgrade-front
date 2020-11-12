@@ -32,7 +32,7 @@ export default function SearchInfoPage() {
 
       <div className="row">
         <div className="col">
-          <h2>
+          <h2 className="row-h2">
             <b>Normas de Sara</b>
           </h2>
           <div className="tabs">
@@ -76,7 +76,7 @@ export default function SearchInfoPage() {
         <div className="card-info">
           <div>
             <img
-              src="https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg"
+              src="https://lh3.googleusercontent.com/proxy/hoenpfiUGW0LFJBreAsCJ9Nkz8VM8Hyb7Ir_0ZJbYGP5xTFrucdQFcaKuy0ktIlYxQ2yOzCE8j9p-oYXZcm4Jc4BgsK4KjMU1oON1YgwkbIZsawO61nrAAe3ZdYmQlNRUpBmc9k"
               alt=""
             />
           </div>
@@ -92,9 +92,7 @@ export default function SearchInfoPage() {
             </p>
           </div>
         </div>
-        <div className="hrname">
-          {/* <hr /> */}
-        </div>
+        <div className="hrname"></div>
       </div>
 
       <br />

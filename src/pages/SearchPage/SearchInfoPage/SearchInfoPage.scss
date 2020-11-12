@@ -7,21 +7,14 @@ $verde: #1eb2a6;
 
 
 // General
-body {
-  color: $midnight;
-  background: $clouds;
- 
-}
-h1 {
+
+.row h1 {
   margin: 0;
   line-height: 2;
   text-align: center;
 }
-h2 {
-  margin: 0 0 .5em;
-  font-weight: normal;
-}
-input {
+
+.row input {
   position: absolute;
   opacity: 0;
   z-index: -1;
@@ -90,7 +83,7 @@ input {
 
 
 // :checked
-input:checked {
+.row input:checked {
   + .tab-label {
     background: darken($verdecito, 10%);
     &::after {
@@ -121,16 +114,18 @@ input:checked {
 }
 .card-text {
   margin-left: 20px;
-
 }
 .card-text p{ 
   line-height: 2;
 }
 
-// .hrname { 
- 
-//   border: 0;
-//     height: 0;
-//     border-top: 1px solid rgba(0, 0, 0, 0.1);
-//     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-// }
+.hrname { 
+  border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+ .card-text h2{
+     margin-top: 0px;
+ }

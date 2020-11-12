@@ -5,14 +5,13 @@
     border-radius: 5px;
     display:flex;
     flex-direction: column;
-    display: flex;
-    
+   
     .card-body{
         display:flex;
         flex-flow: row wrap;
         padding: 10px 30px;      
     }
-    header{
+    .header-custom {
         flex: 100%;
     }
     .meta{
@@ -30,15 +29,27 @@
         width: 100%;
         height: 300px; // only for mobile, vertical cards: flex-direction: column;
     }
+}
 
+.card-ul article{
+    max-width: 626px;
+  display: flex;
+  justify-content: center;
+}
+
+.card-ul {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
 }
 
 
 
 // Horizontal kicks in
-@media only screen and (min-width: 268px) {
+@media only screen and (min-width: 368px) {
 	.card{
         flex-direction: row;
+          max-width: 626px;
         max-height: 279px; // desktop horizontal cards with featured image
         h3{
             font-size: calc(100% + 1vw);
@@ -63,11 +74,11 @@
 }
 
 
-h3{
+.card-body h3{
     font-size: 32px;
     line-height: 1.2;
     font-weight: bold;
-    color: #222;
+    color: #2c3e50;
     margin: .5em 0;
 }
 .pre-heading {
@@ -105,7 +116,7 @@ a{
 
 
 
-.title img {
+.title-custom img {
   width:110px;
   height: 110px;
   border-radius: 5px;
@@ -124,10 +135,4 @@ a{
    display: flex;
    flex-direction: row   
 }
-.text {
-   display: flex;
-   flex-direction: row 
-}
-
-
 
