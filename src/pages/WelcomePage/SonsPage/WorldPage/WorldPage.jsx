@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './WorldPage.scss'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './WorldPage.scss';
 import world from '../../../../assets/icons/world@3x.png'
 
 export default function WorldPage() {
@@ -35,7 +35,7 @@ export default function WorldPage() {
 
         <div className="c-page__bottom">
            <Link to="/login" onClick={alertLog}>
-            <button className="">Empezar ya</button>
+            <button className="c-page__background-button">Empezar ya</button>
           </Link>
           <Link to="/prices">
             <span className="c-page__background-span">

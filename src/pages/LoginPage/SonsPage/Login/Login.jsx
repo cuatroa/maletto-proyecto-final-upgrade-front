@@ -1,10 +1,5 @@
-import React, { useState, useContext, } from "react";
-import { useHistory } from "react-router-dom";
-// import { useForm } from "react-hook-form";
-// import { API, updateAPIToken } from "../../shared/services/api";
-// import IsLoggedContext from "./../../Contexts/IsLoggedContext";
+import React from "react";
 import './../../LoginPage.scss'
-import axios from 'axios';
 
 export default function Login() {
  
@@ -48,7 +43,7 @@ export default function Login() {
           id="email"
           name="email"
           type="email"
-          placeholder="carlos@gmail.com"
+          placeholder="john@gmail.com"
           // ref={register({
           //   required: true,
           //   pattern: {
@@ -73,8 +68,7 @@ export default function Login() {
           id="password"
           name="password"
           type="password"
-          leftIcon="pi pi-eye-slash"
-          placeholder="********"
+          placeholder="*****"
           // ref={register({
           //   required: true,
           // })}
@@ -87,7 +81,7 @@ export default function Login() {
       <input
         value="Iniciar Sesión"
         type="submit"
-        className=" p-login-register__submit longbutton"
+        className="c-page__button1"
       ></input>
     </form>
   );

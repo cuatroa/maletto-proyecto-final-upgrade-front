@@ -1,16 +1,12 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-// import { useForm } from "react-hook-form";
-// import { API, updateAPIToken } from "../../shared/services/api";
 import './../../LoginPage.scss'
 import  "../../../../index.scss";
-// import IsLoggedContext from "../../Contexts/IsLoggedContext";
 
 export default function Register() {
   return (
     <form>
       <div className="">
-        <p className="text-large">Únete a Maleteo y disfruta de sus ventajas</p>
+        <p className="text-large">Únete a MALETTO y disfruta de sus ventajas</p>
       </div>
       <div className="p-login-register-social">
         <a
@@ -46,7 +42,7 @@ export default function Register() {
           id="email"
           name="email"
           type="email"
-          placeholder="carlos@gmail.com"
+          placeholder="john@gmail.com"
           // ref={register({
           //   required: true,
           //   pattern: {
@@ -68,7 +64,7 @@ export default function Register() {
           id="name"
           name="name"
           type="text"
-          placeholder="Carlos"
+          placeholder="John"
           // ref={register({
           //   required: true,
           // })}
@@ -84,7 +80,7 @@ export default function Register() {
           id="surname"
           name="surname"
           type="text"
-          placeholder="Pérez González"
+          placeholder="Doe"
           // ref={register({
           //   required: true,
           // })}
@@ -100,7 +96,7 @@ export default function Register() {
           id="password"
           name="password"
           type="password"
-          placeholder="********"
+          placeholder="*****"
           // ref={register({
           //   required: true,
           //   pattern: {
@@ -146,7 +142,7 @@ export default function Register() {
             novedades y otro correos electrónicos de Maleteo
           </label>
         </div>
-        <button type="submit" className=" p-login-register__submit longbutton ">
+        <button type="submit" className="c-page__button1">
           Registrarse
         </button>
       </div>
