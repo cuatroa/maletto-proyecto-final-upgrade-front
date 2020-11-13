@@ -2,26 +2,29 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
+
 
 
     .c-experience {
-        width: 90vw;
-        margin: 0em;
-
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
 
         .img {
-            min-width: 90vw;
-            max-height: 100%;
+            min-width: 95vw;
+            max-height: 10%;
             height: 13rem;
-            border-radius: 2px;
             object-fit: cover;
+            object-position: center center;
         }
     }
 
     .c-experience-caption {
-        width: 100%;
-        margin: 0.1rem;
+        width: 90%;
+        display: inline;
+        justify-content: center;
+        text-align: center;
 
         &__title {
             font-family: Montserrat;

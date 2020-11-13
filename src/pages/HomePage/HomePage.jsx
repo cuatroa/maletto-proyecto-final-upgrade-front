@@ -7,6 +7,7 @@ import MoreExperiences from "./SonsPage/MoreExperiences/MoreExperiences";
 import Experiences from "./SonsPage/Experiences/Experiences"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+// import Calendar from 'react-calendar';
 
 
 export default function HomePage() {
@@ -19,7 +20,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="structure">
+    <div>
       <main className="StructureHome">
         <div className="HomeFormData">
           <h1 className="home_title">Encuentra tu guardián</h1>
@@ -35,12 +36,24 @@ export default function HomePage() {
             {/* Calendario */}
             <section>
               <div>
+                {/* <Calendar
+                  onChange={onChange}
+                  value={value}
+                /> */}
                 <i className="icon-calendar"></i>
+<<<<<<< HEAD
                 <input type="datetime-local" className="input-date" placeholder="Depósito"></input>
               </div>
               <div>
                 <i className="icon-calendar"></i>
                 <input type="datetime-local" className="input-date" placeholder="Retirada"></input>
+=======
+                <input type="datetime-local" className="input-calendar" placeholder="Depósito"></input>
+              </div>
+              <div>
+                <i className="icon-calendar"></i>
+                <input type="datetime-local" className="input-calendar" placeholder="Retirada"></input>
+>>>>>>> c963008f1b8d3752c042faf7e4531c21b8a6acde
               </div>
 
             </section>
@@ -91,26 +104,24 @@ export default function HomePage() {
                 </div>
               </Carousel>
             </div>
-            <p>soy un carousel 🎡</p>
+
             {/* Se ha de vincular con el carrusel */}
           </article>
 
           <article>
             <h2 >Experiencias</h2>
-            <div className="experience">
-              <Experiences />
-              {!showMore && <MoreExperiences />}
-              <button
-                className="btnMore"
-                onClick={() => setShowMore(!showMore)}
-              >
-                {showMore ? "Mostrar más" : "Mostrar menos"}
-              </button>
-            </div>
-
-
-
+            <Experiences />
           </article>
+
+          {!showMore && <MoreExperiences />}
+          <button
+            className="morehome"
+            onClick={() => setShowMore(!showMore)}
+          >
+            {showMore ? "Mostrar más" : "Mostrar menos"}
+          </button>
+
+
         </section>
 
       </main>

@@ -5,7 +5,9 @@ $verde: #1eb2a6;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 2rem;
     margin-bottom: 8rem;
+    padding: 10px;
 
     //Style Form
     .structure_application {
@@ -36,90 +38,87 @@ $verde: #1eb2a6;
             }
         }
 
+        .input-calendar[type="datetime-local"]::-webkit-calendar-picker-indicator {
+            background: none;
+            background-image: img("/src/assets/icons/dropdown.png");
+            background-size: cover;
+            cursor: pointer;
+        }
+
         @media screen {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-    }
 
-
-    //Style Search
-    .homeSeach {
-        flex-direction: row;
-        align-items: center;
-        align-content: center;
-        width: 90%;
-        height: 2rem;
-        border: 0.5pt solid rgb(200, 200, 200);
-        padding: 5pt;
-        background-color: rgba(250, 250, 250, 0.5);
-        border-radius: 2pt;
-        padding-right: 1rem;
-    }
-
-    //Style Icon
-    i {
-        color: #1eb2a6;
-    }
-
-
-    .homeBtn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .btn {
-            color: rgb(250, 250, 250);
-            border: none;
-            background-color: #1eb2a6;
-            border-radius: 5px;
-            outline: none;
-            size: 20rem;
-            width: 5rem;
+        //Style Search
+        .homeSeach {
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+            width: 90%;
             height: 2rem;
-
-            &:active {
-                // background-color: #f67575;
-                background: darken($verde, 15%);
-            }
+            border: 0.5pt solid rgb(200, 200, 200);
+            padding: 5pt;
+            background-color: rgba(250, 250, 250, 0.5);
+            border-radius: 2pt;
+            padding-right: 1rem;
         }
 
-    }
-
-    //Home Extras --Novedades/Experiencias
-    .experience {
-        //Hablar con Cristian --
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-
-        .btnMore {
-            border: none;
-            margin-top: 2rem;
-            outline: none;
-            width: 15rem;
-            height: 3rem;
-            background-color: #1eb2a6;
-            color: white;
-            text-align: center;
-            border-radius: 3pt;
-            border-color: #1eb2a6;
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-
-            &:active {
-                // background-color: #f67575;
-                background: darken($verde, 15%);
-            }
+        //Style Icon
+        i {
+            color: #1eb2a6;
         }
 
 
+        .homeBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .btn {
+                color: rgb(250, 250, 250);
+                border: none;
+                background-color: #1eb2a6;
+                border-radius: 5px;
+                outline: none;
+                size: 20rem;
+                width: 5rem;
+                height: 2rem;
+
+                &:active {
+                    // background-color: #f67575;
+                    background: darken($verde, 15%);
+                }
+            }
+
+        }
+
+        //Home Extras --Novedades/Experiencias
+
     }
 
+    .morehome {
+        border: none;
+        margin-top: 2rem;
+        outline: none;
+        width: 15rem;
+        height: 3rem;
+        background-color: #1eb2a6;
+        color: white;
+        text-align: center;
+        border-radius: 3pt;
+        border-color: #1eb2a6;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
 
+        &:active {
+            // background-color: #f67575;
+            background: darken($verde, 15%);
+        }
+    }
 
 }
 

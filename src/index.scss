@@ -2,13 +2,20 @@
 @import "../src/assets/fonts/maletto_icons-v1.0/style.scss";
 //variables--
 
-
 //General Style
 
-body {
+* {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
   background: white;
   margin: 0;
+=======
+  margin: 0;
+}
+
+body {
+  background-color: white;
+>>>>>>> c963008f1b8d3752c042faf7e4531c21b8a6acde
 }

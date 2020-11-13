@@ -1,58 +1,45 @@
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
-// import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+// import UserPage from "../UserPage";
+import Navbar from "./../../../shared/components/Navbar/Navbar";
+import "./UserBookingPage.scss"
 
-// export default function UserBookingPage() {
-//     return <div></div>;
-//     const [user, setUser] = useState([]);
+export default function UserBookingPage() {
 
-//     useEffect(() => {
-//         axios.get("http://localhost:3001/user").then((res) => {
-//             setUser(res.data);
-//             console.log(res.data);
-//         });
-//     }, []);
+    const [user, setUser] = useState([]);
 
-//     return (
-//         <div className="gallery">
-//             <ul>.............................
-//           {user.map((item, index) => {
-//                 return (
-//                     <div key={index}>
-//                         <h1>{item.name}</h1>
-//                         <h1>{item.email}</h1>
-//                         <img src={'http://localhost:3001' + item.img} alt="" />
-//                     </div>
-//                 );
+    useEffect(() => {
+        axios.get("http://localhost:3001/location-space").then((res) => {
+            setUser(res.data);
+            console.log(res.data);
+        });
+    }, []);
 
-//             })}
-//             </ul>
-
-
-//             <h1>Register</h1>
-
-//             <form action="/user" method="POST">
-//                 <label for="email">
-//                     <p>Email</p>
-//                     <input type="text" name="email" />
-//                 </label>
-
-//                 <label for="password">
-//                     <p>Password</p>
-//                     <input type="password" name="password" />
-//                 </label>
-
-//                 <input type="submit" value="Register now!" />
+    return (
+        <div className="container">
+            <div className="container-noNavbar">
+           <Link className="icon-atras" to="/user" > </Link>
+            <div className="bookings">
+                <h1>Tus reservas</h1>
+                <hr />
+            </div>
+            <div className="div-image-title">
+                {user.map((item, index) => {
+                    return (
+                        <div className="image-title" key={index}>
+                            <h2>{item.title}</h2>
+                            <img className="image-location"src={item.img} alt="" />
+                            <Link className="icon-proximo" to =""/*"Poner redirección"*/> </Link>
+                            <hr/>
+                        </div>
+                    );
+                })}
+            </div>
+            </div>
+            <Navbar />
+        </div>
+    );
+}
 
 
-//             </form>
-//         </div>
-//     );
-// }
-
-
-
-
-
-
-// export default UserBookingPage
