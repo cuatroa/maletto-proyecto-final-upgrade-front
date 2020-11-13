@@ -3,48 +3,53 @@ import "./HomePage.scss";
 // import axios from "axios";
 // import { Link } from "react-router-dom";
 import Navbar from "../../shared/components/Navbar/Navbar";
-import CalendarScroll from "../../shared/components/Calendar/CalendarScroll";
 import MoreExperiences from "./SonsPage/MoreExperiences/MoreExperiences";
 import Experiences from "./SonsPage/Experiences/Experiences"
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 
 export default function HomePage() {
 
   const [showMore, setShowMore] = useState(true);
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
 
   return (
-    <div>
+    <div className="structure">
       <main className="StructureHome">
         <div className="HomeFormData">
-          <h2 className="home_title">Encuentra tu guardián</h2>
+          <h1 className="home_title">Encuentra tu guardián</h1>
 
-          {/* Se hace la 1º cajita para el form */}
           <form class="structure_application">
-
             {/* Search Ubication */}
-            <section className="inner-addon right-addon">
-              <i className="glyphicon icon-search"></i>
-              <input type="text" class="form-control" placeholder="Búsqueda..." />
+
+            <section className="homeSearch">
+              <i className="icon-search"></i>
+              <input type="text" placeholder="Búsqueda..." id="search" />
             </section>
 
             {/* Calendario */}
-            <section className="home__calendar">
-              {/* <CalendarScroll className="home__calendar icon-calendar" /> */}
-              <i className="icon-calendar"></i>
-              <input type="datetime-local" name="Depósito"></input>
-            </section>
+            <section>
+              <div>
+                <i className="icon-calendar"></i>
+                <input type="datetime-local" placeholder="Depósito"></input>
+              </div>
+              <div>
+                <i className="icon-calendar"></i>
+                <input type="datetime-local" placeholder="Retirada"></input>
+              </div>
 
-            <section className="home__calendar ">
-              {/* <CalendarScroll className="home__calendar icon-calendar" /> */}
-              <i className="icon-calendar"></i>
-              <input type="datetime-local" name="Retirada"></input>
             </section>
 
             {/* Nº de maletas */}
-            <section className="Homesuitcase">
+            <section>
               <i className="icon-suitcase" aria-hidden="true"></i>
-              <select type="menu" >
-                <option value="0" >...</option>
+              <select type="menu" width="1rem">
+                <option value="0" >Nº de Piezas</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -56,43 +61,56 @@ export default function HomePage() {
                 <option value="9">9</option>
                 <option value="10">10</option>
               </select>
-
             </section>
-            <section className="HomeSearch">
+
+            <section className="homeBtn">
               {/* Btn Buscar -- se redirecciona al Maps  */}
-              <button className="Search">Buscar</button>
+              <button className="btn">Buscar</button>
             </section>
-
-
           </form>
         </div>
 
-        <section className="home_extras">
+        <section className="homeExtras">
           <article>
-            <h2 className="title">Novedades</h2>
-
+            <h2 >Novedades</h2>
+            <div className="general">
+              <Carousel
+                autoPlay
+                infiniteLoop={true}
+                showThumbs={false}
+                showStatus={false}
+              >
+                <div>
+                  <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1008&q=80" />
+                </div>
+                <div>
+                  <img src="https://images.unsplash.com/photo-1522509585149-c9cd39d1ff08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1073&q=80" />
+                </div>
+                <div>
+                  <img src="https://images.unsplash.com/photo-1534777367038-9404f45b869a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" />
+                </div>
+              </Carousel>
+            </div>
+            <p>soy un carousel 🎡</p>
+            {/* Se ha de vincular con el carrusel */}
           </article>
 
           <article>
-            <h2 className="title">Experiencias</h2>
+            <h2 >Experiencias</h2>
             <div className="experience">
               <Experiences />
+              {!showMore && <MoreExperiences />}
+              <button
+                className="btnMore"
+                onClick={() => setShowMore(!showMore)}
+              >
+                {showMore ? "Mostrar más" : "Mostrar menos"}
+              </button>
             </div>
+
+
+
           </article>
-
-          {/*Generamos el btn para dar la opción de ver más o menos cantidad en la web*/}
-          <button className="piki">hi</button>
-
-          {/* <div className="home_buttonMore">
-            {!showMore && <MoreExperiences />}
-            <button
-              className="home_btnExperiences"
-              onClick={() => setShowMore(!showMore)}
-            >
-              {showMore ? "Mostrar más" : "Mostrar menos"}
-            </button>
-
-          </div> */}
         </section>
 
       </main>
