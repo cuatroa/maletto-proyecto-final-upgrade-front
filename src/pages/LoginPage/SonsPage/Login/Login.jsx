@@ -4,7 +4,7 @@ import './../../LoginPage.scss'
 export default function Login() {
  
   return (
-    <form className="p-login-register__form" >
+    <div>
       <div>
         <p className="text-large">Inicia sesión ahora</p>
       </div>
@@ -30,9 +30,7 @@ export default function Login() {
       <div>
         <p className="text-style-small">o utiliza tu correo electrónico</p>
       </div>
-      <div>
-       <p className="error"> </p>
-      </div>
+      <form className="p-login-register__form" >
       <div className="p-login-register-divInput">
         <label className="p-login-register__label" htmlFor="email">
           Dirección de correo electrónico
@@ -52,11 +50,6 @@ export default function Login() {
           //   },
           // })}
         />
-      
-          <span className="error">El email es necesario</span>
-        
-        
-          <span className="error">Email inválido</span>
         
       </div>
       <div className="p-login-register-divInput">
@@ -68,15 +61,15 @@ export default function Login() {
           id="password"
           name="password"
           type="password"
-          placeholder="*****"
+          placeholder="********"
           // ref={register({
           //   required: true,
           // })}
         />
-       
-          <span className="error">La contraseña es necesaria</span>
         
       </div>
+
+      <br/>
 
       <input
         value="Iniciar Sesión"
@@ -84,5 +77,6 @@ export default function Login() {
         className="c-page__button1"
       ></input>
     </form>
+    </div>
   );
 }

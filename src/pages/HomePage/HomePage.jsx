@@ -36,11 +36,11 @@ export default function HomePage() {
             <section>
               <div>
                 <i className="icon-calendar"></i>
-                <input type="datetime-local" placeholder="Depósito"></input>
+                <input type="datetime-local" className="input-date" placeholder="Depósito"></input>
               </div>
               <div>
                 <i className="icon-calendar"></i>
-                <input type="datetime-local" placeholder="Retirada"></input>
+                <input type="datetime-local" className="input-date" placeholder="Retirada"></input>
               </div>
 
             </section>

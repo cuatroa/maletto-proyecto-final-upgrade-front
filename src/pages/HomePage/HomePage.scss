@@ -122,3 +122,7 @@ $verde: #1eb2a6;
 
 
 }
+
+.input-date[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    background: none;
+}
