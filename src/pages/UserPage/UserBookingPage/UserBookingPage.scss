@@ -1,0 +1,61 @@
+// @media only screen and (min-width: 268px) {
+.container {
+  // border: blue solid;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 20px auto;
+  //   padding: 20px;
+  max-width: 650px;
+  box-sizing: border-box;
+  //   display: flex;
+
+  justify-content: center;
+}
+.container-noNavbar {
+  // border: purple solid;
+  flex-direction: column;
+}
+.bookings {
+  // border: black solid;
+  // display: flex;
+}
+.icon-atras {
+  text-decoration: none;
+  // color: black;
+  // margin-top: 2vh;
+  // margin-top: 4vw;
+  // margin-left: 0vw;
+}
+.icon-flecha-correcta {
+  color: black;
+  text-decoration: none;
+  float: right;
+}
+.image-title {
+  justify-content: space-between;
+
+  // border: green solid;
+  // margin-left: 20px;
+  // margin-right: -20px;
+  // float: ;
+  // display: flex;
+  width: 100%;
+}
+.image-location {
+  // border: black solid;
+  border-radius: 0.9rem;
+  //   margin-top: 1vw;
+  //   margin-bottom: 4vh;
+  width: 80%;
+  margin-right: 30vw;
+  max-width: 60vw;
+  height: auto;
+  // justify-content: center;
+}
+
+.div-image-title {
+  // border: red solid;
+  justify-content: space-between;
+}
+// }
