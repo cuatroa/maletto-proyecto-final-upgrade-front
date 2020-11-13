@@ -12,7 +12,7 @@ export default function SearchInfoPage() {
   };
 
   return (
-    <div className="general">
+    <div>
       <Carousel
         autoPlay
         infiniteLoop={true}
