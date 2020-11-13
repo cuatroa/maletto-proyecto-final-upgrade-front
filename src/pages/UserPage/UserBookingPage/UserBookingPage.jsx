@@ -20,12 +20,10 @@ export default function UserBookingPage() {
         <div className="container">
             <div className="container-noNavbar">
            <Link className="icon-atras" to="/user" > </Link>
-           
             <div className="bookings">
                 <h1>Tus reservas</h1>
                 <hr />
             </div>
-
             <div className="div-image-title">
                 {user.map((item, index) => {
                     return (

@@ -10,16 +10,13 @@ import Experiences from "./pages/HomePage/SonsPage/Experiences/Experiences";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import UserPage from "./pages/UserPage/UserPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
-import { LoginPage } from "./pages/LoginPage/LoginPage";
-import SearchInfoPage from "./pages/SearchPage/SearchInfoPage/SearchInfoPage";
-import BookingCompletePage from "./pages/SearchPage/SonsPage/BookingCompletePage/BookingCompletePage";
+import {LoginPage} from "./pages/LoginPage/LoginPage";
 import UserBookingPage from "./pages/UserPage/UserBookingPage/UserBookingPage";
 import BookingDetailPage from "./pages/SearchPage/SonsPage/BookingDetailPage/BookingDetailPage";
+import SearchInfoPage from "./pages/SearchPage/SearchInfoPage/SearchInfoPage";
+import BookingCompletePage from "./pages/SearchPage/SonsPage/BookingCompletePage/BookingCompletePage";
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
 // import Register from "./pages/LoginPage/SonsPage/Register/Register";
-
-
-
 function App() {
   return (
     <div>
@@ -35,13 +32,14 @@ function App() {
             <Route path="/user-booking-page">
             <UserBookingPage/>
             </Route>
-           
-
             <Route path="/search/info">
               <SearchInfoPage />
             </Route>
             <Route path="/search">
               <SearchPage />
+            </Route>
+            <Route path="/user-booking-page">
+              <UserBookingPage />
             </Route>
             <Route path="/user">
               <UserPage />
