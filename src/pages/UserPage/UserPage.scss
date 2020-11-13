@@ -1,0 +1,24 @@
+.container {
+  // border: blue solid;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 20px auto;
+  //   padding: 20px;
+  max-width: 650px;
+  box-sizing: border-box;
+  //   display: flex;
+
+  justify-content: center;
+}
+.small-text {
+  color: gray;
+  font-weight: lighter;
+}
+.image {
+  //   border: blue solid;
+
+  border-radius: 0.9rem;
+  height: 100px;
+  width: auto;
+}

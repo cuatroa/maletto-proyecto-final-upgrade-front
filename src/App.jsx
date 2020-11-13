@@ -13,6 +13,7 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import SearchInfoPage from "./pages/SearchPage/SearchInfoPage/SearchInfoPage";
 import BookingCompletePage from "./pages/SearchPage/SonsPage/BookingCompletePage/BookingCompletePage";
+import UserBookingPage from "./pages/UserPage/UserBookingPage/UserBookingPage";
 import BookingDetailPage from "./pages/SearchPage/SonsPage/BookingDetailPage/BookingDetailPage";
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
 // import Register from "./pages/LoginPage/SonsPage/Register/Register";
@@ -31,6 +32,11 @@ function App() {
             <Route path="/booking/complete">
               <BookingCompletePage />
             </Route>
+            <Route path="/user-booking-page">
+            <UserBookingPage/>
+            </Route>
+           
+
             <Route path="/search/info">
               <SearchInfoPage />
             </Route>
