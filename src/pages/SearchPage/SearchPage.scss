@@ -1,138 +1,88 @@
 
-.card{
-	box-shadow: 0 4px 4px -2px rgba(0,0,0,0.3);
-	background: #fff;
-    border-radius: 5px;
-    display:flex;
-    flex-direction: column;
-   
-    .card-body{
-        display:flex;
-        flex-flow: row wrap;
-        padding: 10px 30px;      
-    }
-    .header-custom {
-        flex: 100%;
-    }
-    .meta{
-        margin-bottom: 22px;
-    }
-  
-    .featured-image{
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        overflow:hidden;
-        width: 100%;
-        height: 300px; // only for mobile, vertical cards: flex-direction: column;
-    }
-}
-
-.card-ul article{
-    max-width: 626px;
+.slide{ 
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
-.card-ul {
-    display: flex;
-    justify-content: center;
-    padding: 0px;
+.card{
+  width: 85vmin;
+  height: 45vmin;
+  display: flex;
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.3);
+  background-color: #fff;
+  border-radius: 11px;
 }
 
-
-
-// Horizontal kicks in
-@media only screen and (min-width: 368px) {
-	.card{
-        flex-direction: row;
-          max-width: 626px;
-        max-height: 279px; // desktop horizontal cards with featured image
-        h3{
-            font-size: calc(100% + 1vw);
-        }
-        .featured-image{
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-            border-top-right-radius: 0;
-            max-width: 390px;
-            max-height: 279px; // desktop horizontal cards with featured image
-        }
-	}
-}
-
-// monitor screen sizes
-@media only screen and (min-width: 1200px) {
-	.card{
-        h3{
-            font-size: 29px;
-        }
-    }
+.card__img{
+  background-position: center;
+  width: 70%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 11px;
+  border-bottom-left-radius: 11px;
 }
 
 
-.card-body h3{
-    font-size: 32px;
-    line-height: 1.2;
-    font-weight: bold;
-    color: #2c3e50;
-    margin: .5em 0;
-}
-.pre-heading {
-    color: #444;
-    font-size: 20px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-.meta {
-    color: #555;
-    font-size: 16px;
-    text-transform: uppercase;
-}
-.author {
-    text-transform: uppercase;
+.card__content{
+  padding: 2% 5%;
+  box-sizing: border-box;
+  width: 50%;
 }
 
-
-
-// NON-CARD STYLES
-.card-general{
-    display:flex;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 626px;
-    padding:20px;
-}
-a{
-    text-decoration: none;
+.card__content-theme{
+  font-weight: 900;
+  font-size: 1.7vmin; 
 }
 
-.card-general li {
-  width: 100%; 
+.card__content-header{
+  font-weight: 900;
+  font-size: 24px;
+  font-size: 4vmin;
+  text-transform: capitalize;
+  letter-spacing: 0.01em;
+  line-height: 0.91;
+  margin: 3vmin 0 3.5vmin;  
 }
 
-
-
-.title-custom img {
-  width:110px;
-  height: 110px;
-  border-radius: 5px;
+.card__content-paragraph{
+  font-size: 2.3vmin;
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 2.5vmin;
 }
+
 
 .icon-star-full {
   color: orange;
 }
 
 .icon-star-empty {
-  color:gray;
+  color:rgb(151, 151, 151);
 }
 
-
-.right-action {
-   display: flex;
-   flex-direction: row   
+.profile_img {
+    max-width: 60%;
+    border-radius: 12%;
+    display: flex;
+}
+.card_stars {
+  margin-top: 5px;
+  font-size: 4vmin;
+  line-height: 1.7;
+  margin-bottom: 2.5vmin;
 }
 
+.card-a a {
+    text-decoration: none;
+    color: #2c3e50;
+}
+
+.height-div {
+  margin: 20px;
+}

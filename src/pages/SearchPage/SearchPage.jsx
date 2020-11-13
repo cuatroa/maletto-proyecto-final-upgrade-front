@@ -1,21 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import Navbar from "../../shared/components/Navbar/Navbar";
 import "./SearchPage.scss";
+import "mapbox-gl/dist/mapbox-gl.css";
+import marker from "../../assets/icons/marker.png";
+
+
+
 
 
 export default function SearchPage() {
 
 
     const [viewport, setViewport] = useState({
-        latitude: 45.4211,
-        longitude: -75.6903,
-        width: "100vw",
-        height: "60vh",
-        zoom: 6,
+      latitude: 40.406288,
+      longitude: -3.751542,
+      width: "100vw",
+      height: "60vh",
+      zoom: 12,
     });
 
 
+
+ 
     return (
       <div className="general">
         <div>
@@ -27,56 +34,58 @@ export default function SearchPage() {
             onViewportChange={(viewport) => {
               setViewport(viewport);
             }}
-            mapStyle="mapbox://styles/coritah44/ckhcn7gg01n4a19o4kembizsi"
-          ></ReactMapGL>
+            mapStyle="mapbox://styles/coritah44/ckhffmpjs0g9e19md6lbpfbke"
+          >
+            <Marker latitude={40.404711} longitude={-3.750979}>
+              <img src={marker} alt="" />
+            </Marker>
+            <Marker latitude={40.400553} longitude={-3.745668}>
+              <img src={marker} alt="" />
+            </Marker>
+            <Marker latitude={40.3876} longitude={-3.748254}>
+              <img src={marker} alt="" />
+            </Marker>
+          </ReactMapGL>
         </div>
-        <ul class="card-ul">
-          <li class="card">
-            <a
-              href="http://localhost:3000/search/info"
-              class="featured-image"
-              style={{
-                backgroundImage:
-                  "url(https://images.pexels.com/photos/5411784/pexels-photo-5411784.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)",
-              }}
-            />
-            <article class="card-body">
-              <header class="header-custom">
-                <a href="http://localhost:3000/search/info">
-                  <div class="title-custom">
-                    <h3>Sara García</h3>
-                    <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT621TlX12PE1LjWn4Djl1ZLj1-i0dR0I9OxA&usqp=CAU"
-                      alt=""
-                    />
-                    <div>
-                      <span class="icon-star-full"></span>
-                      <span class="icon-star-full"></span>
-                      <span class="icon-star-full"></span>
-                      <span class="icon-star-empty"></span>
-                      <span class="icon-star-empty"></span>
-                    </div>
+        <div class="height-div"></div>
+        <div class="card-a">
+          <div class="slide">
+            <a href="http://localhost:3000/search/info">
+              <div class="card">
+                <div
+                  class="card__img"
+                  style={{
+                    backgroundImage:
+                      "url(https://images.pexels.com/photos/5411784/pexels-photo-5411784.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)",
+                  }}
+                ></div>
+                <div class="card__content">
+                  <h2 class="card__content-header">Sara García</h2>
+                  <img
+                    class="profile_img"
+                    src="https://www.betrendsetter.com/wp-content/uploads/2017/01/shag-with-waves-round-face-2.jpg"
+                    alt=""
+                  />
+                  <div class="card_stars">
+                    <span class="icon-star-full"></span>
+                    <span class="icon-star-full"></span>
+                    <span class="icon-star-full"></span>
+                    <span class="icon-star-empty"></span>
+                    <span class="icon-star-empty"></span>
                   </div>
-
-                  <p class="meta">
-                    <span class="author">Utilidata</span>
-                    <span> | </span>
-                    <time class="updated" datetime="" itemprop="datePublished">
-                      July 27, 2017
-                    </time>
-                  </p>
-                </a>
-              </header>
-            </article>
-          </li>
-        </ul>
-
+                  <p class="card__content-paragraph">3 minutos a pie</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
 
         <br />
         <br />
         <br />
         <br />
         <br />
+
 
         <Navbar />
       </div>
