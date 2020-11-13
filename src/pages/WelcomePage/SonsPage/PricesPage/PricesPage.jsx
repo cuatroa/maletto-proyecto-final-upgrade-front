@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Navbar from "../../../../shared/components/Navbar/Navbar";
 import './PricesPage.scss'
 
 export default function PricesPage() {
@@ -33,7 +32,6 @@ export default function PricesPage() {
         <p className="p-prices-card__text1">Por equipaje</p>
       </div>
     </div>
-    <Navbar/>
   </div>
   );
 }

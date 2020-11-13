@@ -5,9 +5,9 @@ import world from '../../../../assets/icons/world@3x.png'
 
 export default function WorldPage() {
 
-  const alertLog = (e) => {
-    alert("Debes registrarte o iniciar sesión para continuar");
-  };
+  // const alertLog = (e) => {
+  //   alert("Debes registrarte o iniciar sesión para continuar");
+  // };
 
 
   return (
@@ -34,7 +34,7 @@ export default function WorldPage() {
         </div>
 
         <div className="c-page__bottom">
-           <Link to="/login" onClick={alertLog}>
+           <Link to="/login">
             <button className="c-page__background-button">Empezar ya</button>
           </Link>
           <Link to="/prices">

@@ -1,25 +1,16 @@
 @import "../src/assets/fonts/maletto_icons-v1.0/variables.scss";
 @import "../src/assets/fonts/maletto_icons-v1.0/style.scss";
+//variables--
 
-body {
-  margin: 0;
+//General Style
+
+* {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #f8fbfc;
-  color: #2c3e50;
+  margin: 0;
 }
 
-button {
-  border: none;
-  color: rgb(255, 255, 255); //naranja
-  border-radius: 1em;
-
-  .btn-Page {
-    width: 2em;
-  }
-
-  .btn-search {
-    height: 2em;
-  }
+body {
+  background-color: white;
 }

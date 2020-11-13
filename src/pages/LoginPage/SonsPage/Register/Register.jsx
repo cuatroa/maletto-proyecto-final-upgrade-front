@@ -1,10 +1,34 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import './../../LoginPage.scss'
 import  "../../../../index.scss";
+import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 export default function Register() {
+
+  const { register, handleSubmit } = useForm();
+  const history = useHistory();
+
+
+  const date = new Date();
+  const currentYear = date.getFullYear();
+  date.setFullYear(currentYear - 18);
+  const years18 = date.toISOString().slice(0, 10);
+
+
+  const onSubmit = (values) => {
+    axios.post(`http://localhost:3001/user`, values)
+      .then((res) => {
+        console.log('User nuevo:', res.data);
+        history.push("/home");
+      })
+      .catch(console.log);
+  };
+
+
   return (
-    <form>
+    <div> 
       <div className="">
         <p className="text-large">Únete a MALETTO y disfruta de sus ventajas</p>
       </div>
@@ -30,11 +54,9 @@ export default function Register() {
       <div className="">
         <p className="text-style-small">o utiliza tu correo electrónico</p>
       </div>
-      <div>
-        <p className="error"> </p>
-      </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
       <div className="p-login-register__form">
-        <label className="p-login-register__label" htmlFor="emailreg">
+        <label className="p-login-register__label" htmlFor="email">
           Dirección de correo electrónico
         </label>
         <input
@@ -43,20 +65,16 @@ export default function Register() {
           name="email"
           type="email"
           placeholder="john@gmail.com"
-          // ref={register({
-          //   required: true,
-          //   pattern: {
-          //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-          //     message: "invalid email address",
-          //   },
-          // })}
+          ref={register({
+            required: true,
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "invalid email address",
+            },
+          })}
         />
 
-        <span className="error">El email es necesario</span>
-
-        <span className="error">Email inválido</span>
-
-        <label className="p-login-register__label" htmlFor="namereg">
+        <label className="p-login-register__label" htmlFor="name">
           Nombre
         </label>
         <input
@@ -65,28 +83,20 @@ export default function Register() {
           name="name"
           type="text"
           placeholder="John"
-          // ref={register({
-          //   required: true,
-          // })}
+          ref={register({ required: true, min: 1 })}
         />
 
-        <span className="error">Nombre es necesario</span>
-
-        <label className="p-login-register__label" htmlFor="surnamereg">
+        <label className="p-login-register__label" htmlFor="lastName">
           Apellido
         </label>
         <input
           className="p-login-register__input"
-          id="surname"
-          name="surname"
+          id="lastName"
+          name="lastName"
           type="text"
           placeholder="Doe"
-          // ref={register({
-          //   required: true,
-          // })}
+          ref={register({ required: true, min: 1 })}
         />
-
-        <span className="error">Apellidos es necesario</span>
 
         <label className="p-login-register__label" htmlFor="password">
           Contraseña
@@ -96,44 +106,21 @@ export default function Register() {
           id="password"
           name="password"
           type="password"
-          placeholder="*****"
-          // ref={register({
-          //   required: true,
-          //   pattern: {
-          //     value: /(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
-          //     message:
-          //       "La contraseña debe tener entre 8 y 16 dígitos, y al menos, 1 mayúscula, 1 minúscula y 1 dígito.",
-          //   },
-          // })}
+          placeholder="********"
+          ref={register({ required: true, min: 1 })}
         />
 
-        <span className="error">Contraseña necesaria</span>
-
-        <span className="error">
-          La contraseña debe tener entre 8 y 16 dígitos, y al menos, 1
-          mayúscula, 1 minúscula y 1 dígito.
-        </span>
-
-        <label className="p-login-register__label" htmlFor="birthdatereg">
+        <label className="p-login-register__label" htmlFor="birthDate">
           Fecha de nacimiento
         </label>
         <input
           className="p-login-register__input"
-          id="birthdate"
-          name="birthdate"
+          id="birthDate"
+          name="birthDate"
           type="date"
-          max=""
-          // ref={register({
-          //   required: true,
-          //   // max: {date}
-          // })}
+          max={years18}
+          ref={register({ required: true, min: 1 })}
         />
-
-        <span className="error">Fecha de nacimiento es necesaria</span>
-
-        <span className="error">
-          Para registrarte debes tener más de 18 años.
-        </span>
 
         <div className="p-login-register-ads">
           <input id="ads" name="ads" type="checkbox"  />
@@ -147,5 +134,6 @@ export default function Register() {
         </button>
       </div>
     </form>
+  </div>
   );
 }
