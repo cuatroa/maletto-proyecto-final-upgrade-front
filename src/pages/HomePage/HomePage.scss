@@ -1,5 +1,9 @@
 $verde: #1eb2a6;
 
+.homePage {
+    margin: 2rem 2rem 5rem;
+}
+
 .StructureHome {
     display: flex;
     justify-content: center;
@@ -40,8 +44,9 @@ $verde: #1eb2a6;
 
         .input-calendar[type="datetime-local"]::-webkit-calendar-picker-indicator {
             background: none;
-            background-image: img("/src/assets/icons/dropdown.png");
+            background-image: url("../../assets/icons/dropdown.png");
             background-size: cover;
+            size: 0.5em;
             cursor: pointer;
         }
 
