@@ -32,7 +32,7 @@ export default function UserBookingPage() {
                         <div className="image-title" key={index}>
                             <h2>{item.title}</h2>
                             <img className="image-location"src={item.img} alt="" />
-                            <Link className="icon-flecha-correcta" to =""/*"Poner redirección"*/> </Link>
+                            <Link className="icon-proximo" to =""/*"Poner redirección"*/> </Link>
                             <hr/>
                         </div>
                     );
