@@ -41,19 +41,11 @@ export default function HomePage() {
                   value={value}
                 /> */}
                 <i className="icon-calendar"></i>
-<<<<<<< HEAD
-                <input type="datetime-local" className="input-date" placeholder="Depósito"></input>
-              </div>
-              <div>
-                <i className="icon-calendar"></i>
-                <input type="datetime-local" className="input-date" placeholder="Retirada"></input>
-=======
                 <input type="datetime-local" className="input-calendar" placeholder="Depósito"></input>
               </div>
               <div>
                 <i className="icon-calendar"></i>
                 <input type="datetime-local" className="input-calendar" placeholder="Retirada"></input>
->>>>>>> c963008f1b8d3752c042faf7e4531c21b8a6acde
               </div>
 
             </section>
