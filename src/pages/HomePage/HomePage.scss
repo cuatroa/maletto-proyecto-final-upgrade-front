@@ -6,6 +6,7 @@ $verde: #1eb2a6;
     align-items: center;
     flex-direction: column;
     margin-bottom: 8rem;
+    padding: 10px;
 
     //Style Form
     .structure_application {
@@ -36,64 +37,62 @@ $verde: #1eb2a6;
             }
         }
 
+        // .input-calendar[type="datetime-local"]::-webkit-calendar-picker-indicator {
+        //     background: none;
+        //     background-image: img("icon-calendar");
+        // }
+
         @media screen {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-    }
 
-
-    //Style Search
-    .homeSeach {
-        flex-direction: row;
-        align-items: center;
-        align-content: center;
-        width: 90%;
-        height: 2rem;
-        border: 0.5pt solid rgb(200, 200, 200);
-        padding: 5pt;
-        background-color: rgba(250, 250, 250, 0.5);
-        border-radius: 2pt;
-        padding-right: 1rem;
-    }
-
-    //Style Icon
-    i {
-        color: #1eb2a6;
-    }
-
-
-    .homeBtn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .btn {
-            color: rgb(250, 250, 250);
-            border: none;
-            background-color: #1eb2a6;
-            border-radius: 5px;
-            outline: none;
-            size: 20rem;
-            width: 5rem;
+        //Style Search
+        .homeSeach {
+            flex-direction: row;
+            align-items: center;
+            align-content: center;
+            width: 90%;
             height: 2rem;
-
-            &:active {
-                // background-color: #f67575;
-                background: darken($verde, 15%);
-            }
+            border: 0.5pt solid rgb(200, 200, 200);
+            padding: 5pt;
+            background-color: rgba(250, 250, 250, 0.5);
+            border-radius: 2pt;
+            padding-right: 1rem;
         }
 
-    }
+        //Style Icon
+        i {
+            color: #1eb2a6;
+        }
 
-    //Home Extras --Novedades/Experiencias
-    .experience {
-        //Hablar con Cristian --
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+
+        .homeBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .btn {
+                color: rgb(250, 250, 250);
+                border: none;
+                background-color: #1eb2a6;
+                border-radius: 5px;
+                outline: none;
+                size: 20rem;
+                width: 5rem;
+                height: 2rem;
+
+                &:active {
+                    // background-color: #f67575;
+                    background: darken($verde, 15%);
+                }
+            }
+
+        }
+
+        //Home Extras --Novedades/Experiencias
 
         .btnMore {
             border: none;
@@ -116,9 +115,5 @@ $verde: #1eb2a6;
             }
         }
 
-
     }
-
-
-
 }
