@@ -1,9 +1,5 @@
 $verde: #1eb2a6;
 
-.homePage {
-    margin: 2rem 2rem 5rem;
-}
-
 .StructureHome {
     display: flex;
     justify-content: center;
@@ -45,8 +41,10 @@ $verde: #1eb2a6;
         .input-calendar[type="datetime-local"]::-webkit-calendar-picker-indicator {
             background: none;
             background-image: url("../../assets/icons/dropdown.png");
-            background-size: cover;
-            size: 0.5em;
+            background-size: 10px;
+            background-position: calc(50% - 5px);
+            background-repeat: no-repeat;
+            outline: none;
             cursor: pointer;
         }
 
@@ -59,16 +57,13 @@ $verde: #1eb2a6;
 
         //Style Search
         .homeSeach {
-            flex-direction: row;
-            align-items: center;
-            align-content: center;
             width: 90%;
             height: 2rem;
             border: 0.5pt solid rgb(200, 200, 200);
             padding: 5pt;
             background-color: rgba(250, 250, 250, 0.5);
             border-radius: 2pt;
-            padding-right: 1rem;
+            // padding-right: 1rem;
         }
 
         //Style Icon
@@ -104,29 +99,31 @@ $verde: #1eb2a6;
 
     }
 
-    .morehome {
-        border: none;
-        margin-top: 2rem;
-        outline: none;
-        width: 15rem;
-        height: 3rem;
-        background-color: #1eb2a6;
-        color: white;
-        text-align: center;
-        border-radius: 3pt;
-        border-color: #1eb2a6;
-        text-decoration: none;
-        font-weight: bold;
-        cursor: pointer;
+    .homeExtras {
+        width: 100%;
 
-        &:active {
-            // background-color: #f67575;
-            background: darken($verde, 15%);
+        .morehome {
+            border: none;
+            margin-top: 2rem;
+            outline: none;
+            width: 15rem;
+            height: 3rem;
+            background-color: #1eb2a6;
+            color: white;
+            text-align: center;
+            border-radius: 3pt;
+            border-color: #1eb2a6;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:active {
+                // background-color: #f67575;
+                background: darken($verde, 15%);
+            }
         }
     }
 
-}
 
-.input-date[type="datetime-local"]::-webkit-calendar-picker-indicator {
-    background: none;
+
 }
