@@ -31,16 +31,21 @@ export default function UserPage() {
                           <div>
                           <div>
                             <h3>Conviértete en guardián</h3>
+                            <Link className="icon-proximo" to =""/*"Poner redirección"*/> </Link>
                             <h4 className="small-text">Puedes ganar 400€ de media al mes</h4>
+                            
                             <hr/>
                           </div>
                           <div>
                             <h3>Invita a tus amigos</h3>
+                            <Link className="icon-proximo" to =""/*"Poner redirección"*/> </Link>
                             <h4 className="small-text">Y podrás ganar descuentos para ti</h4>
                             <hr/>
                           </div>
                           <div>
+                          <Link className="icon-proximo" to ="/user-booking-page"/*"Poner redirección"*/> </Link>
                             <h3>Tus reservas</h3>  
+                            
                             <hr/>
                           </div>
                           <div>
