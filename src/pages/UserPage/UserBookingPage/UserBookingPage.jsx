@@ -37,6 +37,7 @@ export default function UserBookingPage() {
                 })}
             </div>
             </div>
+            
             <Navbar />
         </div>
     );
