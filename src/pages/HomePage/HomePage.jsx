@@ -103,16 +103,16 @@ export default function HomePage() {
           <article>
             <h2 >Experiencias</h2>
             <Experiences />
-            <div>
-              {!showMore && <MoreExperiences />}
-              <button
-                className="btnMore"
-                onClick={() => setShowMore(!showMore)}
-              >
-                {showMore ? "Mostrar más" : "Mostrar menos"}
-              </button>
-            </div>
           </article>
+
+          {!showMore && <MoreExperiences />}
+          <button
+            className="morehome"
+            onClick={() => setShowMore(!showMore)}
+          >
+            {showMore ? "Mostrar más" : "Mostrar menos"}
+          </button>
+
 
         </section>
 

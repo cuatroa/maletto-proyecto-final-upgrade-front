@@ -5,6 +5,7 @@ $verde: #1eb2a6;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 2rem;
     margin-bottom: 8rem;
     padding: 10px;
 
@@ -37,10 +38,12 @@ $verde: #1eb2a6;
             }
         }
 
-        // .input-calendar[type="datetime-local"]::-webkit-calendar-picker-indicator {
-        //     background: none;
-        //     background-image: img("icon-calendar");
-        // }
+        .input-calendar[type="datetime-local"]::-webkit-calendar-picker-indicator {
+            background: none;
+            background-image: img("/src/assets/icons/dropdown.png");
+            background-size: cover;
+            cursor: pointer;
+        }
 
         @media screen {
             display: flex;
@@ -94,26 +97,27 @@ $verde: #1eb2a6;
 
         //Home Extras --Novedades/Experiencias
 
-        .btnMore {
-            border: none;
-            margin-top: 2rem;
-            outline: none;
-            width: 15rem;
-            height: 3rem;
-            background-color: #1eb2a6;
-            color: white;
-            text-align: center;
-            border-radius: 3pt;
-            border-color: #1eb2a6;
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-
-            &:active {
-                // background-color: #f67575;
-                background: darken($verde, 15%);
-            }
-        }
-
     }
+
+    .morehome {
+        border: none;
+        margin-top: 2rem;
+        outline: none;
+        width: 15rem;
+        height: 3rem;
+        background-color: #1eb2a6;
+        color: white;
+        text-align: center;
+        border-radius: 3pt;
+        border-color: #1eb2a6;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:active {
+            // background-color: #f67575;
+            background: darken($verde, 15%);
+        }
+    }
+
 }
