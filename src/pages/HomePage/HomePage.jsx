@@ -20,7 +20,7 @@ export default function HomePage() {
   };
 
   return (
-    <div>
+    <div className="homePage">
       <main className="StructureHome">
         <div className="HomeFormData">
           <h1 className="home_title">Encuentra tu guardián</h1>

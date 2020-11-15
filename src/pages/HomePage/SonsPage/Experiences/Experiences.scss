@@ -1,20 +1,18 @@
 .c-allexp {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-
-
+    flex-wrap: wrap;
 
     .c-experience {
-        width: 50vw;
+        width: 100%;
+        margin: 0;
         display: flex;
         flex-direction: column;
         align-content: center;
 
         .img {
-            min-width: 95vw;
-            max-height: 10%;
-            height: 13rem;
+            min-width: 100%;
+            height: 20rem;
             object-fit: cover;
             object-position: center center;
         }
