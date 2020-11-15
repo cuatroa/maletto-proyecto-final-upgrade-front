@@ -17,6 +17,7 @@ import SearchInfoPage from "./pages/SearchPage/SearchInfoPage/SearchInfoPage";
 import BookingCompletePage from "./pages/SearchPage/SonsPage/BookingCompletePage/BookingCompletePage";
 import GuardianPage from "./pages/GuardianPage/GuardianPage";
 import GuardianSpacesPage from "./pages/GuardianPage/SonsPage/GuardianSpacesPage/GuardianSpacesPage";
+import PublishPage from "./pages/GuardianPage/SonsPage/PublishPage/PublishPage";
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
 // import Register from "./pages/LoginPage/SonsPage/Register/Register";
 function App() {
@@ -30,6 +31,9 @@ function App() {
             </Route>
             <Route path="/booking/complete">
               <BookingCompletePage />
+            </Route>
+            <Route path="/publish-page">
+            <PublishPage/>
             </Route>
             <Route path="/guardian-spaces-page">
             <GuardianSpacesPage/>
