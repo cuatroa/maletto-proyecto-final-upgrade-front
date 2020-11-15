@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 // import UserPage from "../UserPage";
-import Navbar from "./../../../shared/components/Navbar/Navbar";
-import "./UserBookingPage.scss"
+import Navbar from "./../../../../shared/components/Navbar/Navbar";
+import "./GuardianSpacesPage.scss"
 
-export default function UserBookingPage() {
+export default function GuardianSpacesPage() {
 
     const [user, setUser] = useState([]);
 
@@ -19,9 +19,9 @@ export default function UserBookingPage() {
     return (
         <div className="container">
             <div className="container-noNavbar">
-           <Link className="icon-atras" to="/user" > </Link>
+           <Link className="icon-atras" to="/guardian" > </Link>
             <div className="bookings">
-                <h1>Tus reservas</h1>
+                <h1>Tus anuncios</h1>
                 <hr />
             </div>
             <div className="div-image-title">
@@ -36,8 +36,8 @@ export default function UserBookingPage() {
                     );
                 })}
             </div>
+            <h3>Añade otro espacio</h3>
             </div>
-            
             <Navbar />
         </div>
     );

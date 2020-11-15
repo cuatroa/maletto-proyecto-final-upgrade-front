@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'maletto_icons';
   src:
-    url('fonts/maletto_icons.ttf?m6mcqy') format('truetype'),
-    url('fonts/maletto_icons.woff?m6mcqy') format('woff'),
-    url('fonts/maletto_icons.svg?m6mcqy#maletto_icons') format('svg');
+    url('fonts/maletto_icons.ttf?ybm77g') format('truetype'),
+    url('fonts/maletto_icons.woff?ybm77g') format('woff'),
+    url('fonts/maletto_icons.svg?ybm77g#maletto_icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -24,6 +24,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-easterEgg1:before {
+  content: "\e90c";
+}
+.icon-informacion:before {
+  content: "\e910";
+}
+.icon-easterEgg2:before {
+  content: "\e911";
+}
+.icon-descargar:before {
+  content: "\e912";
+}
 .icon-proximo:before {
   content: "\e90a";
 }
@@ -155,6 +167,9 @@
 }
 .icon-star-full:before {
   content: "\e9d9";
+}
+.icon-question:before {
+  content: "\ea09";
 }
 .icon-plus:before {
   content: "\ea0a";

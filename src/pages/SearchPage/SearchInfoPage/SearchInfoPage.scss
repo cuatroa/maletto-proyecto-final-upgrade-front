@@ -8,11 +8,6 @@ $verde: #1eb2a6;
 
 // General
 
-.row h1 {
-  margin: 0;
-  line-height: 2;
-  text-align: center;
-}
 
 .row input {
   position: absolute;
@@ -47,6 +42,7 @@ $verde: #1eb2a6;
     padding: 1em;
     background: $white;
     font-weight: bold;
+    font-size: 1.6vmax;
     cursor: pointer;
     /* Icon */
     &:hover {
@@ -66,6 +62,7 @@ $verde: #1eb2a6;
     color: $midnight;
     background: white;
     transition: all .35s;
+    
   }
   &-close {
     display: flex;
@@ -80,8 +77,13 @@ $verde: #1eb2a6;
   }
 }
 
+.row h2{
+  font-size: 3vmax;
+}
 
-
+.tab-content {
+  font-size: 1.6vmax;
+}
 // :checked
 .row input:checked {
   + .tab-label {
@@ -101,15 +103,12 @@ $verde: #1eb2a6;
   justify-content: center;
   flex-wrap: nowrap;
   margin: 20px auto;
-  padding: 20px;
+  padding: 0px 20px;
   max-width: 626px;
- 
-  
 }
 .card-info img {
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  height: 16vmin;
   
 }
 .card-text {
@@ -117,15 +116,36 @@ $verde: #1eb2a6;
 }
 .card-text p{ 
   line-height: 2;
+  font-size: 1.6vmax;
+  
 }
 
-.hrname { 
-  border: 0;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+.card-text h3{ 
+  font-size: 2.1vmax;
+  margin-top: 0px;
 }
 
- .card-text h2{
-     margin-top: 0px;
- }
+.hrname hr{ 
+background-color: #d4d7da;
+border: 0;
+height: 2px;
+width: 30%;
+}
+
+.row-width {
+  display: flex;
+  justify-content: start;
+  flex-wrap: nowrap;
+  margin: 20px auto;
+  margin-bottom: 1px;
+  padding: 20px;
+  max-width: 626px;
+  // margin-left: 0px;
+  // padding-left: 0px;
+}
+
+.row-width h2{ 
+  font-size: 3vmax;
+  margin: 0px;
+  padding: 0px;
+}

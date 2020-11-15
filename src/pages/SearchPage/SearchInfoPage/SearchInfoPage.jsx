@@ -12,7 +12,7 @@ export default function SearchInfoPage() {
   };
 
   return (
-    <div className="general">
+    <div>
       <Carousel
         autoPlay
         infiniteLoop={true}
@@ -31,8 +31,8 @@ export default function SearchInfoPage() {
       </Carousel>
 
       <div className="row">
-        <div className="col">
-          <h2 className="row-h2">
+        <div>
+          <h2>
             <b>Normas de Sara</b>
           </h2>
           <div className="tabs">
@@ -71,19 +71,23 @@ export default function SearchInfoPage() {
           </div>
         </div>
       </div>
-
+      <div className="row-width">
+        <h2>
+          <b>Reseñas</b>
+        </h2>
+      </div>
       <div>
         <div className="card-info">
           <div>
             <img
-              src="https://lh3.googleusercontent.com/proxy/hoenpfiUGW0LFJBreAsCJ9Nkz8VM8Hyb7Ir_0ZJbYGP5xTFrucdQFcaKuy0ktIlYxQ2yOzCE8j9p-oYXZcm4Jc4BgsK4KjMU1oON1YgwkbIZsawO61nrAAe3ZdYmQlNRUpBmc9k"
+              src="https://images.pexels.com/photos/3761521/pexels-photo-3761521.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
               alt=""
             />
           </div>
           <div className="card-text">
-            <h2>
+            <h3>
               <b>Robert</b>
-            </h2>
+            </h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
               assumenda delectus? Fuga sed voluptate iure eos dolorem ratione
@@ -92,7 +96,32 @@ export default function SearchInfoPage() {
             </p>
           </div>
         </div>
-        <div className="hrname"></div>
+        <div className="hrname">
+          <hr />
+        </div>
+
+        <div className="card-info">
+          <div>
+            <img
+              src="https://jimsravesnrants.files.wordpress.com/2017/06/rhiannon.jpg?w=584"
+              alt=""
+            />
+          </div>
+          <div className="card-text">
+            <h3>
+              <b>Tina</b>
+            </h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+              assumenda delectus? Fuga sed voluptate iure eos dolorem ratione
+              dignissimos cupiditate error. Saepe quas nemo sit beatae sint
+              ducimus voluptatibus necessitatibus.
+            </p>
+          </div>
+        </div>
+        <div className="hrname">
+          <hr />
+        </div>
       </div>
 
       <br />

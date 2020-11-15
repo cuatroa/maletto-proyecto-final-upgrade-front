@@ -23,6 +23,7 @@ export default function Experiences() {
             </p>
           <StarRating />
         </figcaption>
+
       </figure>
       <figure className="c-experience">
         <img
