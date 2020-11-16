@@ -24,37 +24,37 @@ export default function UserPage() {
                     {/* return ( */}
                         <div className="image-title">
                           <div>
-                            <h2>{user.name}</h2>
+                            <h2>{user.name} {user.lastName}</h2>
                             <h3 >Puedes ver y editar tu perfil</h3>
                             <img className="image" src={user.img} alt="" />
                           </div>
                           <div>
                           <div>
                             <h3>Conviértete en guardián</h3>
-                            <Link className="icon-proximo" to =""/*"Poner redirección"*/> </Link>
+                            <Link className="icon-proximo icono-user-page"> </Link>
                             <h4 className="small-text">Puedes ganar 400€ de media al mes</h4>
                             
                             <hr/>
                           </div>
                           <div>
                             <h3>Invita a tus amigos</h3>
-                            <Link className="icon-proximo" to =""/*"Poner redirección"*/> </Link>
+                            <Link className="icon-proximo icono-user-page"> </Link>
                             <h4 className="small-text">Y podrás ganar descuentos para ti</h4>
                             <hr/>
                           </div>
                           <div>
-                          <Link className="icon-proximo" to ="/user-booking-page"/*"Poner redirección"*/> </Link>
+                          <Link className="icon-proximo icono-user-page" to ="/user-booking-page"/*"Poner redirección"*/> </Link>
                             <h3>Tus reservas</h3>  
                             
                             <hr/>
                           </div>
                           <div>
-                          <Link className="icon-cog" to ="/user"/*"Poner redirección"*/> </Link>
+                          <Link className="icon-cog icono-user-page" to ="/user"/*"Poner redirección"*/> </Link>
                             <h3>Configuración</h3>
                             <hr/>
                           </div>
                           <div>
-                          <Link className="icon-info" to ="/user"/*"Poner redirección"*/> </Link>
+                          <Link className="icon-info icono-user-page" to ="/user"/*"Poner redirección"*/> </Link>
                             <h3>Ayuda</h3>  
                             <hr/>
                           </div>

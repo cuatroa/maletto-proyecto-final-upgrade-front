@@ -31,34 +31,34 @@ export default function GuardianPage() {
                           <div>
                           <div>
                             <h3>Invita a tus amigos</h3>
-                            <Link className="icon-proximo" to ="/home"/*"Poner redirección"*/> </Link>
+                            <Link className="icon-proximo icono-user-page" to ="/home"/*"Poner redirección"*/> </Link>
                             <h4 className="small-text">Y podrás ganar descuentos para ti</h4>
                             
                             <hr/>
                           </div>
                           <div>
-                          <Link className="icon-proximo" to ="/guardian-spaces-page"/*"Poner redirección"*/> </Link>
+                          <Link className="icon-proximo icono-user-page" to ="/guardian/spaces"/*"Poner redirección"*/> </Link>
                             <h3>Tus anuncios</h3>
                             <h4 className="small-text"></h4>
                             <hr/>
                           </div>
                           <div>
-                          <Link className="icon-proximo" to ="/booking-petitions-page"/*"Poner redirección"*/> </Link>
+                          <Link className="icon-proximo icono-user-page" to ="/booking-petitions-page"/*"Poner redirección"*/> </Link>
                             <h3>Peticiones de reserva</h3>  
                             <hr/>
                           </div>
                           <div>
-                          <Link className="icon-proximo" to ="/publish-page"/*"Poner redirección"*/> </Link>
+                          <Link className="icon-proximo icono-user-page" to ="/guardian/publish"/*"Poner redirección"*/> </Link>
                             <h3>Publica tu anuncio</h3>  
                             <hr/>
                           </div>
                           <div>
-                          <Link className="icon-cog" to ="/guardian"/*"Poner redirección"*/> </Link>
+                          <Link className="icon-cog icono-user-page" to ="/guardian"> </Link>
                             <h3>Configuración</h3>
                             <hr/>
                           </div>
                           <div>
-                          <Link className="icon-info" to ="/guardian"/*"Poner redirección"*/> </Link>
+                          <Link className="icon-info icono-user-page" to ="/guardian"> </Link>
                             <h3>Ayuda</h3>  
                             <hr/>
                           </div>
