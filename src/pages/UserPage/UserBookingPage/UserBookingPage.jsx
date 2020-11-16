@@ -18,7 +18,7 @@ export default function UserBookingPage() {
   return (
     <div className="container">
       <div className="container-noNavbar">
-        <Link className="icon-atras" to="/user">
+        <Link className="icon-atras icono-user-booking" to="/user">
           {" "}
         </Link>
         <div className="bookings">
@@ -31,7 +31,7 @@ export default function UserBookingPage() {
               <div className="image-title" key={index}>
                 <h2>{item.title}</h2>
                 <img className="image-location" src={item.img} alt="" />
-                <Link className="icon-proximo" to="" /*"Poner redirección"*/>
+                <Link className="icon-proximo icono-user-booking" to="" /*"Poner redirección"*/>
                   {" "}
                 </Link>
                 <hr />

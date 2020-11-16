@@ -32,10 +32,10 @@ function App() {
             <Route path="/booking/complete">
               <BookingCompletePage />
             </Route>
-            <Route path="/publish-page">
+            <Route path="/guardian/publish">
             <PublishPage/>
             </Route>
-            <Route path="/guardian-spaces-page">
+            <Route path="/guardian/spaces">
             <GuardianSpacesPage/>
             </Route>
             <Route path="/guardian">
@@ -47,7 +47,7 @@ function App() {
             <Route path="/search">
               <SearchPage />
             </Route>
-            <Route path="/user-booking-page">
+            <Route path="/user/booking">
               <UserBookingPage />
             </Route>
             <Route path="/user">
