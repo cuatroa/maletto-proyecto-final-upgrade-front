@@ -7,15 +7,22 @@ import "./UserPage.scss"
 export default function UserPage() {
 
   const [user, setUser] = useState([]);
-  // const user = [];
+  const apiUrl = 'http://localhost:3001';
 
-    useEffect(() => {
-        axios.get("http://localhost:3001/user/5fabcc0e88fb296090024a82").then((res) => {
-            setUser(res.data);
-            // setUser = user;
-            console.log(res.data);
-        });
-    }, []);
+  useEffect(() => {
+    axios
+      // We have to use { withCredentials: true } to send and receive valid cookies
+      .get(`${apiUrl}/auth/profile`, { withCredentials: true })
+      .then(({ data }) => setUser(data))
+      .catch(console.log);
+  }, []);
+
+  const logout = (values) => {
+    axios
+      .get(`${apiUrl}/auth/logout`, { withCredentials: true })
+      .then(() => setUser())
+      .catch(console.log);
+  };
 
   return (
     <div className="container">
@@ -25,13 +32,13 @@ export default function UserPage() {
                         <div className="image-title">
                           <div>
                             <h2>{user.name} {user.lastName}</h2>
-                            <h3 >Puedes ver y editar tu perfil</h3>
+                            <h3 >Puedes ver y <Link to="/user/edit" className="user-edit">editar</Link> tu perfil</h3>
                             <img className="image" src={user.img} alt="" />
                           </div>
                           <div>
                           <div>
                             <h3>Conviértete en guardián</h3>
-                            <Link className="icon-proximo icono-user-page"> </Link>
+                            <Link className="icon-proximo icono-user-page" to="/guardian"> </Link>
                             <h4 className="small-text">Puedes ganar 400€ de media al mes</h4>
                             
                             <hr/>
@@ -43,7 +50,7 @@ export default function UserPage() {
                             <hr/>
                           </div>
                           <div>
-                          <Link className="icon-proximo icono-user-page" to ="/user-booking-page"/*"Poner redirección"*/> </Link>
+                          <Link className="icon-proximo icono-user-page" to ="/user"/*"Poner redirección"*/> </Link>
                             <h3>Tus reservas</h3>  
                             
                             <hr/>
@@ -58,6 +65,13 @@ export default function UserPage() {
                             <h3>Ayuda</h3>  
                             <hr/>
                           </div>
+                          <div>
+                          <Link className="icon-salir icono-user-page" to ="/login" onClick={logout}> </Link>
+                            <h3>Salir</h3>  
+                            <hr/>
+                          </div>
+                          <br/>
+                          <br/>
 
                           </div>
                         </div>

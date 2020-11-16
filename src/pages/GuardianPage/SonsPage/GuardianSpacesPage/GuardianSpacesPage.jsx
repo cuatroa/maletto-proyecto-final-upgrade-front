@@ -37,6 +37,7 @@ export default function GuardianSpacesPage() {
                 })}
             </div>
             <h3>Añade otro espacio</h3>
+            <Link className="icon-plus " to="/guardian/publish"> </Link>
             </div>
             <Navbar />
         </div>

@@ -25,7 +25,7 @@ export default function GuardianPage() {
                         <div className="image-title">
                           <div>
                             <h2>{user.name}</h2>
-                            <h3 >Puedes ver y editar tu perfil</h3>
+                            <h3 >Puedes ver y <Link to="/user/edit" className="user-edit-guardian">editar</Link> tu perfil</h3>
                             <img className="image" src={user.img} alt="" />
                           </div>
                           <div>
