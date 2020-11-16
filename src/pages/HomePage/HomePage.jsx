@@ -5,8 +5,18 @@ import "./HomePage.scss";
 import Navbar from "../../shared/components/Navbar/Navbar";
 import MoreExperiences from "./SonsPage/MoreExperiences/MoreExperiences";
 import Experiences from "./SonsPage/Experiences/Experiences"
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// import AliceCarousel from 'react-alice-carousel';
+// import "react-alice-carousel/lib/alice-carousel.css";
+import photo1 from "../../assets/img/carousel/a.jpg";
+import photo2 from "../../assets/img/carousel/b.jpg";
+import photo3 from "../../assets/img/carousel/c.jpg";
+import photo5 from "../../assets/img/carousel/e.jpg";
+import photo6 from "../../assets/img/carousel/f.jpg";
 import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+
+// import ReactDOM from "react-dom";
 // import Calendar from 'react-calendar';
 
 
@@ -18,6 +28,8 @@ export default function HomePage() {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
+
+
 
   return (
     <div className="homePage">
@@ -78,22 +90,34 @@ export default function HomePage() {
         <section className="homeExtras">
           <article>
             <h2 >Novedades</h2>
-            <div className="general">
+            <div className="photoText">
               <Carousel
                 autoPlay
                 infiniteLoop={true}
                 showThumbs={false}
-                showStatus={false}
-              >
+                showStatus={false}>
                 <div>
-                  <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1008&q=80" />
+                  <img src={photo5} className="desvanecer" alt="" />
+                  <p className="text">prueba a</p>
                 </div>
                 <div>
-                  <img src="https://images.unsplash.com/photo-1522509585149-c9cd39d1ff08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1073&q=80" />
+                  <img src={photo3} className="desvanecer" alt="" />
+                  <p className="text">prueba a</p>
                 </div>
                 <div>
-                  <img src="https://images.unsplash.com/photo-1534777367038-9404f45b869a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" />
+                  <img src={photo1} className="desvanecer" alt="" />
+                  <p className="text">prueba a</p>
                 </div>
+                <div>
+                  <img src={photo6} className="desvanecer" alt="" />
+                  <p className="text">prueba a</p>
+                </div>
+
+                <div>
+                  <img src={photo2} className="desvanecer" alt="" />
+                  <p className="text">prueba a</p>
+                </div>
+
               </Carousel>
             </div>
 
@@ -105,14 +129,16 @@ export default function HomePage() {
             <Experiences />
           </article>
 
-          {!showMore && <MoreExperiences />}
-          <button
-            className="morehome"
-            onClick={() => setShowMore(!showMore)}
-          >
-            {showMore ? "Mostrar más" : "Mostrar menos"}
-          </button>
+          <div className="btnExtras">
+            {!showMore && <MoreExperiences />}
+            <button
+              className="morehome"
+              onClick={() => setShowMore(!showMore)}
+            >
+              {showMore ? "Mostrar más" : "Mostrar menos"}
+            </button>
 
+          </div>
 
         </section>
 
@@ -125,4 +151,5 @@ export default function HomePage() {
     </div >
   );
 }
+
 
