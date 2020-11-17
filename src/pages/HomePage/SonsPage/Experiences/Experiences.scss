@@ -3,14 +3,15 @@
     justify-content: center;
     flex-wrap: wrap;
 
-    .c-experience {
+    .experience {
         width: 100%;
-        margin: 0;
+        // margin: 1rem;
         display: flex;
         flex-direction: column;
+        // justify-content: center;
         align-content: center;
 
-        .img {
+        .photo {
             min-width: 100%;
             height: 20rem;
             object-fit: cover;
@@ -18,13 +19,14 @@
         }
     }
 
-    .c-experience-caption {
-        width: 90%;
-        display: inline;
+    figcaption {
+        width: 100%;
+        display: wrap;
         justify-content: center;
         text-align: center;
 
-        &__title {
+
+        .title {
             font-family: Montserrat;
             font-size: 10pt;
             font-weight: bold;
@@ -32,11 +34,14 @@
             margin-bottom: 2.5pt;
         }
 
-        &__text {
+        .text {
             font-family: Montserrat;
-            font-size: 7pt;
+            font-size: 1.5vmax;
             margin-top: 2.5pt;
             margin-bottom: 7pt;
+            display: flex;
+            justify-content: center;
+
         }
     }
 }

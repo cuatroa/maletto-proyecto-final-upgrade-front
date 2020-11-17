@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import './../../LoginPage.scss'
 import  "../../../../index.scss";
@@ -7,7 +7,13 @@ import { useHistory } from "react-router-dom";
 
 export default function Register() {
 
-  const { register, handleSubmit } = useForm();
+  const apiUrl = 'http://localhost:3001';
+
+  const { handleSubmit, register } = useForm();
+
+  const [user, setUser] = useState(null);
+  const [isLogin, setIsLogin] = useState(true);
+
   const history = useHistory();
 
 
@@ -17,14 +23,19 @@ export default function Register() {
   const years18 = date.toISOString().slice(0, 10);
 
 
-  const onSubmit = (values) => {
-    axios.post(`http://localhost:3001/user`, values)
-      .then((res) => {
-        console.log('User nuevo:', res.data);
+  const registerUser = (values) => {
+    axios
+      .post(`${apiUrl}/auth/register`, values, { withCredentials: true })
+      // Axios returns { data: API_RESPONSE } and our API response has a .data property too
+      .then(({ data }) => {
+        setUser(data.data);
         history.push("/home");
       })
       .catch(console.log);
   };
+
+  const onSubmit = (values) =>
+  registerUser(values);
 
 
   return (

@@ -10,11 +10,16 @@ import Experiences from "./pages/HomePage/SonsPage/Experiences/Experiences";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import UserPage from "./pages/UserPage/UserPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
-import {LoginPage} from "./pages/LoginPage/LoginPage";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
 import UserBookingPage from "./pages/UserPage/UserBookingPage/UserBookingPage";
 import BookingDetailPage from "./pages/SearchPage/SonsPage/BookingDetailPage/BookingDetailPage";
 import SearchInfoPage from "./pages/SearchPage/SearchInfoPage/SearchInfoPage";
 import BookingCompletePage from "./pages/SearchPage/SonsPage/BookingCompletePage/BookingCompletePage";
+import GuardianPage from "./pages/GuardianPage/GuardianPage";
+import GuardianSpacesPage from "./pages/GuardianPage/SonsPage/GuardianSpacesPage/GuardianSpacesPage";
+import PublishPage from "./pages/GuardianPage/SonsPage/PublishPage/PublishPage";
+import DemoPage from "./pages/DEMOpage/DemoPage";
+import UserEditPage from "./pages/UserPage/UserEditPage/UserEditPage";
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
 // import Register from "./pages/LoginPage/SonsPage/Register/Register";
 function App() {
@@ -23,14 +28,26 @@ function App() {
       <Router>
         <div>
           <Switch>
+            <Route path="/user/edit">
+              <UserEditPage />
+            </Route>
+            <Route path="/DEMO">
+              <DemoPage />
+            </Route>
             <Route path="/booking/detail">
               <BookingDetailPage />
             </Route>
             <Route path="/booking/complete">
               <BookingCompletePage />
             </Route>
-            <Route path="/user-booking-page">
-            <UserBookingPage/>
+            <Route path="/guardian/publish">
+              <PublishPage />
+            </Route>
+            <Route path="/guardian/spaces">
+              <GuardianSpacesPage />
+            </Route>
+            <Route path="/guardian">
+              <GuardianPage />
             </Route>
             <Route path="/search/info">
               <SearchInfoPage />
@@ -38,7 +55,7 @@ function App() {
             <Route path="/search">
               <SearchPage />
             </Route>
-            <Route path="/user-booking-page">
+            <Route path="/user/booking">
               <UserBookingPage />
             </Route>
             <Route path="/user">
@@ -75,6 +92,7 @@ function App() {
             <Route exact path="/">
               <LandingPage />
             </Route>
+
           </Switch>
         </div>
       </Router>

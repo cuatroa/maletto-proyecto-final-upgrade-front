@@ -1,0 +1,82 @@
+
+.container {
+  //   border: blue solid;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 20px auto;
+  //   padding: 20px;
+  max-width: 650px;
+  box-sizing: border-box;
+  //   display: flex;
+
+  justify-content: center;
+}
+//texto
+.small-text {
+  color: gray;
+  font-weight: lighter;
+}
+//Iconos
+.icon-cog {
+  color: black;
+  text-decoration: none;
+  float: right;
+}
+.icon-info {
+  color: black;
+  text-decoration: none;
+  float: right;
+}
+
+.icon-descargar {
+  color: black;
+  text-decoration: none;
+  float: right;
+}
+
+.input-publish {
+  font-size: 20px;
+  background-color: #f8fbfc;
+  border: none;
+  outline: none;
+
+  &__img {
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 auto 0;
+    min-height: 15px;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+  }
+}
+
+.button-publish {
+  font-family: Montserrat;
+  border: none;
+  width: 15rem;
+  height: 3rem;
+  background-color: #1eb2a6;
+  color: white;
+  text-align: center;
+  border-radius: 3pt;
+  border-color: #1eb2a6;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container-button-publish {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.input-select {
+  color: gray;
+}

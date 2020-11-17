@@ -1,0 +1,22 @@
+.link {
+    padding: 0;
+
+    .linkItem {
+        text-align: left;
+        font-size: 0.9rem;
+        list-style: none;
+    }
+
+    .linkUrl {
+        text-decoration: none;
+        margin: 6px;
+        font-size: 1.5vh;
+        display: block;
+        color: #1d1d1d;
+        background-color: #f8f8f8;
+        padding: 8px;
+        border-radius: 3px;
+        box-shadow: 2px 2px 4px rgba(150, 149, 149, 0.4);
+        text-align: center;
+    }
+}

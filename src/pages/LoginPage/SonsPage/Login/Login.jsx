@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import './../../LoginPage.scss'
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 export default function Login() {
+
+  const apiUrl = 'http://localhost:3001';
+
+  const { handleSubmit, register } = useForm();
+  const [user, setUser] = useState(null);
+  const [isLogin, setIsLogin] = useState(true);
+
+  const history = useHistory();
+
+  const loginUser = (values) => {
+    axios
+      .post(`${apiUrl}/auth/login`, values, { withCredentials: true })
+      // Axios returns { data: API_RESPONSE } and our API response has a .data property too
+      .then(({ data }) => {
+        setUser(data.data);
+        history.push("/home");
+        console.log(data.data);
+      })
+      .catch(console.log);
+  };
+
+  const onSubmit = (values) =>
+  loginUser(values)
  
   return (
     <div>
@@ -30,7 +56,7 @@ export default function Login() {
       <div>
         <p className="text-style-small">o utiliza tu correo electrónico</p>
       </div>
-      <form className="p-login-register__form" >
+      <form className="p-login-register__form" onSubmit={handleSubmit(onSubmit)}>
       <div className="p-login-register-divInput">
         <label className="p-login-register__label" htmlFor="email">
           Dirección de correo electrónico
@@ -42,13 +68,13 @@ export default function Login() {
           name="email"
           type="email"
           placeholder="john@gmail.com"
-          // ref={register({
-          //   required: true,
-          //   pattern: {
-          //     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-          //     message: "invalid email address",
-          //   },
-          // })}
+          ref={register({
+            required: true,
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              message: "invalid email address",
+            },
+          })}
         />
         
       </div>
@@ -62,9 +88,9 @@ export default function Login() {
           name="password"
           type="password"
           placeholder="********"
-          // ref={register({
-          //   required: true,
-          // })}
+          ref={register({
+            required: true,
+          })}
         />
         
       </div>
