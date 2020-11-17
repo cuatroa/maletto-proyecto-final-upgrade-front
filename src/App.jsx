@@ -18,6 +18,8 @@ import BookingCompletePage from "./pages/SearchPage/SonsPage/BookingCompletePage
 import GuardianPage from "./pages/GuardianPage/GuardianPage";
 import GuardianSpacesPage from "./pages/GuardianPage/SonsPage/GuardianSpacesPage/GuardianSpacesPage";
 import PublishPage from "./pages/GuardianPage/SonsPage/PublishPage/PublishPage";
+import DemoPage from "./pages/DEMOpage/DemoPage";
+import UserEditPage from "./pages/UserPage/UserEditPage/UserEditPage";
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
 // import Register from "./pages/LoginPage/SonsPage/Register/Register";
 function App() {
@@ -26,6 +28,12 @@ function App() {
       <Router>
         <div>
           <Switch>
+            <Route path="/user/edit">
+              <UserEditPage />
+            </Route>
+            <Route path="/DEMO">
+              <DemoPage />
+            </Route>
             <Route path="/booking/detail">
               <BookingDetailPage />
             </Route>

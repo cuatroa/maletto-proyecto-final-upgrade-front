@@ -21,6 +21,7 @@
     outline: 0;
     border-width: 0 0 1px;
     border-color: rgb(167, 167, 167);
+    background-color: #f8fbfc;
     font-size: 8pt;
     font-family: Montserrat;
     margin-bottom: 6pt;
@@ -111,7 +112,7 @@
 .p-tabview-nav,
 li.p-highlight a,
 li.p-highlight a:hover {
-  background-color: white !important;
+  background-color: #f8fbfc !important;
   border: 0px !important;
   color: black !important;
   list-style: none;
@@ -119,6 +120,7 @@ li.p-highlight a:hover {
   margin: 0;
   padding: 1rem;
   padding-left: 1.5rem;
+  outline: none;
 
 }
 
