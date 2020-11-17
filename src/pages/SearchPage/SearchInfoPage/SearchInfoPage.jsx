@@ -63,6 +63,7 @@ export default function SearchInfoPage() {
               <input type="checkbox" id="chck3" />
               <label className="tab-label" for="chck3">
                 Contactar con tu guardián
+                
               </label>
               <div className="tab-content">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!

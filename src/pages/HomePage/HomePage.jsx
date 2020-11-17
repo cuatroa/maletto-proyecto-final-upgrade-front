@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import "./HomePage.scss";
-// import axios from "axios";
-// import { Link } from "react-router-dom";
 import Navbar from "../../shared/components/Navbar/Navbar";
 import MoreExperiences from "./SonsPage/MoreExperiences/MoreExperiences";
 import Experiences from "./SonsPage/Experiences/Experiences"
-// import AliceCarousel from 'react-alice-carousel';
-// import "react-alice-carousel/lib/alice-carousel.css";
 import photo1 from "../../assets/img/carousel/a.jpg";
 import photo2 from "../../assets/img/carousel/b.jpg";
 import photo3 from "../../assets/img/carousel/c.jpg";
@@ -14,13 +10,14 @@ import photo5 from "../../assets/img/carousel/e.jpg";
 import photo6 from "../../assets/img/carousel/f.jpg";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-
-
-// import ReactDOM from "react-dom";
-// import Calendar from 'react-calendar';
+import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 
 
 export default function HomePage() {
+
+  const { handleSubmit, register } = useForm();
+  const history = useHistory();
 
   const [showMore, setShowMore] = useState(true);
   const [index, setIndex] = useState(0);
@@ -29,6 +26,11 @@ export default function HomePage() {
     setIndex(selectedIndex);
   };
 
+  const onSubmit = (values) => {
+    const { search } = values;
+    // Vamos a SearchPage con un query param llamado name que es igual al search del formulario
+    history.push(`/search?${search ? `name=${search}` : ''}`);
+  };
 
 
   return (
@@ -37,21 +39,24 @@ export default function HomePage() {
         <div className="HomeFormData">
           <h1 className="home_title">Encuentra tu guardián</h1>
 
-          <form class="structure_application">
+          <form className="structure_application"
+            onSubmit={handleSubmit(onSubmit)}>
             {/* Search Ubication */}
 
             <section className="homeSearch">
               <i className="icon-search"></i>
-              <input type="text" placeholder="Búsqueda..." id="search" />
+              <input
+                type="text"
+                placeholder="Búsqueda..."
+                id="search"
+                name="search"
+                ref={register({})}
+              />
             </section>
 
             {/* Calendario */}
             <section>
               <div>
-                {/* <Calendar
-                  onChange={onChange}
-                  value={value}
-                /> */}
                 <i className="icon-calendar"></i>
                 <input type="datetime-local" className="input-calendar" placeholder="Depósito"></input>
               </div>
@@ -83,6 +88,7 @@ export default function HomePage() {
             <section className="homeBtn">
               {/* Btn Buscar -- se redirecciona al Maps  */}
               <button className="btn">Buscar</button>
+
             </section>
           </form>
         </div>
@@ -150,6 +156,8 @@ export default function HomePage() {
 
     </div >
   );
+
+
 }
 
 
