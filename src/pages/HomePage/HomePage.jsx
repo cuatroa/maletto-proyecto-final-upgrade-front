@@ -24,14 +24,17 @@ export default function HomePage() {
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
-  };
+  }
 
   const onSubmit = (values) => {
     const { search } = values;
+    const { departure } = values;
+    // Vamos a SearchPage con un query param llamado name que es igual al search del formulario
+    history.push(`/departure?${departure ? `name=${departure}` : ''}`);
     // Vamos a SearchPage con un query param llamado name que es igual al search del formulario
     history.push(`/search?${search ? `name=${search}` : ''}`);
-  };
 
+  }
 
   return (
     <div className="homePage">
@@ -58,11 +61,11 @@ export default function HomePage() {
             <section>
               <div>
                 <i className="icon-calendar"></i>
-                <input type="datetime-local" className="input-calendar" placeholder="Depósito"></input>
+                <input type="datetime-local" id="datetime-local" name="datetime-local" className="input-calendar" placeholder="Depósito"></input>
               </div>
               <div>
                 <i className="icon-calendar"></i>
-                <input type="datetime-local" className="input-calendar" placeholder="Retirada"></input>
+                <input type="datetime-local" id="datetime-local" name="datetime-local" className="input-calendar" placeholder="Retirada"></input>
               </div>
 
             </section>
@@ -70,7 +73,7 @@ export default function HomePage() {
             {/* Nº de maletas */}
             <section>
               <i className="icon-suitcase" aria-hidden="true"></i>
-              <select type="menu" width="1rem">
+              <select type="menu" id="menu" name="menu" width="1rem">
                 <option value="0" >Nº de Piezas</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
