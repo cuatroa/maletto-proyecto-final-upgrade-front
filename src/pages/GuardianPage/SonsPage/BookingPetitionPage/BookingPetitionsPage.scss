@@ -1,0 +1,72 @@
+$verde: #1eb2a6;
+
+.structureBooking {
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+
+
+.containerBooking {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin: 1rem;
+
+    .petitions {
+        margin: 1em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .btnBooking {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .btnA {
+            border: none;
+            outline: none;
+            width: 5rem;
+            height: 2rem;
+            background-color: #1eb2a6;
+            color: white;
+            text-align: center;
+            border-radius: 3pt;
+            border-color: #1eb2a6;
+            text-decoration: none;
+            font-weight: bold;
+
+            &:active {
+                // background-color: #f67575;
+                background: darken($verde, 15%);
+            }
+        }
+
+        .btnB {
+            border: none;
+            margin-top: 1rem;
+            outline: none;
+            width: 5rem;
+            height: 2rem;
+            color: #1eb2a6;
+            background: none;
+            text-align: center;
+            border-radius: 3pt;
+            border-color: #1eb2a6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        &:active {
+            // background-color: #f67575;
+            color: darken($verde, 15%);
+        }
+
+
+    }
+
+}

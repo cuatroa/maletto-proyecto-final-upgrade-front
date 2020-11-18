@@ -22,6 +22,7 @@ import DemoPage from "./pages/DEMOpage/DemoPage";
 import UserEditPage from "./pages/UserPage/UserEditPage/UserEditPage";
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
 // import Register from "./pages/LoginPage/SonsPage/Register/Register";
+import BookingPetitionsPage from "./pages/GuardianPage/SonsPage/BookingPetitionPage/BookingPetitionsPage";
 function App() {
   return (
     <div>

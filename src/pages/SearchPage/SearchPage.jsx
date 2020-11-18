@@ -8,6 +8,7 @@ import Geocoder from "react-map-gl-geocoder";
 import MapGL, { Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 
+
 const locationCoords = {
   madrid: {
     latitude: 40.416761,
@@ -119,16 +120,16 @@ export default function SearchPage() {
 
           {locations.length
             ? locations.map((location) =>
-                location.latitude && location.longitude ? (
-                  <Marker
-                    key={location._id}
-                    latitude={Number(location.latitude)}
-                    longitude={Number(location.longitude)}
-                  >
-                    <img src={marker} alt="" />
-                  </Marker>
-                ) : null
-              )
+              location.latitude && location.longitude ? (
+                <Marker
+                  key={location._id}
+                  latitude={Number(location.latitude)}
+                  longitude={Number(location.longitude)}
+                >
+                  <img src={marker} alt="" />
+                </Marker>
+              ) : null
+            )
             : null}
         </MapGL>
       </div>
