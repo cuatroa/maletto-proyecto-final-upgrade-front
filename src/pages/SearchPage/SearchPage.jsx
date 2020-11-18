@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useEffect } from "react";
+import React, { useState, useRef, useCallback, useEffect, useLocation } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Navbar from "../../shared/components/Navbar/Navbar";
@@ -7,6 +7,7 @@ import marker from "../../assets/icons/marker.png";
 import Geocoder from "react-map-gl-geocoder";
 import MapGL, { Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+
 
 const locationCoords = {
   madrid: {
@@ -95,9 +96,9 @@ export default function SearchPage() {
             mapboxApiAccessToken={MAPBOX_TOKEN}
             position="top-left"
             placeholder="buscar"
-            // inputValue="madrid"
-            // onLoading={(value) => getResponse(value)}
-            // localGeocoder:{(value) => getResponse(value)}
+          // inputValue="madrid"
+          // onLoading={(value) => getResponse(value)}
+          // localGeocoder:{(value) => getResponse(value)}
           />
           {/* <Popup
             longitude={-3.750979}
@@ -114,16 +115,16 @@ export default function SearchPage() {
 
           {locations.length
             ? locations.map((location) =>
-                location.latitude && location.longitude ? (
-                  <Marker
-                    key={location._id}
-                    latitude={Number(location.latitude)}
-                    longitude={Number(location.longitude)}
-                  >
-                    <img src={marker} alt="" />
-                  </Marker>
-                ) : null
-              )
+              location.latitude && location.longitude ? (
+                <Marker
+                  key={location._id}
+                  latitude={Number(location.latitude)}
+                  longitude={Number(location.longitude)}
+                >
+                  <img src={marker} alt="" />
+                </Marker>
+              ) : null
+            )
             : null}
         </MapGL>
       </div>
