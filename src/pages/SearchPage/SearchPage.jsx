@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "../../shared/components/Navbar/Navbar";
 import "./SearchPage.scss";
 import marker from "../../assets/icons/marker.png";
@@ -20,7 +20,7 @@ const locationCoords = {
 };
 
 export default function SearchPage() {
-  const apiUrl = "http://localhost:3001";
+  const apiUrl = process.env.REACT_APP_API_URL;
   const [locations, setLocations] = useState([]);
   const location = useLocation();
   const query = new URLSearchParams(location.search);
@@ -43,12 +43,14 @@ export default function SearchPage() {
       });
   }, []);
 
-
+  const locationToCenter = locationCoords[name] || locationCoords.madrid;
   const [viewport, setViewport] = useState({
-    latitude: 40.406288,
-    longitude: -3.751542,
+    ...locationToCenter,
+    width: "100vw",
+    height: "60vh",
     zoom: 12,
   });
+
   const geocoderContainerRef = useRef();
   const mapRef = useRef();
   const handleViewportChange = useCallback(
@@ -67,8 +69,7 @@ export default function SearchPage() {
     [handleViewportChange]
   );
 
-  const MAPBOX_TOKEN =
-    "pk.eyJ1IjoiY29yaXRhaDQ0IiwiYSI6ImNraGMybzFtOTA2dzkydG1obG15Y2N5ejMifQ.gRgDwZ05972n1N3QPw1TpA";
+  const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
   return (
     <div className="general">
@@ -77,7 +78,6 @@ export default function SearchPage() {
           ref={geocoderContainerRef}
           style={{ position: "absolute", top: 20, left: 20, zIndex: 1 }}
         />
-        {/* {user[0] && user[0].locationSpaces && user[0].locationSpaces[0] && (    */}
         <MapGL
           ref={mapRef}
           {...viewport}
@@ -95,22 +95,27 @@ export default function SearchPage() {
             mapboxApiAccessToken={MAPBOX_TOKEN}
             position="top-left"
             placeholder="buscar"
-            // inputValue="madrid"
-            // onLoading={(value) => getResponse(value)}
-            // localGeocoder:{(value) => getResponse(value)}
           />
-          {/* <Popup
-            longitude={-3.750979}
-            latitude={40.404711}
-            closeButton={true}
-            closeOnClick={true}
-            onClose={() => {
-              setUser(null);
-            }}
-          >
-            <h1>{user[0].name}</h1>
-            Hi there! 👋
-          </Popup> */}
+
+          {/* {locations.length
+            ? locations.map((location) =>
+                location.latitude && location.longitude ? (
+                  <Popup
+                    key={location._id}
+                    latitude={Number(location.latitude)}
+                    longitude={Number(location.longitude)}
+                    closeButton={true}
+                    closeOnClick={true}
+                    onClose={() => {
+                      setLocations(null);
+                    }}
+                  >
+                    <p>{location.title}</p>
+                    <img src={marker} alt="" />
+                  </Popup>
+                ) : null
+              )
+            : null} */}
 
           {locations.length
             ? locations.map((location) =>
@@ -127,47 +132,53 @@ export default function SearchPage() {
             : null}
         </MapGL>
       </div>
-      {/* <h1>{user[0].locationSpaces[0].latitude}</h1>
-       <h1>{user[0].name}</h1> */}
-      <div className="height-div"></div>
-      <div className="card-a">
-        <div className="slide">
-          <a href="http://localhost:3000/search/info">
-            <div className="card">
-              <div
-                className="card__img"
-                style={{
-                  backgroundImage:
-                    "url(https://images.pexels.com/photos/5411784/pexels-photo-5411784.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)",
-                }}
-              ></div>
-              <div className="card__content">
-                <h2 className="card__content-header">Sara García</h2>
-                <img
-                  className="profile_img"
-                  src="https://www.betrendsetter.com/wp-content/uploads/2017/01/shag-with-waves-round-face-2.jpg"
-                  alt=""
-                />
-                <div className="card_stars">
-                  <span className="icon-star-full"></span>
-                  <span className="icon-star-full"></span>
-                  <span className="icon-star-full"></span>
-                  <span className="icon-star-empty"></span>
-                  <span className="icon-star-empty"></span>
+
+      <br />
+
+      {locations.length
+        ? locations.map((location) =>
+            location.title && location.img ? (
+              <div key={location._id}>
+                <div className="card-a">
+                  <div className="slide">
+                    <Link to={"search/" + location._id}>
+                      <div className="card">
+                        <div
+                          className="card__img"
+                          style={{ backgroundImage: `url(${location.img})` }}
+                        ></div>
+                        <div className="card__content">
+                          <h2 className="card__content-header">
+                            {location.user[0].name} {location.user[0].lastName}
+                          </h2>
+                          <img
+                            className="profile_img"
+                            src={location.user[0].img}
+                            alt=""
+                          />
+                          <div className="card_stars">
+                            <span className="icon-star-full"></span>
+                            <span className="icon-star-full"></span>
+                            <span className="icon-star-full"></span>
+                            <span className="icon-star-empty"></span>
+                            <span className="icon-star-empty"></span>
+                          </div>
+                          <p className="card__content-paragraph">
+                            {location.location}
+                          </p>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
                 </div>
-                <p className="card__content-paragraph">3 minutos a pie</p>
               </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
+            ) : null
+          )
+        : null}
       <br />
       <br />
       <br />
       <br />
-      <br />
-
       <Navbar />
     </div>
   );

@@ -1,13 +1,10 @@
-
 $midnight: #2c3e50;
 $clouds: #f8fbfc;
 $white: #ffffff;
 $verdecito: #d4f8e8;
 $verde: #1eb2a6;
 
-
 // General
-
 
 .row input {
   position: absolute;
@@ -16,10 +13,10 @@ $verde: #1eb2a6;
 }
 // Layout
 .row {
-  display:flex;
+  display: flex;
   justify-content: center;
-  padding:20px;
-  }
+  padding: 20px;
+}
 
 .row hr {
   border: none;
@@ -30,7 +27,7 @@ $verde: #1eb2a6;
 .tabs {
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 4px -2px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.3);
   max-width: 1160px;
 }
 .tab {
@@ -53,7 +50,7 @@ $verde: #1eb2a6;
       width: 1em;
       height: 1em;
       text-align: center;
-      transition: all .35s;
+      transition: all 0.35s;
     }
   }
   &-content {
@@ -61,8 +58,7 @@ $verde: #1eb2a6;
     padding: 0 1em;
     color: $midnight;
     background: white;
-    transition: all .35s;
-    
+    transition: all 0.35s;
   }
   &-close {
     display: flex;
@@ -82,7 +78,7 @@ $verde: #1eb2a6;
   color: inherit;
 }
 
-.row h2{
+.row h2 {
   font-size: 3vmax;
 }
 
@@ -114,27 +110,25 @@ $verde: #1eb2a6;
 .card-info img {
   border-radius: 50%;
   height: 16vmin;
-  
 }
 .card-text {
   margin-left: 20px;
 }
-.card-text p{ 
+.card-text p {
   line-height: 2;
   font-size: 1.6vmax;
-  
 }
 
-.card-text h3{ 
+.card-text h3 {
   font-size: 2.1vmax;
   margin-top: 0px;
 }
 
-.hrname hr{ 
-background-color: #d4d7da;
-border: 0;
-height: 2px;
-width: 30%;
+.hrname hr {
+  background-color: #d4d7da;
+  border: 0;
+  height: 2px;
+  width: 30%;
 }
 
 .row-width {
@@ -149,8 +143,48 @@ width: 30%;
   // padding-left: 0px;
 }
 
-.row-width h2{ 
+.row-width h2 {
   font-size: 3vmax;
   margin: 0px;
   padding: 0px;
+}
+.banda-reserva {
+  z-index: 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 20px 29px 26px 15px rgba(0, 18, 22, 0.205);
+  height: 6vh;
+  background-color: white;
+
+  .banda-reserva {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+    justify-content: space-between;
+  }
+}
+.reserva0 {
+  font-size: 3.3vmin;
+}
+
+.reservaBtn {
+  color: rgb(255, 255, 255);
+  border: none;
+  font-size: 2.2vmax;
+  background-color: #1eb2a6;
+  border-radius: 5px;
+  outline: none;
+  width: 21vmax;
+  height: 4vmax;
+
+  &:active {
+    // background-color: #f67575;
+    background: darken($verde, 15%);
+  }
 }

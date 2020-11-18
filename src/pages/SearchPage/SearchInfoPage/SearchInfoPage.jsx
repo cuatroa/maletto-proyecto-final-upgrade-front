@@ -1,15 +1,30 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../../shared/components/Navbar/Navbar";
 import "./SearchInfoPage.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import axios from "axios";
+import { Link, useParams } from "react-router-dom";
+import { useForm } from "react-hook-form";
+
 
 export default function SearchInfoPage() {
-  const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
+  const { handleSubmit, register } = useForm();
+ 
+
+  const _id = useParams()._id;
+
+  const [location, setLocation] = useState([]);
+
+  useEffect(() => {
+    axios.get(process.env.REACT_APP_API_URL + `/location-space/${_id}`).then((res) => {
+          console.log(res.data);
+          setLocation(res.data);
+        });
+  }, []);
+
+
+  
 
   return (
     <div>
@@ -19,21 +34,19 @@ export default function SearchInfoPage() {
         showThumbs={false}
         showStatus={false}
       >
-        <div>
-          <img src="https://images.pexels.com/photos/5196650/pexels-photo-5196650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-        </div>
-        <div>
-          <img src="https://images.pexels.com/photos/2343465/pexels-photo-2343465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-        </div>
-        <div>
-          <img src="https://images.pexels.com/photos/3915707/pexels-photo-3915707.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-        </div>
+        <img src={location.img} alt="" />
+
+        {/* {location.map.img((item, index) => (
+            <div key={index}>
+              // <img src={item.img} alt="" />
+            </div>
+          ))} */}
       </Carousel>
 
       <div className="row">
         <div>
           <h2>
-            <b>Normas de Sara</b>
+            <b>Normas de {location.title}</b>
           </h2>
           <div className="tabs">
             <div className="tab">
@@ -130,7 +143,18 @@ export default function SearchInfoPage() {
       <br />
       <br />
       <br />
-      <Navbar />
+      <div className="banda-reserva">
+        <div className="reserva0">
+          <h3>
+            TOTAL <b className="boldito">12€</b>
+          </h3>
+        </div>
+        <section className="reserva">
+          <Link to={"/booking/" + location._id}>
+            <button className="reservaBtn">Reservar ahora</button>
+          </Link>
+        </section>
+      </div>
     </div>
   );
 }

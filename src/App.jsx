@@ -34,11 +34,11 @@ function App() {
             <Route path="/DEMO">
               <DemoPage />
             </Route>
-            <Route path="/booking/detail">
-              <BookingDetailPage />
-            </Route>
             <Route path="/booking/complete">
               <BookingCompletePage />
+            </Route>
+            <Route path="/booking/:_id">
+              <BookingDetailPage />
             </Route>
             <Route path="/guardian/publish">
               <PublishPage />
@@ -49,7 +49,7 @@ function App() {
             <Route path="/guardian">
               <GuardianPage />
             </Route>
-            <Route path="/search/info">
+            <Route path="/search/:_id">
               <SearchInfoPage />
             </Route>
             <Route path="/search">
@@ -92,7 +92,6 @@ function App() {
             <Route exact path="/">
               <LandingPage />
             </Route>
-
           </Switch>
         </div>
       </Router>
