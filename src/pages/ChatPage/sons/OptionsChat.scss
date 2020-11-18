@@ -5,9 +5,16 @@
 }
 
 .optionBtn {
+    font-size: 1.8vh;
     padding: 0.5rem;
     border-radius: 25px;
     background: transparent;
-    border: 1px solid green;
+    border: 1px solid #f67575;
     margin: 3px;
+
+    &:hover {
+        background-color: #f67575;
+        color: white;
+        outline: none;
+    }
 }

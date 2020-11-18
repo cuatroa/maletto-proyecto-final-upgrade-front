@@ -2,9 +2,10 @@
     padding: 0;
 
     .linkItem {
-        text-align: left;
-        font-size: 0.9rem;
+        text-align: center;
+        font-size: 0.5vh;
         list-style: none;
+        color: #2c3e50;
     }
 
     .linkUrl {
@@ -12,11 +13,11 @@
         margin: 6px;
         font-size: 1.5vh;
         display: block;
-        color: #1d1d1d;
+
         background-color: #f8f8f8;
         padding: 8px;
-        border-radius: 3px;
-        box-shadow: 2px 2px 4px rgba(150, 149, 149, 0.4);
+        border-radius: 6px;
+        box-shadow: 2px 2px 4px rgba(83, 83, 83, 0.4);
         text-align: center;
     }
 }

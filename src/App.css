@@ -37,12 +37,3 @@
     transform: rotate(360deg);
   }
 }
-
-.chat {
-  text-align: center;
-
-}
-
-.react-chatbot-kit-chat-container {
-  width: 20rem;
-}

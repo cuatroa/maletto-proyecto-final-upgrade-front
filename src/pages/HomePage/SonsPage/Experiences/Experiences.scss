@@ -5,14 +5,12 @@
 
     .experience {
         width: 100%;
-        // margin: 1rem;
         display: flex;
         flex-direction: column;
-        // justify-content: center;
         align-content: center;
 
         .photo {
-            min-width: 100%;
+            min-width: 80%;
             height: 20rem;
             object-fit: cover;
             object-position: center center;

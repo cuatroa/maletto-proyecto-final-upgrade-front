@@ -1,13 +1,49 @@
-.ChatStructure {
-    background-color: #fff;
-    border-radius: 3px;
-    /* margin-bottom: 15px; */
-    border-radius: 5px;
+.react-chatbot-kit-chat-container {
+    width: 100%;
     position: absolute;
-    width: em;
-    /* margin-bottom: 3.5rem; */
-    height: 33em;
-    width: 50em;
-    /* margin-bottom: 20rem; */
-    /* margin: 2rem;
+}
+
+.react-chatbot-kit-chat-inner-container {
+    height: 92vh;
+}
+
+.react-chatbot-kit-chat-header {}
+
+.react-chatbot-kit-chat-message-container {
+    padding: 0em 2em;
+    overflow: scroll;
+    height: 90%;
+    /* overflow-y: hidden; */
+    overflow-x: hidden;
+}
+
+.react-chatbot-kit-chat-bot-message-container {
+
+
+    .react-chatbot-kit-chat-bot-message {
+        font-size: 1.5vmax;
+    }
+
+}
+
+.optionsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .optionBtn {
+        font-size: 1.5vmax;
+    }
+}
+
+//Hablar con Abel
+.react-chatbot-kit-chat-bot-avatar-container {
+    background-image: url("../../assets/img/robot/robot.jpg");
+    object-fit: fit;
+
+
+    // .react-chatbot-kit-chat-bot-avatar-letter {
+    //     // display: none;
+    // }
+
 }
