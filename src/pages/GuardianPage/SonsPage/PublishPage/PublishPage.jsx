@@ -1,28 +1,58 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Navbar from "./../../../../shared/components/Navbar/Navbar";
 import "./PublishPage.scss";
 import { useForm } from "react-hook-form";
 
+const apiUrl = 'http://localhost:3001';
+
 export default function PublishPage() {
   const { register, handleSubmit } = useForm();
 
-  const onSubmit = (values) => {
+  const [user, setUser] = useState(null);
+  const history = useHistory();
+
+  useEffect(() => {
     axios
-      .post(`http://localhost:3001/location-space`, values)
+      // We have to use { withCredentials: true } to send and receive valid cookies
+      .get(`${apiUrl}/auth/profile`, { withCredentials: true })
+      .then(({ data }) => setUser(data))
+      .catch((err) => {
+        console.log(err);
+        history.push('/home');
+      });
+  }, []);
+
+  const onSubmit = (values) => {
+    const formData = new FormData();
+
+    Object.keys(values).forEach((key) => {
+      if (typeof values[key] !== 'undefined') {
+        formData.append(key, values[key]);
+      }
+    });
+    console.log(formData);
+
+    axios
+      .post(`${apiUrl}/location-space`,  values, { withCredentials: true })
       .then((res) => {
         console.log('Location nueva:', res.data);
       })
-      .catch(console.log);
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
 
   return (
     <div className="container">
       <div className="container-noNavbar">
-      <Link className="icon-atras" to="/guardian" >  </Link>
+      <Link className="icon-atras" to="/user">
+          {' '}
+        </Link>
       
+      {/* {user ? ( */}
       <div className="div-image-title">
         <div className="image-title">
           <div>
@@ -49,8 +79,13 @@ export default function PublishPage() {
               <hr />
             </div>
             <div>
+              <label htmlFor="city"><h3>Ciudad</h3></label>
+              <input type="text" name="city" id="city" placeholder="Madrid..." className="input-publish" ref={register({required: true, min: 1})}/>
+              <hr />
+            </div>
+            <div>
               <label htmlFor="img"><h3>Foto</h3></label>
-              <input type="file" name="img" id="img" placeholder="" className="input-publish__img" ref={register({required: true})}/>
+              <input type="file" name="img" id="img" placeholder="" className="input-publish__img" ref={register({})}/>
               <hr />
             </div>
             <div>
@@ -79,11 +114,6 @@ export default function PublishPage() {
               </select>
               <hr />
             </div>
-            <div>
-              <label htmlFor="availability"><h3>User</h3></label>
-              <input type="text" name="user" id="user" placeholder="" className="input-publish" ref={register({required: true, min: 1})}/>
-              <hr />
-            </div>
           </div>
           <div className="container-button-publish">
           <button type="submit" className="button-publish">Publicar</button>
@@ -91,6 +121,7 @@ export default function PublishPage() {
           </form>
         </div>
       </div>
+      {/* ) : null} */}
       </div>
       <Navbar />
     </div>
