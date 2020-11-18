@@ -1,45 +1,52 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Navbar from "./../../shared/components/Navbar/Navbar";
 import "./GuardianPage.scss"
 
+const apiUrl = 'http://localhost:3001';
+
 export default function GuardianPage() {
+  const [user, setUser] = useState(null);
+  const history = useHistory();
 
-  const [user, setUser] = useState([]);
-  // const user = [];
+  useEffect(() => {
+    axios
+      // We have to use { withCredentials: true } to send and receive valid cookies
+      .get(`${apiUrl}/auth/profile`, { withCredentials: true })
+      .then(({ data }) => setUser(data))
+      .catch((err) => {
+        console.log(err);
+        history.push('/home');
+      });
+  }, []);
 
-    useEffect(() => {
-        axios.get("http://localhost:3001/user/5fabcc0e88fb296090024a82").then((res) => {
-            setUser(res.data);
-            // setUser = user;
-            console.log(res.data);
-        });
-    }, []);
+  const logout = (values) => {
+    axios
+      .get(`${apiUrl}/auth/logout`, { withCredentials: true })
+      .then(() => {
+        history.push('/login');
+      })
+      .catch(console.log);
+  };
 
   return (
     <div className="container">
+          {user ? (
       <div className="div-image-title">
-                {/* {user.map((item, index) => { */}
-                    {/* return ( */}
                         <div className="image-title">
                           <div>
-                            <h2>{user.name}</h2>
+                          <h2>
+                            {user.name} {user.lastName}
+                          </h2>
                             <h3 >Puedes ver y <Link to="/user/edit" className="user-edit-guardian">editar</Link> tu perfil</h3>
                             <img className="image" src={user.img} alt="" />
                           </div>
                           <div>
                           <div>
-                            <h3>Invita a tus amigos</h3>
-                            <Link className="icon-proximo icono-user-page" to ="/home"/*"Poner redirección"*/> </Link>
-                            <h4 className="small-text">Y podrás ganar descuentos para ti</h4>
-                            
-                            <hr/>
-                          </div>
-                          <div>
                           <Link className="icon-proximo icono-user-page" to ="/guardian/spaces"/*"Poner redirección"*/> </Link>
                             <h3>Tus anuncios</h3>
-                            <h4 className="small-text"></h4>
+                            <h4 className="small-text">Ver y editar tus anuncios</h4>
                             <hr/>
                           </div>
                           <div>
@@ -62,12 +69,19 @@ export default function GuardianPage() {
                             <h3>Ayuda</h3>  
                             <hr/>
                           </div>
-
+                          <div>
+                            <button className="icon-salir icono-user-page icon-exit-log" onClick={logout}>
+                              {' '}
+                            </button>
+                            <h3>Salir</h3>
+                            <hr />
+                          </div>
+                          <br />
+                          <br />
                           </div>
                         </div>
-                    {/* ); */}
-                {/* })} */}
             </div>
+            ) : null}
             <Navbar/>
     </div>
     

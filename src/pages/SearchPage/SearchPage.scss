@@ -5,6 +5,7 @@
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
+  margin-bottom: 20px;
   width: 100%;
   height: 100%;
 }
@@ -42,12 +43,12 @@
 
 .card__content-header{
   font-weight: 900;
-  font-size: 24px;
-  font-size: 4vmin;
+  font-size: 20px;
+  font-size: 3.4vmin;
   text-transform: capitalize;
   letter-spacing: 0.01em;
-  line-height: 0.91;
-  margin: 3vmin 0 3.5vmin;  
+  line-height: 1.1;
+  margin: 1vmin 0 3vmin;  
 }
 
 .card__content-paragraph{
@@ -55,6 +56,10 @@
   line-height: 1.7;
   font-weight: 300;
   margin-bottom: 2.5vmin;
+}
+
+.card__content-paragraph p{
+  margin: 0;
 }
 
 
@@ -75,7 +80,7 @@
   margin-top: 5px;
   font-size: 4vmin;
   line-height: 1.7;
-  margin-bottom: 2.5vmin;
+ 
 }
 
 .card-a a {
@@ -85,4 +90,16 @@
 
 .height-div {
   margin: 20px;
+}
+
+.mapboxgl-ctrl-geocoder {
+    font-size: 38;
+    line-height: 24px;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    width: 92%;
+    min-width: 220px;
+    z-index: 1;
+    border-radius: 4px;
+    transition: width .25s, min-width .25s;
 }

@@ -36,4 +36,18 @@
   to {
     transform: rotate(360deg);
   }
+<<<<<<< HEAD
 }
+=======
+}
+
+.chat {
+  text-align: center;
+
+}
+
+.react-chatbot-kit-chat-container {
+  width: 20rem;
+}
+
+>>>>>>> 17257a82d1556f366ffe9068c21995bb0ed6cbd4
