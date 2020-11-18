@@ -33,9 +33,7 @@ export default function UserPage() {
   return (
     <div className="container">
       {user ? (
-        <div className="div-image-title">
-          {/* {user.map((item, index) => { */}
-          {/* return ( */}
+        <div className="structure">
           <div className="image-title">
             <div>
               <h2>

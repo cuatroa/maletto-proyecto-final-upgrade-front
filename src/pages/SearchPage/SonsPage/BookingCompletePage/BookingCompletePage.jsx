@@ -6,26 +6,24 @@ import fenix from '../../../../assets/icons/fenix@3x.png'
 export default function BookingCompletePage() {
     return (
         <div className='p-all'>
-        <div>
-        <h1 className='p-title'>Reserva Completada</h1>
-        </div>
-        <div className='padre'>
-        <div class='p-cross'>
-        <Link to="/home">
-        <span class="icon-cross p-returnback"></span>
+            <div>
+                <h1 className='p-title'>Reserva Completada</h1>
+            </div>
+            <div className='father'>
+                <Link to="/home">
+                    <span class="icon-cross"></span>
                 </Link>
 
-        </div>
-        <img
-            alt="fenix"
-            src={fenix} 
-            className='img hijo'></img>
-        </div>
+                <img
+                    alt="fenix"
+                    src={fenix}
+                    className='son'></img>
+            </div>
 
-        <div className='p-free'>BE FREE!</div>
-        <div className='p-text1'> Contacta ya con tu guardian y espera a que acepte la reserva.</div>          
+            <div className='p-free'>BE FREE!</div>
+            <div className='p-text1'> Contacta ya con tu guardian y espera a que acepte la reserva.</div>
 
-           
+
         </div>
-      );
+    );
 }
