@@ -60,10 +60,12 @@ export default function SearchInfoPage() {
             </div>
 
             <div className="tab">
-              <input type="checkbox" id="chck3" />
-              <label className="tab-label" for="chck3">
-                Contactar con tu guardián
-              </label>
+              <input type="submit" value="http://localhost:3000/chat" />
+              <a href="http://localhost:3000/chat">
+                <label className="tab-label" for="chck3">
+                  Contactar con tu guardián
+                </label>
+              </a>
               <div className="tab-content">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
               </div>

@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    // margin: 1rem;
 
     .experience {
         width: 100%;
@@ -25,7 +24,7 @@
         display: wrap;
         justify-content: center;
         text-align: center;
-        font-size: 3vw;
+
 
         .title {
             font-family: Montserrat;
@@ -37,10 +36,11 @@
 
         .text {
             font-family: Montserrat;
-            font-size: 7pt;
+            font-size: 1.5vmax;
             margin-top: 2.5pt;
             margin-bottom: 7pt;
             display: flex;
+            justify-content: center;
 
         }
     }

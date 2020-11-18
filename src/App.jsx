@@ -10,7 +10,7 @@ import Experiences from "./pages/HomePage/SonsPage/Experiences/Experiences";
 import SearchPage from "./pages/SearchPage/SearchPage";
 import UserPage from "./pages/UserPage/UserPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
-import {LoginPage} from "./pages/LoginPage/LoginPage";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
 import UserBookingPage from "./pages/UserPage/UserBookingPage/UserBookingPage";
 import BookingDetailPage from "./pages/SearchPage/SonsPage/BookingDetailPage/BookingDetailPage";
 import SearchInfoPage from "./pages/SearchPage/SearchInfoPage/SearchInfoPage";
@@ -22,6 +22,7 @@ import DemoPage from "./pages/DEMOpage/DemoPage";
 import UserEditPage from "./pages/UserPage/UserEditPage/UserEditPage";
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
 // import Register from "./pages/LoginPage/SonsPage/Register/Register";
+import BookingPetitionsPage from "./pages/GuardianPage/SonsPage/BookingPetitionPage/BookingPetitionsPage";
 function App() {
   return (
     <div>
@@ -40,14 +41,18 @@ function App() {
             <Route path="/booking/complete">
               <BookingCompletePage />
             </Route>
+            {/* //Borrar --- */}
+            <Route path="/booking-petitions-page">
+              <BookingPetitionsPage />
+            </Route>
             <Route path="/guardian/publish">
-            <PublishPage/>
+              <PublishPage />
             </Route>
             <Route path="/guardian/spaces">
-            <GuardianSpacesPage/>
+              <GuardianSpacesPage />
             </Route>
             <Route path="/guardian">
-            <GuardianPage/>
+              <GuardianPage />
             </Route>
             <Route path="/search/info">
               <SearchInfoPage />
@@ -92,6 +97,7 @@ function App() {
             <Route exact path="/">
               <LandingPage />
             </Route>
+
           </Switch>
         </div>
       </Router>
