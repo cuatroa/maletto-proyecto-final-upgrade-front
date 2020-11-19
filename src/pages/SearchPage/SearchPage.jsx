@@ -38,8 +38,10 @@ export default function SearchPage() {
         // Seteamos las localizaciones en el state para pintarlas en el mapa
         console.log(data);
         setLocations(data);
+        console.log("hiiii****")
       })
       .catch((err) => {
+        console.log("ERROR****")
         console.log(err);
       });
   }, []);
