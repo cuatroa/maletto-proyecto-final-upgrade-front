@@ -103,35 +103,32 @@ export default function HomePage() {
 
         <section className="homeExtras">
           <article>
-            <h2 >Novedades</h2>
+            <h2 className="titleExtras">Novedades</h2>
             <div className="photoText">
               <Carousel
                 autoPlay
                 infiniteLoop={true}
                 showThumbs={false}
-                showStatus={false}>
+                showStatus={false}
+                className="fontPhoto">
                 <div>
-                  <img src={photo5} className="desvanecer" alt="" />
-                  <p className="text">prueba a</p>
+                  <img src={photo5} alt="" />
                 </div>
                 <div>
-                  <img src={photo3} className="desvanecer" alt="" />
-                  <p className="text">prueba a</p>
+                  <img src={photo3} alt="" />
                 </div>
                 <div>
-                  <img src={photo1} className="desvanecer" alt="" />
-                  <p className="text">prueba a</p>
+                  <img src={photo1} alt="" />
                 </div>
                 <div>
-                  <img src={photo6} className="desvanecer" alt="" />
-                  <p className="text">prueba a</p>
+                  <img src={photo6} alt="" />
                 </div>
 
                 <div>
-                  <img src={photo2} className="desvanecer" alt="" />
+                  <img src={photo2} alt="" />
                   <p className="text">prueba a</p>
                 </div>
-
+               >
               </Carousel>
             </div>
 
@@ -139,7 +136,7 @@ export default function HomePage() {
           </article>
 
           <article>
-            <h2 >Experiencias</h2>
+            <h2 className="titleExtras" >Experiencias</h2>
             <Experiences />
           </article>
 

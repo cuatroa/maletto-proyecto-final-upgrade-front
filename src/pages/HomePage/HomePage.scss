@@ -106,6 +106,20 @@ $verde: #1eb2a6;
     .homeExtras {
         width: 100%;
 
+        .titleExtras {
+            display: flex;
+            justify-content: left;
+            margin: 1em 1em 0em;
+        }
+
+        .fontPhoto {
+            margin: 0.5em 0.5em 1em 2em;
+            width: 80%;
+            height: auto;
+            object-fit: cover;
+            object-position: center center;
+        }
+
         .photoText {
             position: relative;
 
@@ -124,7 +138,6 @@ $verde: #1eb2a6;
             }
 
         }
-
 
         .btnExtras {
             display: flex;
