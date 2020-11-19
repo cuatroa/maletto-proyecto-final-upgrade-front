@@ -24,18 +24,16 @@ export default function HomePage() {
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
-  };
+  }
 
   const onSubmit = (values) => {
-    const { search, departure } = values;
-    // const { departure } = values;
-    // Vamos a SearchPage con un query param llamado name que es igual al search del formulario
-    history.push(`/search?${search ? `name=${search}` : ''}`, )
-    // history.push(`/search?${​​search | departure ? `name=${​​search | departure}​​` : ''}​​`);
-    // history.push(`/search?${departure ? `data=${departure}` : ''}`);
+    const { search } = values;
+    history.push(`/search?${search ? `name=${search}` : ''}`)
   };
 
-
+  // Vamos a SearchPage con un query param llamado name que es igual al search del formulario
+  // history.push(`/departure?$departure ? `name=${departure}` : ''`;
+  // Vamos a SearchPage con un query param llamado name que es igual al search del formulario
   return (
     <div className="homePage">
       <main className="StructureHome">
@@ -61,12 +59,11 @@ export default function HomePage() {
             <section>
               <div>
                 <i className="icon-calendar"></i>
-                <input type="datetime-local" className="input-calendar" placeholder="Depósito" id="departure"
-                name="departure" ref={register({})}></input>
+                <input type="datetime-local" id="bntSearch" name="bntSearch" className="input-calendar" placeholder="Depósito" ref={register({})}></input>
               </div>
               <div>
                 <i className="icon-calendar"></i>
-                <input type="datetime-local" className="input-calendar" placeholder="Retirada"></input>
+                <input type="datetime-local" id="bntSearch" name="bntSearch" className="input-calendar" placeholder="Retirada" ref={register({})}></input>
               </div>
 
             </section>
@@ -74,7 +71,7 @@ export default function HomePage() {
             {/* Nº de maletas */}
             <section>
               <i className="icon-suitcase" aria-hidden="true"></i>
-              <select type="menu" width="1rem">
+              <select type="menu" id="bntSearch" name="bntSearch" width="1rem" ref={register({})}>
                 <option value="0" >Nº de Piezas</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -91,9 +88,9 @@ export default function HomePage() {
 
             <section className="homeBtn">
               {/* Btn Buscar -- se redirecciona al Maps  */}
-              <button className="btn">Buscar</button>
-
+              <button className="btn" id="bntSearch" name="bntSearch">Buscar</button>
             </section>
+
           </form>
         </div>
 
@@ -163,5 +160,3 @@ export default function HomePage() {
 
 
 }
-
-

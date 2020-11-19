@@ -9,7 +9,7 @@ export default function UserBookingPage() {
     const [user, setUser] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:3001/location-space").then((res) => {
+        axios.get("http://localhost:3001/booking").then((res) => {
             setUser(res.data);
             console.log(res.data);
         });

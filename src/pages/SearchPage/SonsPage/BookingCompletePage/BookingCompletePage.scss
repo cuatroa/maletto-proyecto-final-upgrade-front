@@ -1,56 +1,55 @@
-.p-all{
-    margin: 1rem;
-    margin-top:6rem;
-}
-.p-cross{
-   position: absolute;
-   top:1rem;
-   right: 1rem;
-   text-decoration: none;
-
-   :visited {
-     text-decoration: none;
-   }
+.p-all {
+  margin: 1rem;
+  margin-top: 6rem;
 }
 
-.padre {
-    
-    margin-top: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .hijo {
-    width: 40%;
-  }
+.father {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
 
-  .p-free{
-    margin-top: 3rem;
-    font-size: 18pt;
-    font-family: Montserrat;
-    font-weight: bold;
-    line-height: 17.5pt;
+.icon-cross {
+  text-decoration: none;
+  font-size: 1.2em;
+  outline: none;
+  color: #1eb2a6;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
 
-  }
-  .p-text1{
+.son {
+  width: 40%;
+}
 
-    margin-top: 1rem;
-    font-size: 15pt;
-    font-family: Montserrat;
-    font-weight: lighter;
-    letter-spacing: normal;
-    line-height: 24pt;
+.p-free {
+  margin-top: 3rem;
+  font-size: 18pt;
+  font-family: Montserrat;
+  font-weight: bold;
+  line-height: 17.5pt;
+
+}
+
+.p-text1 {
+
+  margin-top: 1rem;
+  font-size: 15pt;
+  font-family: Montserrat;
+  font-weight: lighter;
+  letter-spacing: normal;
+  line-height: 24pt;
 
 
-  }
+}
 
-  .p-title{
-    margin-top: 6.5rem;
-    font-size: 20pt;
-    font-family: Montserrat;
-    font-weight: bold;
-  }
-
+.p-title {
+  margin-top: 6.5rem;
+  font-size: 20pt;
+  font-family: Montserrat;
+  font-weight: bold;
+}

@@ -14,7 +14,7 @@ export default function Experiences() {
           src={Cairo}
           alt="Cairo"
         ></img>
-        <figcaption className="c-experience-caption">
+        <figcaption className="squaredContainer">
           <h3 className="title">
             Viaja casi 5.000 años en el tiempo
             </h3>
@@ -31,7 +31,7 @@ export default function Experiences() {
           src={Barcelona}
           alt="Barcelona"
         ></img>
-        <figcaption className="c-experience-caption">
+        <figcaption className="squaredContainer">
           <h3 className="title">
             Sumérgete en Barcelona
             </h3>
@@ -47,7 +47,7 @@ export default function Experiences() {
           src={Athens}
           alt="Athens"
         ></img>
-        <figcaption className="c-experience-caption">
+        <figcaption className="squaredContainer">
           <h3 className="title">
             Tour mitológico por Atenas
             </h3>

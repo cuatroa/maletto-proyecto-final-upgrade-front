@@ -1,61 +1,56 @@
 // @media only screen and (min-width: 268px) {
-.container {
-  // border: blue solid;
+.Space {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   flex-wrap: nowrap;
-  margin: 20px auto;
-  //   padding: 20px;
+  margin: 2rem 2rem 5rem;
   max-width: 650px;
   box-sizing: border-box;
-  //   display: flex;
-
   justify-content: center;
-}
-.container-noNavbar {
-  // border: purple solid;
-  flex-direction: column;
-}
-// .bookings {
-//   // border: black solid;
-//   // display: flex;
-// }
-.icon-atras {
-  text-decoration: none;
-  color: black;
-  // margin-top: 2vh;
-  // margin-top: 4vw;
-  // margin-left: 0vw;
-}
-.icon-proximo {
-  color: black;
-  text-decoration: none;
-  float: right;
-}
-.image-title {
-  justify-content: space-between;
+  font-size: 1.5vmax;
 
-  // border: green solid;
-  // margin-left: 20px;
-  // margin-right: -20px;
-  // float: ;
-  // display: flex;
-  width: 100%;
-}
-.image-location {
-  // border: black solid;
-  border-radius: 0.9rem;
-  //   margin-top: 1vw;
-  //   margin-bottom: 4vh;
-  width: 80%;
-  margin-right: 30vw;
-  max-width: 60vw;
-  height: auto;
-  // justify-content: center;
-}
+  .icon-atras {
+    text-decoration: none;
+    color: black;
+  }
 
-.div-image-title {
-  // border: red solid;
-  justify-content: space-between;
+  .icon-proximo {
+    color: black;
+    text-decoration: none;
+    float: right;
+    text-decoration: none;
+  }
+
+  .photoAdvertisements {
+    min-width: 50%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+
+  .photo-location {
+    border-radius: 0.9rem;
+    width: 50%;
+    margin-right: 30vw;
+    max-width: 60vw;
+    height: auto;
+  }
+
+  .otherSpace {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .icon-plus {
+      text-decoration: none;
+      font-size: 1.5em;
+      color: #1eb2a6;
+    }
+
+
+  }
+
+
+
 }
-// }
