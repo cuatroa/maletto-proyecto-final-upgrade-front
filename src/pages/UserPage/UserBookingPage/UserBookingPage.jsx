@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // import UserPage from "../UserPage";
 import Navbar from "./../../../shared/components/Navbar/Navbar";
 import "./UserBookingPage.scss";
 
 export default function UserBookingPage() {
   const [user, setUser] = useState([]);
+  const _id = useParams()._id;
 
   useEffect(() => {
-    axios.get("http://localhost:3001/location-space").then((res) => {
+    axios.get(process.env.REACT_APP_API_URL + `/user/${_id}`).then((res) => {
       setUser(res.data);
       console.log(res.data);
     });
@@ -25,19 +26,18 @@ export default function UserBookingPage() {
           <h1>Tus reservas</h1>
           <hr />
         </div>
+        <h1>{user.name}</h1>
         <div className="div-image-title">
-          {user.map((item, index) => {
-            return (
-              <div className="image-title" key={index}>
-                <h2>{item.title}</h2>
-                <img className="image-location" src={item.img} alt="" />
-                <Link className="icon-proximo icono-user-booking" to="" /*"Poner redirección"*/>
-                  {" "}
-                </Link>
-                <hr />
-              </div>
-            );
-          })}
+          {/* {user.length
+            ? user.map((user) =>
+                user.name && user.bookings ? (
+                  <div className="image-title" key={user._id}>
+                    <div>{user.bookings._id}</div>
+                    <hr />
+                  </div>
+                ) : null
+              )
+            : null} */}
         </div>
       </div>
 

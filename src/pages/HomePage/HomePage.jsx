@@ -27,9 +27,12 @@ export default function HomePage() {
   };
 
   const onSubmit = (values) => {
-    const { search } = values;
+    const { search, departure } = values;
+    // const { departure } = values;
     // Vamos a SearchPage con un query param llamado name que es igual al search del formulario
-    history.push(`/search?${search ? `name=${search}` : ''}`);
+    history.push(`/search?${search ? `name=${search}` : ''}`, )
+    // history.push(`/search?${​​search | departure ? `name=${​​search | departure}​​` : ''}​​`);
+    // history.push(`/search?${departure ? `data=${departure}` : ''}`);
   };
 
 
@@ -58,7 +61,8 @@ export default function HomePage() {
             <section>
               <div>
                 <i className="icon-calendar"></i>
-                <input type="datetime-local" className="input-calendar" placeholder="Depósito"></input>
+                <input type="datetime-local" className="input-calendar" placeholder="Depósito" id="departure"
+                name="departure" ref={register({})}></input>
               </div>
               <div>
                 <i className="icon-calendar"></i>

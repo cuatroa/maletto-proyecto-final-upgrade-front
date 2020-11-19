@@ -23,6 +23,7 @@ import UserEditPage from "./pages/UserPage/UserEditPage/UserEditPage";
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
 // import Register from "./pages/LoginPage/SonsPage/Register/Register";
 import BookingPetitionsPage from "./pages/GuardianPage/SonsPage/BookingPetitionPage/BookingPetitionsPage";
+import BookingInfoPage from "./pages/UserPage/BookingInfoPage/BookingInfoPage";
 function App() {
   return (
     <div>
@@ -56,7 +57,10 @@ function App() {
             <Route path="/search">
               <SearchPage />
             </Route>
-            <Route path="/user/booking">
+            <Route path="/user/booking/:_id">
+              <BookingInfoPage />
+            </Route>
+            <Route path="/user/:_id">
               <UserBookingPage />
             </Route>
             <Route path="/user">

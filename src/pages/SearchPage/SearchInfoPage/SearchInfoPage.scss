@@ -188,3 +188,26 @@ $verde: #1eb2a6;
     background: darken($verde, 15%);
   }
 }
+
+.card1 {
+  width: 85vmin;
+  height: 45vmin;
+  display: flex;
+  border-radius: 11px;
+}
+
+.card__info{
+  background-position: center;
+  width: 70%;
+  height: 100%;
+
+  border-top-left-radius: 11px;
+  border-bottom-left-radius: 11px;
+}
+
+.card__info p{
+  
+text-transform: uppercase;
+
+} 
+

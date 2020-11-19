@@ -26,14 +26,15 @@ export default function SearchPage() {
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const name = query.get("name");
+  const date = query.get("date");
 
   useEffect(() => {
     axios
       // We have to use { withCredentials: true } to send and receive valid cookies
       // Si hay name => http://localhost:xxxx/location-space?name=madrid
       .get(`${apiUrl}/location-space?${name ? `name=${name}` : ""}`, {
-        withCredentials: true,
-      })
+        withCredentials: true })
+
       .then(({ data }) => {
         // Seteamos las localizaciones en el state para pintarlas en el mapa
         console.log(data);
@@ -42,7 +43,14 @@ export default function SearchPage() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  },
+  
+  []);
+
+
+
+
+  
 
   const locationToCenter = locationCoords[name] || locationCoords.madrid;
   const [viewport, setViewport] = useState({

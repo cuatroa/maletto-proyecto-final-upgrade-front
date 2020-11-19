@@ -65,7 +65,7 @@ export default function UserPage() {
               <div>
                 <Link
                   className="icon-proximo icono-user-page"
-                  to="/user" /*"Poner redirección"*/
+                  to={"user/" + user._id}
                 >
                   {' '}
                 </Link>
