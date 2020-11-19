@@ -14,7 +14,7 @@ export default function MoreExperiences() {
           src={Aveiro}
           alt="Aveiro"
         ></img>
-        <figcaption className="c-experience-caption">
+        <figcaption className="squaredContainer">
           <h2 className="title">
             Color en Costa Nova
             </h2>
@@ -30,7 +30,7 @@ export default function MoreExperiences() {
           src={Paris}
           alt="Paris"
         ></img>
-        <figcaption className="c-experience-caption">
+        <figcaption className="squaredContainer">
           <h2 className="title">
             Misterios y leyendas de París
             </h2>
@@ -46,7 +46,7 @@ export default function MoreExperiences() {
           src={Amsterdam}
           alt="Amsterdam"
         ></img>
-        <figcaption className="c-experience-caption">
+        <figcaption className="squaredContainer">
           <h2 className="title">
             Paseo en barco por los canales
             </h2>
