@@ -9,6 +9,9 @@ import MapGL, { Marker } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import marker from "../../../assets/icons/marker.png";
 
+
+
+
 export default function SearchInfoPage() {
   const { handleSubmit, register } = useForm();
   const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
@@ -40,16 +43,16 @@ export default function SearchInfoPage() {
 
   return (
     <div>
-      {/* <h1>{Number(location.longitude)}</h1> */}
+      {/* <h1>{props.amount}</h1> */}
+      {/* <h1>{location.title}</h1> */}
+      {/* <h1>{amount}</h1> */}
       <Carousel
         autoPlay
         infiniteLoop={true}
         showThumbs={false}
         showStatus={false}
       >
-        <div>
-          <img src={location.img} alt="" />
-        </div>
+        <div><img src={location.img} alt="" /></div>
         <div>
           <img
             src="https://images.pexels.com/photos/139303/pexels-photo-139303.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"

@@ -7,7 +7,8 @@ import marker from "../../assets/icons/marker.png";
 import Geocoder from "react-map-gl-geocoder";
 import MapGL, { Marker, Popup } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-
+import BookingDetailPage from "./SonsPage/BookingDetailPage/BookingDetailPage";
+import SearchInfoPage from "./SearchInfoPage/SearchInfoPage";
 
 const locationCoords = {
   madrid: {
@@ -36,21 +37,18 @@ export default function SearchPage() {
       // We have to use { withCredentials: true } to send and receive valid cookies
       // Si hay name => http://localhost:xxxx/location-space?name=madrid
       .get(`${apiUrl}/location-space${location.search}`, {
-        withCredentials: true
+        withCredentials: true,
       })
 
       .then(({ data }) => {
         // Seteamos las localizaciones en el state para pintarlas en el mapa
         console.log(data);
         setLocations(data);
-        console.log("hiiii****")
       })
       .catch((err) => {
-        console.log("ERROR****")
         console.log(err);
       });
-  },
-    []);
+  }, []);
 
   const locationToCenter = locationCoords[name] || locationCoords.madrid;
   const [viewport, setViewport] = useState({
@@ -82,6 +80,9 @@ export default function SearchPage() {
 
   return (
     <div className="general">
+      {/* <BookingDetailPage amount={amount} /> */}
+
+      <h1>{amount}</h1>
       <div style={{ height: "60vh" }}>
         <div
           ref={geocoderContainerRef}

@@ -2,17 +2,17 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./BookingDetailPage.scss";
-import Navbar from "../../../../shared/components/Navbar/Navbar";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import SearchPage from "../../SearchPage";
 
 export default function BookingDetailPage() {
   const history = useHistory();
   const { register, handleSubmit } = useForm();
   const _id = useParams()._id;
-
   const [location, setLocation] = useState([]);
+  // const amount = query.get("amount");
 
   useEffect(() => {
     axios
@@ -31,25 +31,29 @@ export default function BookingDetailPage() {
         console.log("Location nueva:", res.data);
       })
       .catch(console.log);
-  }
+  };
 
   return (
     <div>
-      <Link className="icon-atras" to="/search/:_id" > </Link>
+      {/* <h1 {this.props.amount}></h1> */}
+      {/* <SearchPage amount={this.props.amount} /> */}
+      <Link className="icon-atras" onClick={() => history.goBack()}>
+        {" "}
+      </Link>
       <main className="structureDetailPage">
         <h1 className="titleDetail">Detalles de tu Reserva</h1>
         <section>
           <table>
             <tbody>
-              <tr className="details" >
-                <td className="infoTab" >Llegada</td>
+              <tr className="details">
+                <td className="infoTab">Llegada</td>
                 <td className="infoTab">Recogida</td>
                 <td className="infoTab">Equipaje</td>
               </tr>
               <tr className="details">
                 <td className="infoData">30 de Julio</td>
                 <td className="infoData">2 de Agosto</td>
-                <td className="infoData">2 maletas</td>
+                {/* <td className="infoData">{amount}</td> */}
               </tr>
             </tbody>
           </table>
@@ -58,18 +62,23 @@ export default function BookingDetailPage() {
         <section>
           <hr />
           <table>
-            <tr><th className="detailsInfo">Gastos de gestión:</th>
-              <td>Item 1</td></tr>
-            <tr><th className="detailsInfo">Servicio asegurado:</th>
-              <td>Item 4</td></tr>
-            <tr><th className="detailsInfo">Total:</th>
-              <td>Item 7</td> </tr>
+            <tr>
+              <th className="detailsInfo">Gastos de gestión:</th>
+              <td>Item 1</td>
+            </tr>
+            <tr>
+              <th className="detailsInfo">Servicio asegurado:</th>
+              <td>Item 4</td>
+            </tr>
+            <tr>
+              <th className="detailsInfo">Total:</th>
+              <td>Item 7</td>{" "}
+            </tr>
           </table>
           <hr />
         </section>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-
           <label htmlFor="citySearch" className="ubication">
             {/* <h3>city</h3> */}
             <input
@@ -86,8 +95,7 @@ export default function BookingDetailPage() {
             <button className="longbutton1">Reservar</button>
           </Link>
         </form>
-      </main >
-    </div >
-
+      </main>
+    </div>
   );
 }

@@ -5,15 +5,18 @@
 
     .experience {
         width: 100%;
-        display: flex;
+        // display: flex;
         flex-direction: column;
         align-content: center;
+        margin: 0;
+        margin-top: 22px;
 
         .photo {
-            width: 20rem;
+            width: 100%;
             height: auto;
             object-fit: cover;
             object-position: center center;
+
         }
 
         .squaredContainer {
@@ -23,15 +26,15 @@
 
             .title {
                 font-family: Montserrat;
-                font-size: 10pt;
+                font-size: 2vmax;
                 font-weight: bold;
-                margin-top: 2.5pt;
-                margin-bottom: 2.5pt;
+                margin-top: 7.5pt;
+                // margin-bottom: 20px;
             }
 
             .text {
                 font-family: Montserrat;
-                font-size: 1.5vmax;
+                font-size: 1.6vmax;
                 margin-top: 2.5pt;
                 margin-bottom: 7pt;
                 display: flex;

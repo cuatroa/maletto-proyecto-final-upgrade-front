@@ -5,7 +5,7 @@ $verde: #1eb2a6;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-align: center;
+    // text-align: center;
     margin: 2rem 2rem 8rem;
 
     .title {
@@ -25,7 +25,7 @@ $verde: #1eb2a6;
             display: inline-block;
             justify-content: center;
             background: transparent;
-            background-color: rgba(240, 239, 239, 0.5);
+            background-color: rgb(233, 243, 242);
             color: rgba(29, 28, 28, 0.5);
             border: none;
             margin: 1rem;
@@ -64,9 +64,9 @@ $verde: #1eb2a6;
         .homeSeach {
             width: 90%;
             height: 2rem;
-            border: 0.5pt solid rgb(200, 200, 200);
+            border: 0.5pt solid rgb(255, 255, 255);
             padding: 5pt;
-            background-color: rgba(250, 250, 250, 0.5);
+            background-color: rgb(255, 255, 255);
             border-radius: 2pt;
             // padding-right: 1rem;
         }
@@ -81,6 +81,7 @@ $verde: #1eb2a6;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding-top: 20px;
 
             .btn {
                 color: rgb(250, 250, 250);
