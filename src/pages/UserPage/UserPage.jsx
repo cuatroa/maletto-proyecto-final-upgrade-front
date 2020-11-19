@@ -85,7 +85,7 @@ export default function UserPage() {
                   <button type="submit" className="btnEnviarGuardian">ENVIAR</button>
                   {/* <h4 className="small-text">
                   Puedes ganar 400€ de media al mes
-                </h4> */}
+                  </h4> */}
 
                   <hr />
                 </div>
