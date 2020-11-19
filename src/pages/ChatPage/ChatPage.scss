@@ -7,7 +7,6 @@
     height: 92vh;
 }
 
-.react-chatbot-kit-chat-header {}
 
 .react-chatbot-kit-chat-message-container {
     padding: 0em 2em;
@@ -17,14 +16,10 @@
     overflow-x: hidden;
 }
 
-.react-chatbot-kit-chat-bot-message-container {
-
-
-    .react-chatbot-kit-chat-bot-message {
-        font-size: 1.5vmax;
-    }
-
+.react-chatbot-kit-chat-bot-message {
+    font-size: 1.5vmax;
 }
+
 
 .optionsContainer {
     display: flex;
@@ -36,14 +31,13 @@
     }
 }
 
-//Hablar con Abel
 .react-chatbot-kit-chat-bot-avatar-container {
     background-image: url("../../assets/img/robot/robot.jpg");
     object-fit: fit;
+    background-position: center;
+    background-size: cover;
+}
 
-
-    // .react-chatbot-kit-chat-bot-avatar-letter {
-    //     // display: none;
-    // }
-
+.react-chatbot-kit-chat-bot-avatar-letter {
+    display: none;
 }

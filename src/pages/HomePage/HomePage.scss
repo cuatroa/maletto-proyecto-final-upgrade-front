@@ -5,9 +5,14 @@ $verde: #1eb2a6;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 2rem;
-    margin-bottom: 8rem;
-    padding: 10px;
+    text-align: center;
+    margin: 2rem 2rem 8rem;
+
+    .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     //Style Form
     .structure_application {

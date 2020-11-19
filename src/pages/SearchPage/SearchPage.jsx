@@ -26,14 +26,18 @@ export default function SearchPage() {
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const name = query.get("name");
-  const date = query.get("date");
+  const amount = query.get("amount");
+  const arrival = query.get("arrival");
+  const departure = query.get("departure");
+  console.log(location.search);
 
   useEffect(() => {
     axios
       // We have to use { withCredentials: true } to send and receive valid cookies
       // Si hay name => http://localhost:xxxx/location-space?name=madrid
-      .get(`${apiUrl}/location-space?${name ? `name=${name}` : ""}`, {
-        withCredentials: true })
+      .get(`${apiUrl}/location-space${location.search}`, {
+        withCredentials: true
+      })
 
       .then(({ data }) => {
         // Seteamos las localizaciones en el state para pintarlas en el mapa
@@ -46,13 +50,7 @@ export default function SearchPage() {
         console.log(err);
       });
   },
-  
-  []);
-
-
-
-
-  
+    []);
 
   const locationToCenter = locationCoords[name] || locationCoords.madrid;
   const [viewport, setViewport] = useState({

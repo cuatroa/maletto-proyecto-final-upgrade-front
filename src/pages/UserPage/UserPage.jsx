@@ -40,7 +40,7 @@ export default function UserPage() {
         formData.append(key, values[key]);
       }
     });
-    
+
     console.log(formData);
 
     axios
@@ -75,61 +75,61 @@ export default function UserPage() {
               <img className="image" src={user.img} alt="" />
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-            <div>
-            <div className="btnGuardian">
-                <h3>Modo guardián</h3>
-                <label class="switch">
-                  <input type="checkbox" name="guardian" id="guardian" ref={register} defaultChecked={user.guardian}/>
-                  <span class="slider round"></span>
-                </label>
-                <button type="submit" className="btnEnviarGuardian">ENVIAR</button>
-                {/* <h4 className="small-text">
+              <div>
+                <div className="btnGuardian">
+                  <h3>Modo guardián</h3>
+                  <label class="switch">
+                    <input type="checkbox" name="guardian" id="guardian" ref={register} defaultChecked={user.guardian} />
+                    <span class="slider round"></span>
+                  </label>
+                  <button type="submit" className="btnEnviarGuardian">ENVIAR</button>
+                  {/* <h4 className="small-text">
                   Puedes ganar 400€ de media al mes
                 </h4> */}
 
-                <hr />
-              </div>
-              <div>
-                <Link
-                  className="icon-proximo icono-user-page"
-                  to={"user/" + user._id}
-                >
-                  {' '}
-                </Link>
-                <h3>Tus reservas</h3>
+                  <hr />
+                </div>
+                <div>
+                  <Link
+                    className="icon-proximo"
+                    to={"user/" + user._id}
+                  >
+                    {' '}
+                  </Link>
+                  <h3>Tus reservas</h3>
 
-                <hr />
+                  <hr />
+                </div>
+                <div>
+                  <Link
+                    className="icon-cog icono-user-page"
+                    to="/user" /*"Poner redirección"*/
+                  >
+                    {' '}
+                  </Link>
+                  <h3>Configuración</h3>
+                  <hr />
+                </div>
+                <div>
+                  <Link
+                    className="icon-info icono-user-page"
+                    to="/user" /*"Poner redirección"*/
+                  >
+                    {' '}
+                  </Link>
+                  <h3>Ayuda</h3>
+                  <hr />
+                </div>
+                <div>
+                  <button className="icon-salir icono-user-page icon-exit-log" onClick={logout}>
+                    {' '}
+                  </button>
+                  <h3>Salir</h3>
+                  <hr />
+                </div>
+                <br />
+                <br />
               </div>
-              <div>
-                <Link
-                  className="icon-cog icono-user-page"
-                  to="/user" /*"Poner redirección"*/
-                >
-                  {' '}
-                </Link>
-                <h3>Configuración</h3>
-                <hr />
-              </div>
-              <div>
-                <Link
-                  className="icon-info icono-user-page"
-                  to="/user" /*"Poner redirección"*/
-                >
-                  {' '}
-                </Link>
-                <h3>Ayuda</h3>
-                <hr />
-              </div>
-              <div>
-                <button className="icon-salir icono-user-page icon-exit-log" onClick={logout}>
-                  {' '}
-                </button>
-                <h3>Salir</h3>
-                <hr />
-              </div>
-              <br />
-              <br />
-            </div>
             </form>
           </div>
           {/* ); */}
