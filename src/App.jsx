@@ -22,7 +22,11 @@ import UserEditPage from "./pages/UserPage/UserEditPage/UserEditPage";
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
 // import Register from "./pages/LoginPage/SonsPage/Register/Register";
 import BookingPetitionsPage from "./pages/GuardianPage/SonsPage/BookingPetitionPage/BookingPetitionsPage";
+<<<<<<< HEAD
 
+=======
+import BookingInfoPage from "./pages/UserPage/BookingInfoPage/BookingInfoPage";
+>>>>>>> baecb106ca017008d109ed8c48805c9d2fe96644
 function App() {
   return (
     <div>
@@ -52,6 +56,9 @@ function App() {
             </Route>
             <Route path="/search">
               <SearchPage />
+            </Route>
+            <Route path="/user/booking/info">
+              <BookingInfoPage />
             </Route>
             <Route path="/user/booking">
               <UserBookingPage />

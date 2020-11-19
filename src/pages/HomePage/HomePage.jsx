@@ -12,6 +12,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
+import qs from "qs";
 
 
 export default function HomePage() {
@@ -27,8 +28,14 @@ export default function HomePage() {
   }
 
   const onSubmit = (values) => {
-    const { search } = values;
-    history.push(`/search?${search ? `name=${search}` : ''}`)
+    const searchValues = {};
+    Object.keys(values).forEach((key) => {
+      if (values[key]) {
+        searchValues[key] = values[key];
+      }
+    })
+    const params = qs.stringify(searchValues);
+    history.push(`/search?${params}`);
   };
 
   // Vamos a SearchPage con un query param llamado name que es igual al search del formulario
@@ -38,7 +45,7 @@ export default function HomePage() {
     <div className="homePage">
       <main className="StructureHome">
         <div className="HomeFormData">
-          <h1 className="home_title">Encuentra tu guardián</h1>
+          <h1 className="title">Encuentra tu guardián</h1>
 
           <form className="structure_application"
             onSubmit={handleSubmit(onSubmit)}>
@@ -49,8 +56,8 @@ export default function HomePage() {
               <input
                 type="text"
                 placeholder="Búsqueda..."
-                id="search"
-                name="search"
+                id="name"
+                name="name"
                 ref={register({})}
               />
             </section>
@@ -59,11 +66,11 @@ export default function HomePage() {
             <section>
               <div>
                 <i className="icon-calendar"></i>
-                <input type="datetime-local" id="bntSearch" name="bntSearch" className="input-calendar" placeholder="Depósito" ref={register({})}></input>
+                <input type="datetime-local" id="arrival" name="arrival" className="input-calendar" placeholder="Depósito" ref={register({})}></input>
               </div>
               <div>
                 <i className="icon-calendar"></i>
-                <input type="datetime-local" id="bntSearch" name="bntSearch" className="input-calendar" placeholder="Retirada" ref={register({})}></input>
+                <input type="datetime-local" id="departure" name="departure" className="input-calendar" placeholder="Retirada" ref={register({})}></input>
               </div>
 
             </section>
@@ -71,8 +78,8 @@ export default function HomePage() {
             {/* Nº de maletas */}
             <section>
               <i className="icon-suitcase" aria-hidden="true"></i>
-              <select type="menu" id="bntSearch" name="bntSearch" width="1rem" ref={register({})}>
-                <option value="0" >Nº de Piezas</option>
+              <select type="menu" id="amount" name="amount" width="1rem" ref={register({ required: true })}>
+                <option value="" >Nº de Piezas</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -88,7 +95,7 @@ export default function HomePage() {
 
             <section className="homeBtn">
               {/* Btn Buscar -- se redirecciona al Maps  */}
-              <button className="btn" id="bntSearch" name="bntSearch">Buscar</button>
+              <button type="submit" className="btn">Buscar</button>
             </section>
 
           </form>
@@ -96,35 +103,29 @@ export default function HomePage() {
 
         <section className="homeExtras">
           <article>
-            <h2 >Novedades</h2>
+            <h2 className="titleExtras">Novedades</h2>
             <div className="photoText">
               <Carousel
                 autoPlay
                 infiniteLoop={true}
                 showThumbs={false}
-                showStatus={false}>
+                showStatus={false}
+                className="fontPhoto">
                 <div>
-                  <img src={photo5} className="desvanecer" alt="" />
-                  <p className="text">prueba a</p>
+                  <img src={photo5} alt="" />
                 </div>
                 <div>
-                  <img src={photo3} className="desvanecer" alt="" />
-                  <p className="text">prueba a</p>
+                  <img src={photo3} alt="" />
                 </div>
                 <div>
-                  <img src={photo1} className="desvanecer" alt="" />
-                  <p className="text">prueba a</p>
+                  <img src={photo1} alt="" />
                 </div>
                 <div>
-                  <img src={photo6} className="desvanecer" alt="" />
-                  <p className="text">prueba a</p>
+                  <img src={photo6} alt="" />
                 </div>
-
                 <div>
-                  <img src={photo2} className="desvanecer" alt="" />
-                  <p className="text">prueba a</p>
+                  <img src={photo2} alt="" />
                 </div>
-
               </Carousel>
             </div>
 
@@ -132,7 +133,7 @@ export default function HomePage() {
           </article>
 
           <article>
-            <h2 >Experiencias</h2>
+            <h2 className="titleExtras" >Experiencias</h2>
             <Experiences />
           </article>
 

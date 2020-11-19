@@ -37,3 +37,13 @@
     transform: rotate(360deg);
   }
 }
+
+.icon-atras {
+  text-decoration: none;
+  color: black;
+  outline: none;
+  display: flex;
+  justify-content: left;
+  margin: 1rem;
+  text-align: center;
+}

@@ -1,40 +1,64 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import "./SearchInfoPage.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import MapGL, { Marker } from "react-map-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
+import marker from "../../../assets/icons/marker.png";
+
+
 
 
 export default function SearchInfoPage() {
-
   const { handleSubmit, register } = useForm();
- 
+  const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
   const _id = useParams()._id;
 
-  const [location, setLocation] = useState([]);
+  const [location, setLocation] = useState({});
 
   useEffect(() => {
-    axios.get(process.env.REACT_APP_API_URL + `/location-space/${_id}`).then((res) => {
-          console.log(res.data);
-          setLocation(res.data);
-        });
+    axios
+      .get(process.env.REACT_APP_API_URL + `/location-space/${_id}`)
+      .then((res) => {
+        console.log(res.data);
+        setLocation(res.data);
+      });
   }, []);
 
+  const mapRef = useRef();
+  const handleViewportChange = useCallback(
+    (newViewport) => setViewport(newViewport),
+    []
+  );
 
-  
+  const [viewport, setViewport] = useState({
+    width: "100vw",
+    height: "60vh",
+    zoom: 15,
+  });
 
   return (
     <div>
+      {/* <h1>{props.amount}</h1> */}
+      {/* <h1>{location.title}</h1> */}
+      {/* <h1>{amount}</h1> */}
       <Carousel
         autoPlay
         infiniteLoop={true}
         showThumbs={false}
         showStatus={false}
       >
-        <img src={location.img} alt="" />
+        <div><img src={location.img} alt="" /></div>
+        <div>
+          <img
+            src="https://images.pexels.com/photos/139303/pexels-photo-139303.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            alt=""
+          />
+        </div>
 
         {/* {location.map.img((item, index) => (
             <div key={index}>
@@ -42,11 +66,42 @@ export default function SearchInfoPage() {
             </div>
           ))} */}
       </Carousel>
+      <div>
+        <div className="card-a1">
+          <div className="slide1">
+            <div className="card1">
+              <div className="card__img1">
+                <div>
+                  <h4>{location.title}</h4>
+                  <h5>{location.location}</h5>
+                  <p className="uppercase">{location.city}</p>
+                </div>
+              </div>
+              <div className="card__content1">
+                <img
+                  className="profile_img1"
+                  src={location.user?.[0].img}
+                  alt=""
+                />
+                <div className="card_stars1">
+                  <span className="icon-star-full"></span>
+                  <span className="icon-star-full"></span>
+                  <span className="icon-star-full"></span>
+                  <span className="icon-star-empty"></span>
+                  <span className="icon-star-empty"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
 
       <div className="row">
         <div>
           <h2>
-            <b>Normas de {location.title}</b>
+            <b>Normas de {location.user?.[0].name}</b>
           </h2>
           <div className="tabs">
             <div className="tab">
@@ -56,8 +111,7 @@ export default function SearchInfoPage() {
               </label>
               <hr />
               <div className="tab-content">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
-                reiciendis!
+                Estás de suerte, este guardián acepta todo tipo de maletas
               </div>
             </div>
 
@@ -68,7 +122,8 @@ export default function SearchInfoPage() {
               </label>
               <hr />
               <div className="tab-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                <b></b>
+                Cancelación gratuita <b>hasta 24 horas</b> antes de la llegada
               </div>
             </div>
 
@@ -86,6 +141,30 @@ export default function SearchInfoPage() {
           </div>
         </div>
       </div>
+      <div style={{ height: "30vh" }}>
+        {location.latitude && location.longitude ? (
+          <MapGL
+            ref={mapRef}
+            {...viewport}
+            width="100%"
+            height="100%"
+            longitude={Number(location.longitude)}
+            latitude={Number(location.latitude)}
+            onViewportChange={handleViewportChange}
+            mapboxApiAccessToken={MAPBOX_TOKEN}
+            mapStyle="mapbox://styles/coritah44/ckhffmpjs0g9e19md6lbpfbke"
+          >
+            <Marker
+              key={location._id}
+              latitude={Number(location.latitude)}
+              longitude={Number(location.longitude)}
+            >
+              <img src={marker} alt="" />
+            </Marker>
+          </MapGL>
+        ) : null}
+      </div>
+
       <div className="row-width">
         <h2>
           <b>Reseñas</b>
