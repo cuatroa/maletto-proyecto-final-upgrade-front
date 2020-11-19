@@ -123,12 +123,9 @@ export default function HomePage() {
                 <div>
                   <img src={photo6} alt="" />
                 </div>
-
                 <div>
                   <img src={photo2} alt="" />
-                  <p className="text">prueba a</p>
                 </div>
-               >
               </Carousel>
             </div>
 
