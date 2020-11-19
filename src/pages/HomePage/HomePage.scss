@@ -5,7 +5,7 @@ $verde: #1eb2a6;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-align: center;
+    // text-align: center;
     margin: 2rem 2rem 8rem;
 
     .title {
@@ -112,9 +112,7 @@ $verde: #1eb2a6;
             margin: 1em 1em 0em;
         }
 
-        .fontPhoto {
-            margin: 0.5em 0.5em 1em 2em;
-            width: 80%;
+        .fontPhoto {           
             height: auto;
             object-fit: cover;
             object-position: center center;
