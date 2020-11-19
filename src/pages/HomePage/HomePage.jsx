@@ -11,7 +11,7 @@ import photo6 from "../../assets/img/carousel/f.jpg";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import qs from "qs";
 
 
@@ -111,21 +111,21 @@ export default function HomePage() {
                 showThumbs={false}
                 showStatus={false}
                 className="fontPhoto">
-                <div>
+                <Link to="/news/travel"><div>
                   <img src={photo5} alt="" />
-                </div>
-                <div>
+                </div></Link>
+                <Link to="/news/christmas"><div>
                   <img src={photo3} alt="" />
-                </div>
-                <div>
+                </div></Link>
+                <Link to="/news/sunflower"><div>
                   <img src={photo1} alt="" />
-                </div>
-                <div>
+                </div></Link>
+                <Link to="/news/dog"><div>
                   <img src={photo6} alt="" />
-                </div>
-                <div>
+                </div></Link>
+                <Link to="/news/route66"><div>
                   <img src={photo2} alt="" />
-                </div>
+                </div></Link>
               </Carousel>
             </div>
 

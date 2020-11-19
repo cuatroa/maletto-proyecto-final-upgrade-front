@@ -81,8 +81,6 @@ export default function SearchPage() {
   return (
     <div className="general">
       {/* <BookingDetailPage amount={amount} /> */}
-
-      <h1>{amount}</h1>
       <div style={{ height: "60vh" }}>
         <div
           ref={geocoderContainerRef}

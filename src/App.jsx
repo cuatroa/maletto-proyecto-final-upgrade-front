@@ -18,23 +18,42 @@ import BookingCompletePage from "./pages/SearchPage/SonsPage/BookingCompletePage
 import GuardianPage from "./pages/GuardianPage/GuardianPage";
 import GuardianSpacesPage from "./pages/GuardianPage/SonsPage/GuardianSpacesPage/GuardianSpacesPage";
 import PublishPage from "./pages/GuardianPage/SonsPage/PublishPage/PublishPage";
-import DemoPage from "./pages/DEMOpage/DemoPage";
 import UserEditPage from "./pages/UserPage/UserEditPage/UserEditPage";
 // import Login from "./pages/LoginPage/SonsPage/Login/Login";
 // import Register from "./pages/LoginPage/SonsPage/Register/Register";
 import BookingPetitionsPage from "./pages/GuardianPage/SonsPage/BookingPetitionPage/BookingPetitionsPage";
 import BookingInfoPage from "./pages/UserPage/BookingInfoPage/BookingInfoPage";
+import NewsTravelPage from "./pages/NewsPage/NewsTravelPage";
+import NewsAdventurePage from "./pages/NewsPage/NewsAdventurePage";
+import NewsFlowerPage from "./pages/NewsPage/NewsFlowerPage";
+import NewsDogPage from "./pages/NewsPage/NewsDogPage";
+import NewsChristmasPage from "./pages/NewsPage/NewsChristmasPage";
+
+
+
 function App() {
   return (
     <div>
       <Router>
         <div>
           <Switch>
+            <Route path="/news/route66">
+              <NewsAdventurePage />
+            </Route>
+            <Route path="/news/christmas">
+              <NewsChristmasPage />
+            </Route>
+            <Route path="/news/dog">
+              <NewsDogPage />
+            </Route>
+            <Route path="/news/sunflower">
+              <NewsFlowerPage />
+            </Route>
+            <Route path="/news/travel">
+              <NewsTravelPage />
+            </Route>
             <Route path="/user/edit">
               <UserEditPage />
-            </Route>
-            <Route path="/DEMO">
-              <DemoPage />
             </Route>
             <Route path="/booking/complete">
               <BookingCompletePage />
