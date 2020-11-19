@@ -67,12 +67,12 @@ export default function UserEditPage() {
           <div>
           <div>
               <label htmlFor="name"><h3>Inserta nuevo nombre</h3></label>
-              <input type="text" name="name" id="name" placeholder={user.name} className="input-publish" ref={register({required: true, min: 1})}/>
+              <input type="text" name="name" id="name" className="input-publish" ref={register({required: true, min: 1})} defaultValue={user.name}/>
               <hr />
             </div>
             <div>
               <label htmlFor="lastName"><h3>Inserta nuevo apellido</h3></label>
-              <input type="text" name="lastName" id="lastName" placeholder={user.lastName} className="input-publish" ref={register({required: true, min: 1})}/>
+              <input type="text" name="lastName" id="lastName" className="input-publish" ref={register({required: true, min: 1})} defaultValue={user.lastName}/>
               <hr />
             </div>
             <div>
@@ -82,12 +82,12 @@ export default function UserEditPage() {
             </div>
             <div>
               <label htmlFor="address"><h3>Dirección</h3></label>
-              <input type="text" name="address" id="address" placeholder={user.address} className="input-publish" ref={register({required: true, min: 1})}/>
+              <input type="text" name="address" id="address" className="input-publish" ref={register({required: true, min: 1})} defaultValue={user.address}/>
               <hr />
             </div>
             <div>
               <label htmlFor="birthDate"><h3>Fecha de nacimiento</h3></label>
-              <input type="date" name="birthDate" id="birthDate" placeholder={user.birthDate} className="input-publish__date" ref={register({required: true, min: 1})}/>
+              <input type="date" name="birthDate" id="birthDate" className="input-publish__date" ref={register({required: true, min: 1})}/>
               <hr />
             </div>
 

@@ -3,10 +3,12 @@ import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
 import Navbar from './../../shared/components/Navbar/Navbar';
 import './UserPage.scss';
+import { useForm } from 'react-hook-form';
 
 const apiUrl = 'http://localhost:3001';
 
 export default function UserPage() {
+  const { handleSubmit, register } = useForm();
   const [user, setUser] = useState(null);
   const history = useHistory();
 
@@ -30,6 +32,30 @@ export default function UserPage() {
       .catch(console.log);
   };
 
+  const onSubmit = (values) => {
+    const formData = new FormData();
+    // Hacemos append de los campos a mandar...
+    Object.keys(values).forEach((key) => {
+      if (typeof values[key] !== "undefined") {
+        formData.append(key, values[key]);
+      }
+    });
+    
+    console.log(formData);
+
+    axios
+      .put(`${apiUrl}/user/${user._id}`, formData, { withCredentials: true }, {
+        headers: { 'Content-Type': 'multipart/form-data' }
+      })
+      .then((res) => {
+        console.log('Usuario editado:', res.data);
+      })
+      .catch(console.log);
+  };
+
+
+
+
   return (
     <div className="container">
       {user ? (
@@ -48,15 +74,18 @@ export default function UserPage() {
               </h3>
               <img className="image" src={user.img} alt="" />
             </div>
+            <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-              <div>
-                <h3>Conviértete en guardián</h3>
-                <Link className="icon-proximo icono-user-page" to="/guardian">
-                  {' '}
-                </Link>
-                <h4 className="small-text">
+            <div className="btnGuardian">
+                <h3>Modo guardián</h3>
+                <label class="switch">
+                  <input type="checkbox" name="guardian" id="guardian" ref={register} defaultChecked={user.guardian}/>
+                  <span class="slider round"></span>
+                </label>
+                <button type="submit" className="btnEnviarGuardian">ENVIAR</button>
+                {/* <h4 className="small-text">
                   Puedes ganar 400€ de media al mes
-                </h4>
+                </h4> */}
 
                 <hr />
               </div>
@@ -101,6 +130,7 @@ export default function UserPage() {
               <br />
               <br />
             </div>
+            </form>
           </div>
           {/* ); */}
           {/* })} */}
