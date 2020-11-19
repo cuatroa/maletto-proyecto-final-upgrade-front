@@ -5,13 +5,13 @@ import Navbar from "./../../../shared/components/Navbar/Navbar";
 import "./UserEditPage.scss";
 import { useForm } from "react-hook-form";
 
-const apiUrl = 'http://localhost:3001';
+const apiUrl = "http://localhost:3001";
 
 export default function UserEditPage() {
   const { handleSubmit, register } = useForm();
   const history = useHistory();
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     axios
@@ -21,7 +21,7 @@ export default function UserEditPage() {
       .catch((err) => {
         console.log(err);
         // Llevo al user a la home en caso de que no esté logeado
-        history.push('/home');
+        history.push("/home");
       });
   }, []);
 
@@ -29,76 +29,119 @@ export default function UserEditPage() {
     const formData = new FormData();
     // Hacemos append de los campos a mandar...
     Object.keys(values).forEach((key) => {
-      if (typeof values[key] !== "undefined") {
+      if (key === "img" && typeof values[key] !== "undefined") {
+        formData.append(key, values[key][0]);
+      } else if (typeof values[key] !== "undefined") {
         formData.append(key, values[key]);
       }
     });
-    
+
     console.log(formData);
 
     axios
-      .put(`${apiUrl}/user/${user._id}`, formData, { withCredentials: true }, {
-        headers: { 'Content-Type': 'multipart/form-data' }
+      .put(`${apiUrl}/user/${user._id}`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+        withCredentials: true,
       })
       .then((res) => {
-        console.log('Usuario editado:', res.data);
+        console.log("Usuario editado:", res.data);
       })
       .catch(console.log);
   };
 
-
-
   return (
     <div className="container">
       <div className="container-noNavbar">
-      <Link className="icon-atras" to="/user">
-          {' '}
-        </Link>
+        <Link className="icon-atras icon-editUser" to={ user.guardian ? "/guardian" : "/user"}></Link>
 
-      {user ? (
-      <div className="div-image-title">
-        <div className="image-title">
-          <div>
-            <h2>Editar perfil</h2>
+        {user ? (
+          <div className="div-image-title">
+            <div className="image-title">
+              <div>
+                <h2>Editar perfil</h2>
+              </div>
+
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div>
+                  <div>
+                    <label htmlFor="name">
+                      <h3>Inserta nuevo nombre</h3>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      className="input-publish"
+                      ref={register({ required: true, min: 1 })}
+                      defaultValue={user.name}
+                    />
+                    <hr />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName">
+                      <h3>Inserta nuevo apellido</h3>
+                    </label>
+                    <input
+                      type="text"
+                      name="lastName"
+                      id="lastName"
+                      className="input-publish"
+                      ref={register({ required: true, min: 1 })}
+                      defaultValue={user.lastName}
+                    />
+                    <hr />
+                  </div>
+                  <div>
+                    <label htmlFor="img">
+                      <h3>Foto de perfil</h3>
+                    </label>
+                    <input
+                      type="file"
+                      name="img"
+                      id="img"
+                      placeholder=""
+                      className="input-publish__img"
+                      ref={register()}
+                    />
+                    <hr />
+                  </div>
+                  <div>
+                    <label htmlFor="address">
+                      <h3>Dirección</h3>
+                    </label>
+                    <input
+                      type="text"
+                      name="address"
+                      id="address"
+                      className="input-publish"
+                      ref={register({ required: true, min: 1 })}
+                      defaultValue={user.address}
+                    />
+                    <hr />
+                  </div>
+                  <div>
+                    <label htmlFor="birthDate">
+                      <h3>Fecha de nacimiento</h3>
+                    </label>
+                    <input
+                      type="date"
+                      name="birthDate"
+                      id="birthDate"
+                      className="input-publish__date"
+                      ref={register({ required: true, min: 1 })}
+                    />
+                    <hr />
+                  </div>
+                </div>
+                <div className="container-button-publish">
+                  <button type="submit" className="button-publish">
+                    Guardar
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-
-          <form onSubmit={handleSubmit(onSubmit)}>
-
-          <div>
-          <div>
-              <label htmlFor="name"><h3>Inserta nuevo nombre</h3></label>
-              <input type="text" name="name" id="name" className="input-publish" ref={register({required: true, min: 1})} defaultValue={user.name}/>
-              <hr />
-            </div>
-            <div>
-              <label htmlFor="lastName"><h3>Inserta nuevo apellido</h3></label>
-              <input type="text" name="lastName" id="lastName" className="input-publish" ref={register({required: true, min: 1})} defaultValue={user.lastName}/>
-              <hr />
-            </div>
-            <div>
-              <label htmlFor="img"><h3>Foto de perfil</h3></label>
-              <input type="file" name="img" id="img" placeholder="" className="input-publish__img" ref={register()}/>
-              <hr />
-            </div>
-            <div>
-              <label htmlFor="address"><h3>Dirección</h3></label>
-              <input type="text" name="address" id="address" className="input-publish" ref={register({required: true, min: 1})} defaultValue={user.address}/>
-              <hr />
-            </div>
-            <div>
-              <label htmlFor="birthDate"><h3>Fecha de nacimiento</h3></label>
-              <input type="date" name="birthDate" id="birthDate" className="input-publish__date" ref={register({required: true, min: 1})}/>
-              <hr />
-            </div>
-
-          </div>
-          <div className="container-button-publish">
-          <button type="submit" className="button-publish">Guardar</button>
-          </div>
-          </form>
-        </div>
-      </div>
-      ) : null}
+        ) : null}
       </div>
       <Navbar />
     </div>
