@@ -15,7 +15,7 @@ export default function SearchInfoPage() {
 
   const _id = useParams()._id;
 
-  const [location, setLocation] = useState([]);
+  const [location, setLocation] = useState({});
 
   useEffect(() => {
     axios
@@ -35,11 +35,7 @@ export default function SearchInfoPage() {
   const [viewport, setViewport] = useState({
     width: "100vw",
     height: "60vh",
-    zoom: 12,
-    //  latitude: {location.latitude},
-    //  longitude: {location.longitude}
-    //  latitude: 40,
-    //  longitude: -3
+    zoom: 15,
   });
 
   return (
@@ -67,27 +63,30 @@ export default function SearchInfoPage() {
             </div>
           ))} */}
       </Carousel>
-
-      <div className="card-a">
-        <div className="slide">
-          <div className="card1">
-            <div className="card__info">
-              <h4>{location.title}</h4>
-              <h5>{location.location}</h5>
-              <p className="uppercase">{location.city}</p>
-            </div>
-            <div className="card__content">
-              <h2 className="card__content-header">
-                {/* {location.user[0].name} {location.user[0].lastName} */}
-              </h2>
-              {/* <img className="profile_img" src={location.user.img} alt="" /> */}
-
-              <div className="card_stars">
-                <span className="icon-star-full"></span>
-                <span className="icon-star-full"></span>
-                <span className="icon-star-full"></span>
-                <span className="icon-star-empty"></span>
-                <span className="icon-star-empty"></span>
+      <div>
+        <div className="card-a1">
+          <div className="slide1">
+            <div className="card1">
+              <div className="card__img1">
+                <div>
+                  <h4>{location.title}</h4>
+                  <h5>{location.location}</h5>
+                  <p className="uppercase">{location.city}</p>
+                </div>
+              </div>
+              <div className="card__content1">
+                <img
+                  className="profile_img1"
+                  src={location.user?.[0].img}
+                  alt=""
+                />
+                <div className="card_stars1">
+                  <span className="icon-star-full"></span>
+                  <span className="icon-star-full"></span>
+                  <span className="icon-star-full"></span>
+                  <span className="icon-star-empty"></span>
+                  <span className="icon-star-empty"></span>
+                </div>
               </div>
             </div>
           </div>
@@ -99,7 +98,7 @@ export default function SearchInfoPage() {
       <div className="row">
         <div>
           <h2>
-            <b>Normas de {location.title}</b>
+            <b>Normas de {location.user?.[0].name}</b>
           </h2>
           <div className="tabs">
             <div className="tab">
@@ -109,8 +108,7 @@ export default function SearchInfoPage() {
               </label>
               <hr />
               <div className="tab-content">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum,
-                reiciendis!
+                Estás de suerte, este guardián acepta todo tipo de maletas
               </div>
             </div>
 
@@ -121,7 +119,8 @@ export default function SearchInfoPage() {
               </label>
               <hr />
               <div className="tab-content">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                <b></b>
+                Cancelación gratuita <b>hasta 24 horas</b> antes de la llegada
               </div>
             </div>
 
@@ -140,25 +139,27 @@ export default function SearchInfoPage() {
         </div>
       </div>
       <div style={{ height: "30vh" }}>
-        <MapGL
-          ref={mapRef}
-          {...viewport}
-          width="100%"
-          height="100%"
-          // longitude={Number(location.longitude)}
-          // latitude={Number(location.latitude)}
-          onViewportChange={handleViewportChange}
-          mapboxApiAccessToken={MAPBOX_TOKEN}
-          mapStyle="mapbox://styles/coritah44/ckhffmpjs0g9e19md6lbpfbke"
-        >
-          {/* <Marker
-            key={location._id}
-            latitude={Number(location.latitude)}
+        {location.latitude && location.longitude ? (
+          <MapGL
+            ref={mapRef}
+            {...viewport}
+            width="100%"
+            height="100%"
             longitude={Number(location.longitude)}
+            latitude={Number(location.latitude)}
+            onViewportChange={handleViewportChange}
+            mapboxApiAccessToken={MAPBOX_TOKEN}
+            mapStyle="mapbox://styles/coritah44/ckhffmpjs0g9e19md6lbpfbke"
           >
-            <img src={marker} alt="" />
-          </Marker> */}
-        </MapGL>
+            <Marker
+              key={location._id}
+              latitude={Number(location.latitude)}
+              longitude={Number(location.longitude)}
+            >
+              <img src={marker} alt="" />
+            </Marker>
+          </MapGL>
+        ) : null}
       </div>
 
       <div className="row-width">

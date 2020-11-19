@@ -1,20 +1,37 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
-// import UserPage from "../UserPage";
+import { Link, useHistory } from "react-router-dom";
 import Navbar from "./../../../shared/components/Navbar/Navbar";
 import "./UserBookingPage.scss";
 
 export default function UserBookingPage() {
-  const [user, setUser] = useState([]);
-  const _id = useParams()._id;
+  const [user, setUser] = useState({});
+  const [usuario, setUsuario] = useState({});
+  const apiUrl = "http://localhost:3001";
+  const history = useHistory();
 
   useEffect(() => {
-    axios.get(process.env.REACT_APP_API_URL + `/user/${_id}`).then((res) => {
-      setUser(res.data);
-      console.log(res.data);
-    });
+    axios
+      // We have to use { withCredentials: true } to send and receive valid cookies
+      .get(`${apiUrl}/auth/profile`, { withCredentials: true })
+      .then(({ data }) => {setUser(data)
+       console.log(data)})
+      .catch((err) => {
+        console.log(err);
+        history.push("/home");
+      });
   }, []);
+
+  useEffect(() => {
+    axios
+      .get(`${apiUrl}/user/${user._id}`, { withCredentials: true })
+      .then((res) => {
+        setUsuario(res.data)
+        console.log("Usuario editado:", res.data);
+      })
+      .catch(console.log);
+  }, []);
+
 
   return (
     <div className="container">
@@ -26,18 +43,18 @@ export default function UserBookingPage() {
           <h1>Tus reservas</h1>
           <hr />
         </div>
-        <h1>{user.name}</h1>
+        <h1>{user.lastName}</h1>
         <div className="div-image-title">
-          {/* {user.length
-            ? user.map((user) =>
+          {user.length
+            ? user.bookings?.map((user) =>
                 user.name && user.bookings ? (
                   <div className="image-title" key={user._id}>
-                    <div>{user.bookings._id}</div>
+                    <div>{user.bookings?.user}</div>
                     <hr />
                   </div>
                 ) : null
               )
-            : null} */}
+            : null}
         </div>
       </div>
 

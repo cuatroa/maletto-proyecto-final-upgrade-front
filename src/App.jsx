@@ -57,10 +57,10 @@ function App() {
             <Route path="/search">
               <SearchPage />
             </Route>
-            <Route path="/user/booking/:_id">
+            <Route path="/user/booking/info">
               <BookingInfoPage />
             </Route>
-            <Route path="/user/:_id">
+            <Route path="/user/booking">
               <UserBookingPage />
             </Route>
             <Route path="/user">

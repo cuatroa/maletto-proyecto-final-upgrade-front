@@ -82,7 +82,6 @@ export default function BookingDetailPage() {
               ref={register({ required: true, min: 1 })}
             />
           </label>
-
           <Link to="/booking/complete">
             <button className="longbutton1">Reservar</button>
           </Link>
