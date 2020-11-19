@@ -130,16 +130,16 @@ export default function SearchPage() {
 
           {locations.length
             ? locations.map((location) =>
-              location.latitude && location.longitude ? (
-                <Marker
-                  key={location._id}
-                  latitude={Number(location.latitude)}
-                  longitude={Number(location.longitude)}
-                >
-                  <img src={marker} alt="" />
-                </Marker>
-              ) : null
-            )
+                location.latitude && location.longitude ? (
+                  <Marker
+                    key={location._id}
+                    latitude={Number(location.latitude)}
+                    longitude={Number(location.longitude)}
+                  >
+                    <img src={marker} alt="" />
+                  </Marker>
+                ) : null
+              )
             : null}
         </MapGL>
       </div>
@@ -148,43 +148,43 @@ export default function SearchPage() {
 
       {locations.length
         ? locations.map((location) =>
-          location.title && location.img ? (
-            <div key={location._id}>
-              <div className="card-a">
-                <div className="slide">
-                  <Link to={"search/" + location._id}>
-                    <div className="card">
-                      <div
-                        className="card__img"
-                        style={{ backgroundImage: `url(${location.img})` }}
-                      ></div>
-                      <div className="card__content">
-                        <h2 className="card__content-header">
-                          {location.user.name} {location.user.lastName}
-                        </h2>
-                        <img
-                          className="profile_img"
-                          src={location.user.img}
-                          alt=""
-                        />
-                        <div className="card_stars">
-                          <span className="icon-star-full"></span>
-                          <span className="icon-star-full"></span>
-                          <span className="icon-star-full"></span>
-                          <span className="icon-star-empty"></span>
-                          <span className="icon-star-empty"></span>
+            location.title && location.img ? (
+              <div key={location._id}>
+                <div className="card-a">
+                  <div className="slide">
+                    <Link to={"search/" + location._id}>
+                      <div className="card">
+                        <div
+                          className="card__img"
+                          style={{ backgroundImage: `url(${location.img})` }}
+                        ></div>
+                        <div className="card__content">
+                          <h2 className="card__content-header">
+                            {location.user[0].name} {location.user[0].lastName}
+                          </h2>
+                          <img
+                            className="profile_img"
+                            src={location.user?.[0].img}
+                            alt=""
+                          />
+                          <div className="card_stars">
+                            <span className="icon-star-full"></span>
+                            <span className="icon-star-full"></span>
+                            <span className="icon-star-full"></span>
+                            <span className="icon-star-empty"></span>
+                            <span className="icon-star-empty"></span>
+                          </div>
+                          <p className="card__content-paragraph">
+                            {location.location}
+                          </p>
                         </div>
-                        <p className="card__content-paragraph">
-                          {location.location}
-                        </p>
                       </div>
-                    </div>
-                  </Link>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ) : null
-        )
+            ) : null
+          )
         : null}
       <br />
       <br />

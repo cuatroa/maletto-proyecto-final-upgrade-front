@@ -3,23 +3,43 @@ import "./BookingInfoPage.scss";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
-
+import { Link, useHistory } from "react-router-dom";
 
 export default function BookingInfoPage() {
+  const apiUrl = "http://localhost:3001";
 
-   const _id = useParams()._id;
+  const [user, setUser] = useState([]);
+  const [usuario, setUsuario] = useState([]);
 
-   const [location, setLocation] = useState([]);
+  const history = useHistory();
 
-   useEffect(() => {
-     axios
-       .get(process.env.REACT_APP_API_URL + `/location-space/${_id}`)
-       .then((res) => {
-         console.log(res.data);
-         setLocation(res.data);
-       });
-   }, []);
+  useEffect(() => {
+    axios
+      // We have to use { withCredentials: true } to send and receive valid cookies
+      .get(`${apiUrl}/auth/profile`, { withCredentials: true })
+      .then(({ data }) => setUser(data))
+      .catch((err) => {
+        console.log(err);
+        history.push("/home");
+      });
+      
+  }, []);
+
+
+
+useEffect(() => {
+  axios
+    .get(
+      `${apiUrl}/user/${user._id}`,
+      { withCredentials: true },
+      
+    )
+    .then((res) => {
+      console.log("Usuario editado:", res.data);
+    })
+    .catch(console.log);
+}, []);
+
   return (
     <div>
       <Carousel
@@ -28,7 +48,7 @@ export default function BookingInfoPage() {
         showThumbs={false}
         showStatus={false}
       >
-        <img src={location.img} alt="" />
+        <img src={user.img} alt="" />
 
         {/* {location.map.img((item, index) => (
             <div key={index}>

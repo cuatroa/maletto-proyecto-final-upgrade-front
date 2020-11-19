@@ -89,8 +89,7 @@ export default function BookingDetailPage() {
             name="locationSpace"
             id="locationSpace"
             value={location._id}
-            // placeholder="Calle Gran Vía..."
-            className=""
+            className="transparent-input"
             ref={register({ required: true, min: 1 })}
           />
           <hr />

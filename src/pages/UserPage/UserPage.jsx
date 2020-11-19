@@ -92,7 +92,7 @@ export default function UserPage() {
               <div>
                 <Link
                   className="icon-proximo icono-user-page"
-                  to={"user/" + user._id}
+                  to="/user/booking"
                 >
                   {' '}
                 </Link>
