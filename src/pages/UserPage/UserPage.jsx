@@ -49,6 +49,7 @@ export default function UserPage() {
       })
       .then((res) => {
         console.log('Usuario editado:', res.data);
+        history.push('/guardian');
       })
       .catch(console.log);
   };

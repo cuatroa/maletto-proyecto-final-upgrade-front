@@ -49,6 +49,7 @@ export default function GuardianPage() {
       })
       .then((res) => {
         console.log('Usuario editado:', res.data);
+        history.push('/user');
       })
       .catch(console.log);
   };
