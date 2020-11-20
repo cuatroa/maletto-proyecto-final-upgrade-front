@@ -67,29 +67,41 @@ export default function BookingDetailPage() {
               <tr className="details">
                 <td className="infoData">30 de Julio</td>
                 <td className="infoData">2 de Agosto</td>
-                <td className="infoData">2 </td>
+                <td className="infoData">2 maletas </td>
               </tr>
             </tbody>
           </table>
         </section>
 
         <section>
-          <hr />
+          <hr className="hrInfo" />
           <table>
             <tr>
+              <th className="detailsInfo">6€ x 2 equipajes:</th>
+              <td>10€</td>
+            </tr>
+            <tr>
               <th className="detailsInfo">Gastos de gestión:</th>
-              <td>Item 1</td>
+              <td>2€</td>
             </tr>
             <tr>
               <th className="detailsInfo">Servicio asegurado:</th>
-              <td>Item 4</td>
+              <td>Gratis</td>
             </tr>
             <tr>
               <th className="detailsInfo">Total:</th>
-              <td>Item 7</td>
+              <td>12€</td>
             </tr>
           </table>
-          <hr />
+          <hr className="hrInfo" />
+          {/* <table>
+            <tbody>
+              <tr>
+                <th className="detailsInfo">Total:</th>
+                <td>12€</td>
+              </tr>
+            </tbody>
+          </table> */}
         </section>
 
         <form onSubmit={handleSubmit(onSubmit)}>
