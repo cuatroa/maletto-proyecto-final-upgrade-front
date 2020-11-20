@@ -75,6 +75,25 @@ $verde: #1eb2a6;
 //   margin-top: 30vmin;
 //   padding: 0px;
 // }
+    .longbutton1 {
+        border: none;
+        margin: 1rem;
+        outline: none;
+        width: 12rem;
+        height: 3rem;
+        background-color: #1eb2a6;
+        color: white;
+        text-align: center;
+        border-radius: 3pt;
+        border-color: #1eb2a6;
+        text-decoration: none;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:active {
+            background: darken($verde, 15%);
+        }
+    }
 
 .transparent-input{
     display: none;

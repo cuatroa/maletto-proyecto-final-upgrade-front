@@ -86,7 +86,7 @@ export default function BookingDetailPage() {
             </tr>
             <tr>
               <th className="detailsInfo">Total:</th>
-              <td>Item 7</td>{" "}
+              <td>Item 7</td>
             </tr>
           </table>
           <hr />

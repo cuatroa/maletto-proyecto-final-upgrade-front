@@ -1,4 +1,5 @@
-.user-edit-guardian {
+.user-edit-guardian,
+.user-edit {
   color: #1eb2a6;
 }
 
@@ -24,21 +25,39 @@
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.3);
 }
 
-.icono-user-page {
-  color: #2c3e50;
+.UserIcon {
   text-decoration: none;
   float: right;
-}
-
-.user-edit {
+  margin-top: 0.5em;
   color: #1eb2a6;
 }
 
-.icon-exit-log {
-  background-color: #f8fbfc;
-  border: none;
-  height: 1rem;
+.reserve {
+  display: flex;
+  justify-content: space-between;
+
+  .proxUser {
+    text-decoration: none;
+    outline: none;
+    text-align: right;
+    margin-top: 1.5em;
+    color: black;
+  }
 }
+
+.btnLogOut {
+  margin-bottom: 3em;
+
+  .logOut {
+    background-color: #f8fbfc;
+    border: none;
+    color: #1eb2a6;
+    font-size: 15px;
+    margin-right: -0.3rem;
+    float: right;
+  }
+}
+
 
 // BOTÓN CHECKBOX GUARDIÁN //
 
@@ -82,22 +101,8 @@
   transition: .4s;
 }
 
-.btnGuardian {
 
-  input:checked + .slider {
-    background-color: #1eb2a6;
-  }
 
-  input:focus + .slider {
-    box-shadow: 0 0 1px #1eb2a6;
-  }
-
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-}
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
@@ -105,6 +110,26 @@
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+
+//Cambiar de Status
+
+.btnGuardian {
+
+  input:checked+.slider {
+    background-color: #1eb2a6;
+  }
+
+  input:focus+.slider {
+    box-shadow: 0 0 1px #1eb2a6;
+  }
+
+  input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
 }
 
 .btnEnviarGuardian {

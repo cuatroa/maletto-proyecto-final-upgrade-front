@@ -5,6 +5,11 @@ $verde: #1eb2a6;
     margin-left: 2rem;
 }
 
+.imgPetitions {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
 
 
 .containerBooking {
@@ -41,7 +46,6 @@ $verde: #1eb2a6;
             font-weight: bold;
 
             &:active {
-                // background-color: #f67575;
                 background: darken($verde, 15%);
             }
         }
@@ -59,14 +63,12 @@ $verde: #1eb2a6;
             border-color: #1eb2a6;
             text-decoration: none;
             font-weight: bold;
+            cursor: pointer;
         }
 
         &:active {
-            // background-color: #f67575;
             color: darken($verde, 15%);
         }
-
-
     }
 
 }
