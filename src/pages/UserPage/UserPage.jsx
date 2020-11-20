@@ -103,7 +103,7 @@ export default function UserPage() {
                 <div>
                   <hr />
                   <Link
-                    className="icon-cog UserIcon"
+                    className="icon-cog icon-settings UserIcon"
                     to="/user" /*"Poner redirección"*/
                   >
                     {' '}

@@ -102,7 +102,7 @@ export default function GuardianPage() {
                 <hr />
                 <div className="reserve">
                   <h3>Configuración</h3>
-                  <Link className="icon-cog UserIcon" to="/guardian"> </Link>
+                  <Link className="icon-cog icon-settings UserIcon" to="/guardian"> </Link>
                 </div>
                 <hr />
                 <div>
