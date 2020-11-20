@@ -49,6 +49,7 @@ export default function GuardianPage() {
       })
       .then((res) => {
         console.log('Usuario editado:', res.data);
+        history.push('/user');
       })
       .catch(console.log);
   };
@@ -129,9 +130,7 @@ export default function GuardianPage() {
                 <hr className="hrInfo"/>
                 <div className="reserve">
                   <h3>Configuración</h3>
-                  <Link className="icon-cog UserIcon" to="/guardian">
-                    {" "}
-                  </Link>
+                  <Link className="icon-cog icon-settings UserIcon" to="/guardian"> </Link>
                 </div>
                 <hr className="hrInfo" />
                 <div>

@@ -26,6 +26,10 @@ $verde: #1eb2a6;
         grid-template-columns: 1fr 1fr;
     }
 
+    .petitionsDelete {
+        display: none;
+    }
+
     .btnBooking {
         display: flex;
         flex-direction: column;

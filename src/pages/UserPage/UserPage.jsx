@@ -49,6 +49,7 @@ export default function UserPage() {
       })
       .then((res) => {
         console.log('Usuario editado:', res.data);
+        history.push('/guardian');
       })
       .catch(console.log);
   };
@@ -106,7 +107,7 @@ export default function UserPage() {
                 <div>
                   <hr className="hrInfo" />
                   <Link
-                    className="icon-cog UserIcon"
+                    className="icon-cog icon-settings UserIcon"
                     to="/user" /*"Poner redirección"*/
                   >
                     {" "}
