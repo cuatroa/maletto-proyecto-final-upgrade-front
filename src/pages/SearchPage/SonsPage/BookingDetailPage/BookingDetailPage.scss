@@ -54,7 +54,6 @@ $verde: #1eb2a6;
         cursor: pointer;
 
         &:active {
-            // background-color: #f67575;
             background: darken($verde, 15%);
         }
     }

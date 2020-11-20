@@ -53,7 +53,7 @@ export default function BookingDetailPage() {
               <tr className="details">
                 <td className="infoData">30 de Julio</td>
                 <td className="infoData">2 de Agosto</td>
-                {/* <td className="infoData">{amount}</td> */}
+                <td className="infoData"></td>
               </tr>
             </tbody>
           </table>
@@ -72,7 +72,7 @@ export default function BookingDetailPage() {
             </tr>
             <tr>
               <th className="detailsInfo">Total:</th>
-              <td>Item 7</td>{" "}
+              <td>Item 7</td>
             </tr>
           </table>
           <hr />

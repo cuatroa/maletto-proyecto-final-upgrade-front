@@ -46,7 +46,6 @@ $verde: #1eb2a6;
             font-weight: bold;
 
             &:active {
-                // background-color: #f67575;
                 background: darken($verde, 15%);
             }
         }
@@ -68,11 +67,8 @@ $verde: #1eb2a6;
         }
 
         &:active {
-            // background-color: #f67575;
             color: darken($verde, 15%);
         }
-
-
     }
 
 }
