@@ -66,10 +66,10 @@ export default function UserPage() {
                 {user.name} {user.lastName}
               </h2>
               <h3>
-                Puedes ver y{' '}
+                Puedes ver y{" "}
                 <Link to="/user/edit" className="user-edit">
                   editar
-                </Link>{' '}
+                </Link>{" "}
                 tu perfil
               </h3>
               <img className="image" src={user.img} alt="" />
@@ -79,53 +79,57 @@ export default function UserPage() {
                 <div className="btnGuardian">
                   <h3>Modo guardián</h3>
                   <label class="switch">
-                    <input type="checkbox" name="guardian" id="guardian" ref={register} defaultChecked={user.guardian} />
+                    <input
+                      type="checkbox"
+                      name="guardian"
+                      id="guardian"
+                      ref={register}
+                      defaultChecked={user.guardian}
+                    />
                     <span class="slider round"></span>
                   </label>
-                  <button type="submit" className="btnEnviarGuardian">ENVIAR</button>
+                  <button type="submit" className="btnEnviarGuardian">
+                    ENVIAR
+                  </button>
                   {/* <h4 className="small-text">
                   Puedes ganar 400€ de media al mes
                   </h4> */}
 
-                  <hr />
+                  <hr className="hrInfo" />
                 </div>
                 <div className="reserve">
                   <h3>Tus reservas</h3>
-                  <Link
-                    className="icon-proximo proxUser"
-                    to="user/booking"
-                  >
-                    {' '}
+                  <Link className="icon-proximo proxUser" to="user/booking">
+                    {" "}
                   </Link>
-
                 </div>
                 <div>
-                  <hr />
+                  <hr className="hrInfo" />
                   <Link
                     className="icon-cog UserIcon"
                     to="/user" /*"Poner redirección"*/
                   >
-                    {' '}
+                    {" "}
                   </Link>
                   <h3>Configuración</h3>
-                  <hr />
+                  <hr className="hrInfo" />
                 </div>
                 <div>
                   <Link
                     className="icon-info UserIcon"
                     to="/user" /*"Poner redirección"*/
                   >
-                    {' '}
+                    {" "}
                   </Link>
                   <h3>Ayuda</h3>
-                  <hr />
+                  <hr className="hrInfo" />
                 </div>
                 <div className="btnLogOut">
                   <button className="icon-salir logOut" onClick={logout}>
-                    {' '}
+                    {" "}
                   </button>
                   <h3>Salir</h3>
-                  <hr />
+                  <hr className="hrInfo" />
                 </div>
                 <br />
                 <br />
@@ -135,10 +139,9 @@ export default function UserPage() {
           {/* ); */}
           {/* })} */}
         </div>
-      ) : null
-      }
+      ) : null}
 
       <Navbar />
-    </div >
+    </div>
   );
 }
