@@ -90,17 +90,12 @@ export default function UserPage() {
                     />
                     <span class="slider round"></span>
                   </label>
-<<<<<<< HEAD
-                  <button type="submit" className="btnEnviarGuardian">ENVIAR</button>
-                  {/* <span class="popuptext" id="myPopup">Cambiando de Perfil ☺️ </span> */}
-=======
                   <button type="submit" className="btnEnviarGuardian">
                     ENVIAR
                   </button>
                   {/* <h4 className="small-text">
                   Puedes ganar 400€ de media al mes
                   </h4> */}
->>>>>>> 2b021754d3603296c6a9893fec8a6a695596dd93
 
                   <hr className="hrInfo" />
                 </div>
