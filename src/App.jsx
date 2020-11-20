@@ -37,6 +37,9 @@ function App() {
       <Router>
         <div>
           <Switch>
+            <Route path="/guardian/petitions">
+              <BookingPetitionsPage />
+            </Route>
             <Route path="/news/route66">
               <NewsAdventurePage />
             </Route>

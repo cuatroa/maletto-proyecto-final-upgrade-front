@@ -6,14 +6,15 @@ import Navbar from "../../../../shared/components/Navbar/Navbar";
 import "./BookingPetitionsPage.scss";
 
 export default function UserBookingPage() {
-    const [user, setUser] = useState([]);
+    const [booking, setBooking] = useState([]);
 
     useEffect(() => {
         axios.get("http://localhost:3001/booking").then((res) => {
-            setUser(res.data);
+            setBooking(res.data);
             console.log(res.data);
         });
     }, []);
+    
 
     return (
         <main>
@@ -25,39 +26,17 @@ export default function UserBookingPage() {
                 <h1>Petición de Reservas</h1>
                 <section className="petitions">
                     <div>
-                        <h3>{user.name} Laura</h3>
-                        <p>Aquí irán los datos del date-time del home -- con props --</p>
+                        <h3>{booking[0].user.name} {booking[0].user.lastName} </h3>
+                        <img alt="" className="imgPetitions" src={booking[0].user.img}></img>
+                        <p>Nº de reserva: {booking[0]._id}</p>
                     </div>
                     <div className="btnBooking">
-                        <button className="btnA">Aceptar</button>
+                        <Link to="/guardian"><button className="btnA">Aceptar</button></Link>
                         <button className="btnB">Declinar</button>
                     </div>
                 </section>
                 <hr />
-                <section className="petitions">
-                    <div>
-                        <h3>{user.name} Laura</h3>
-                        <p>Aquí irán los datos del date-time del home -- con props --</p>
-                    </div>
-                    <div className="btnBooking">
-                        <button className="btnA">Aceptar</button>
-                        <button className="btnB">Declinar</button>
-                    </div>
-                </section>
-                <hr />
-                <section className="petitions">
-                    <div>
-                        <h3>{user.name} Laura</h3>
-                        <p>Aquí irán los datos del date-time del home -- con props --</p>
-                    </div>
-                    <div className="btnBooking">
-                        <button className="btnA">Aceptar</button>
-                        <button className="btnB">Declinar</button>
-                    </div>
-                </section>
-                <hr />
-
-
+               
             </div>
 
 

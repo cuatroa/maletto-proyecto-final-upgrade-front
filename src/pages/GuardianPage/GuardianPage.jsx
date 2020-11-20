@@ -87,7 +87,7 @@ export default function GuardianPage() {
                 <hr />
               </div>
               <div>
-                <Link className="icon-proximo icono-user-page" to="/booking-petitions-page"/*"Poner redirección"*/> </Link>
+                <Link className="icon-proximo icono-user-page" to="/guardian/petitions"/*"Poner redirección"*/> </Link>
                 <h3>Peticiones de reserva</h3>
                 <hr />
               </div>
