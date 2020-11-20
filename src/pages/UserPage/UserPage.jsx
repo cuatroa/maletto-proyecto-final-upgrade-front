@@ -4,8 +4,10 @@ import { Link, useHistory } from 'react-router-dom';
 import Navbar from './../../shared/components/Navbar/Navbar';
 import './UserPage.scss';
 import { useForm } from 'react-hook-form';
+import { Popup } from 'react-map-gl';
 
 const apiUrl = 'http://localhost:3001';
+
 
 export default function UserPage() {
   const { handleSubmit, register } = useForm();
@@ -54,11 +56,10 @@ export default function UserPage() {
   };
 
 
-
-
   return (
     <div className="container">
       {user ? (
+
         <div className="structure">
           <div className="image-title">
             <div>
@@ -83,9 +84,7 @@ export default function UserPage() {
                     <span class="slider round"></span>
                   </label>
                   <button type="submit" className="btnEnviarGuardian">ENVIAR</button>
-                  {/* <h4 className="small-text">
-                  Puedes ganar 400€ de media al mes
-                  </h4> */}
+                  {/* <span class="popuptext" id="myPopup">Cambiando de Perfil ☺️ </span> */}
 
                   <hr />
                 </div>
