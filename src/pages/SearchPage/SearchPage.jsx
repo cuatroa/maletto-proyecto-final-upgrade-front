@@ -112,13 +112,10 @@ export default function SearchPage() {
                     key={location._id}
                     latitude={Number(location.latitude)}
                     longitude={Number(location.longitude)}
-                    closeButton={true}
+                    onMouseLeave={() => this.setState({ popupInfo: null })}
                     closeOnClick={true}
-                    onClose={() => {
-                      setLocations(null);
-                    }}
                   >
-                    <p>{location.title}</p>
+                    ><p>{location.title}</p>
                     <img src={marker} alt="" />
                   </Popup>
                 ) : null
@@ -134,6 +131,7 @@ export default function SearchPage() {
                     longitude={Number(location.longitude)}
                   >
                     <img src={marker} alt="" />
+                    
                   </Marker>
                 ) : null
               )
