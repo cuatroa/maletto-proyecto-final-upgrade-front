@@ -27,37 +27,44 @@ export default function GuardianSpacesPage() {
       }, []);
 
     return (
-        <main>
-            <div className="Space">
-                <Link className="icon-atras" to="/guardian" > </Link>
-                <h1>Tus Anuncios</h1>
-                <section className="container-noNavbar">
-                    <hr />
-                    <div className="advertisements">
-                        {person.locationSpaces?.map((item, index) => {
-                            return (
-                                <div className="photoAdvertisements" key={index}>
-                                    <h2>{item.title}</h2>
-                                    <img className="photo-location" src={item.img} alt="" />
-                                    <Link className="icon-proximo" to=""/*"Poner redirección"*/> </Link>
-                                    <hr />
-                                </div>
-                            );
-                        })}
-                    </div>
-                </section>
-                <div className="otherSpace">
-                    <h2>Añade otro espacio</h2>
-                    <Link className="icon-plus " to="/guardian/publish"> </Link>
-                </div>
+      <main>
+        <div className="Space">
+          <Link className="icon-atras" to="/guardian">
+            {" "}
+          </Link>
+          <h1>Tus Anuncios</h1>
+          <section className="container-noNavbar">
+            <hr className="hrInfo" />
+            <div className="advertisements">
+              {person.locationSpaces?.map((item, index) => {
+                return (
+                  <div className="photoAdvertisements" key={index}>
+                    <h2>{item.title}</h2>
+                    <img className="photo-location" src={item.img} alt="" />
+                    <Link
+                      className="icon-proximo"
+                      to="" /*"Poner redirección"*/
+                    >
+                      {" "}
+                    </Link>
+                    <hr className="hrInfo" />
+                  </div>
+                );
+              })}
             </div>
+          </section>
+          <div className="otherSpace">
+            <h2>Añade otro espacio</h2>
+            <Link className="icon-plus " to="/guardian/publish">
+              {" "}
+            </Link>
+          </div>
+        </div>
 
-
-            <div>
-                <Navbar />
-            </div>
-
-        </main>
+        <div>
+          <Navbar />
+        </div>
+      </main>
     );
 }
 
