@@ -8,15 +8,14 @@ import { useForm } from "react-hook-form";
 import MapGL, { Marker } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import marker from "../../../assets/icons/marker.png";
-
-
-
+import { useHistory } from "react-router-dom";
 
 export default function SearchInfoPage() {
   const { handleSubmit, register } = useForm();
   const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
   const _id = useParams()._id;
+  const history = useHistory();
 
   const [location, setLocation] = useState({});
 
@@ -43,16 +42,18 @@ export default function SearchInfoPage() {
 
   return (
     <div>
-      {/* <h1>{props.amount}</h1> */}
-      {/* <h1>{location.title}</h1> */}
-      {/* <h1>{amount}</h1> */}
+      <Link className="icon-atras" onClick={() => history.goBack()}>
+        {" "}
+      </Link>
       <Carousel
         autoPlay
         infiniteLoop={true}
         showThumbs={false}
         showStatus={false}
       >
-        <div><img src={location.img} alt="" /></div>
+        <div>
+          <img src={location.img} alt="" />
+        </div>
         <div>
           <img
             src="https://images.pexels.com/photos/139303/pexels-photo-139303.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -66,7 +67,7 @@ export default function SearchInfoPage() {
             </div>
           ))} */}
       </Carousel>
-      <div>
+      {/* <div>
         <div className="card-a1">
           <div className="slide1">
             <div className="card1">
@@ -94,9 +95,29 @@ export default function SearchInfoPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <br />
+
+      <div className="row-widtha">
+        <div className="card-infoa">
+          <div>
+            <img src={location.user?.[0].img} alt="" />
+          </div>
+          <div className="card-texta">
+            <h4>{location.title}</h4>
+            <div className="card_stars1">
+              <span className="icon-star-full"></span>
+              <span className="icon-star-full"></span>
+              <span className="icon-star-full"></span>
+              <span className="icon-star-empty"></span>
+              <span className="icon-star-empty"></span>
+            </div>
+            <h5>Salón</h5>
+            <p className="uppercase">{location.city}</p>
+          </div>
+        </div>
+      </div>
 
       <div className="row">
         <div>
@@ -183,10 +204,8 @@ export default function SearchInfoPage() {
               <b>Robert</b>
             </h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-              assumenda delectus? Fuga sed voluptate iure eos dolorem ratione
-              dignissimos cupiditate error. Saepe quas nemo sit beatae sint
-              ducimus voluptatibus necessitatibus.
+              La atención fue excelente, ubicación perfecta, buena limpieza. Se
+              encuentra en una tercera planta sin ascensor.
             </p>
           </div>
         </div>
@@ -206,10 +225,9 @@ export default function SearchInfoPage() {
               <b>Tina</b>
             </h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-              assumenda delectus? Fuga sed voluptate iure eos dolorem ratione
-              dignissimos cupiditate error. Saepe quas nemo sit beatae sint
-              ducimus voluptatibus necessitatibus.
+              Es un hostal, excelente ubicación y su personal muy atento. A un
+              paso del centro, limpio y trato amable. Lo recomiendo porque todo
+              está cerca.
             </p>
           </div>
         </div>
