@@ -1,44 +1,46 @@
 .react-chatbot-kit-chat-container {
-    width: 100%;
-    position: absolute;
+  width: 100%;
+  position: absolute;
 }
 
 .react-chatbot-kit-chat-inner-container {
-    height: 92vh;
+  height: 92vh;
 }
 
-
 .react-chatbot-kit-chat-message-container {
-    padding: 0em 2em;
-    overflow: scroll;
-    height: 90%;
-    overflow-x: hidden;
+  padding: 0em 2em;
+  overflow: scroll;
+  height: 90%;
+  overflow-x: hidden;
 }
 
 .react-chatbot-kit-chat-bot-message {
-    font-size: 1.5vmax;
+  // font-size: 1.5vmax;
 }
 
-
 .optionsContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    .optionBtn {
-        font-size: 1.5vmax;
-    }
+  .optionBtn {
+    font-size: 1.5vmax;
+  }
 }
 
 .react-chatbot-kit-chat-bot-avatar-container {
-    background-image: url("../../assets/img/robot/robot.jpg");
-    object-fit: fit;
-    background-position: center;
-    background-size: cover;
-    width: 100px;
-    height: 100px;
+  background-image: url("../../assets/img/robot/robot.jpg");
+  object-fit: fit;
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 100px;
 }
 
 .react-chatbot-kit-chat-bot-avatar-letter {
-    display: none;
+  display: none;
+}
+
+.react-chatbot-kit-chat-input {
+  outline: none;
 }

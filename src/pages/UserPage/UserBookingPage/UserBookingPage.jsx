@@ -5,8 +5,8 @@ import Navbar from "./../../../shared/components/Navbar/Navbar";
 import "./UserBookingPage.scss";
 
 export default function UserBookingPage() {
-  const [user, setUser] = useState({});
-  const [usuario, setUsuario] = useState({});
+  const [user, setUser] = useState([]);
+  const [person, setPerson] = useState([]);
   const apiUrl = "http://localhost:3001";
   const history = useHistory();
 
@@ -14,51 +14,50 @@ export default function UserBookingPage() {
     axios
       // We have to use { withCredentials: true } to send and receive valid cookies
       .get(`${apiUrl}/auth/profile`, { withCredentials: true })
-      .then(({ data }) => {setUser(data)
-       console.log(data)})
+      .then(({ data }) => {
+        setUser(data);
+        axios
+          .get(`http://localhost:3001/user/${data._id}`)
+          .then((res) => {
+            setPerson(res.data);
+            console.log(res.data);
+          });
+      })
       .catch((err) => {
         console.log(err);
         history.push("/home");
       });
   }, []);
 
-  useEffect(() => {
-    axios
-      .get(`${apiUrl}/user/${user._id}`, { withCredentials: true })
-      .then((res) => {
-        setUsuario(res.data)
-        console.log("Usuario editado:", res.data);
-      })
-      .catch(console.log);
-  }, []);
-
-
   return (
-    <div className="container">
-      <div className="container-noNavbar">
-        <Link className="icon-atras icono-user-booking" to="/user">
+    <main>
+      <div className="Space">
+        <Link className="icon-atras" to="/guardian">
           {" "}
         </Link>
-        <div className="bookings">
-          <h1>Tus reservas</h1>
-          <hr />
-        </div>
-        <h1>{usuario.lastName}</h1>
-        <div className="div-image-title">
-          {usuario.length
-            ? usuario.bookings?.map((usuario) =>
-                usuario.name && usuario.bookings ? (
-                  <div className="image-title" key={user._id}>
-                    <div>{usuario.bookings[0]}</div>
-                    <hr />
-                  </div>
-                ) : null
-              )
-            : null}
-        </div>
+        <h1>Tus Reservas</h1>
+        <section className="container-noNavbar">
+          <hr className="hrInfo" />
+          <div className="advertisements">
+            {person.locationSpaces?.map((item, index) => {
+              return (
+                <div className="photoAdvertisements" key={index}>
+                  <h2>{item.title}</h2>
+                  <img className="photo-location" src={item.img} alt="" />
+                  <Link className="icon-proximo" to="" /*"Poner redirección"*/>
+                    {" "}
+                  </Link>
+                  <hr className="hrInfo" />
+                </div>
+              );
+            })}
+          </div>
+        </section>
       </div>
 
-      <Navbar />
-    </div>
+      <div>
+        <Navbar />
+      </div>
+    </main>
   );
 }

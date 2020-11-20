@@ -43,6 +43,7 @@ export default function BookingDetailPage() {
       .post(`http://localhost:3001/booking`, values, { withCredentials: true })
       .then((res) => {
         console.log("Booking nueva:", res.data);
+        history.push("/booking/complete");
       })
       .catch(console.log);
   };
