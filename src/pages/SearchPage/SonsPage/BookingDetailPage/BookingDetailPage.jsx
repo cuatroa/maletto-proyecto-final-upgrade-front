@@ -12,7 +12,21 @@ export default function BookingDetailPage() {
   const { register, handleSubmit } = useForm();
   const _id = useParams()._id;
   const [location, setLocation] = useState([]);
+  const apiUrl = "http://localhost:3001";
+  const [user, setUser] = useState(null);
   // const amount = query.get("amount");
+
+  useEffect(() => {
+    axios
+      // We have to use { withCredentials: true } to send and receive valid cookies
+      .get(`${apiUrl}/auth/profile`, { withCredentials: true })
+      .then(({ data }) => setUser(data))
+      .catch((err) => {
+        console.log(err);
+        // Llevo al user a la home en caso de que no esté logeado
+        history.push("/home");
+      });
+  }, []);
 
   useEffect(() => {
     axios
@@ -26,9 +40,9 @@ export default function BookingDetailPage() {
   const onSubmit = (values) => {
     axios
       // .post(process.env.REACT_APP_API_URL + `/booking`, values)
-      .post(`http://localhost:3001/booking`, values)
+      .post(`http://localhost:3001/booking`, values, { withCredentials: true })
       .then((res) => {
-        console.log("Location nueva:", res.data);
+        console.log("Booking nueva:", res.data);
       })
       .catch(console.log);
   };
@@ -53,7 +67,7 @@ export default function BookingDetailPage() {
               <tr className="details">
                 <td className="infoData">30 de Julio</td>
                 <td className="infoData">2 de Agosto</td>
-                {/* <td className="infoData">{amount}</td> */}
+                <td className="infoData">2 </td>
               </tr>
             </tbody>
           </table>
@@ -79,21 +93,23 @@ export default function BookingDetailPage() {
         </section>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-          <label htmlFor="citySearch" className="ubication">
+          <label htmlFor="locationSpace" className="ubication">
             {/* <h3>city</h3> */}
             <input
               type="text"
               name="locationSpace"
               id="locationSpace"
               value={location._id}
-              // placeholder="Calle Gran Vía..."
-              className=""
+              className="transparent-input"
               ref={register({ required: true, min: 1 })}
             />
           </label>
-          <Link to="/booking/complete">
-            <button className="longbutton1">Reservar</button>
-          </Link>
+
+          <div className="bottom-btn">
+            <button type="submit" className="longbutton1">
+              Reservar
+            </button>
+          </div>
         </form>
       </main>
     </div>

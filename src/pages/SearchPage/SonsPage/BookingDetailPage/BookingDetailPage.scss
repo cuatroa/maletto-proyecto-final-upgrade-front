@@ -1,62 +1,81 @@
 $verde: #1eb2a6;
 
 .structureDetailPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .titleDetail {
+    text-align: center;
+  }
+
+  .details {
     display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+
+    .infoTab {
+      margin: 0em 1em;
+      text-align: center;
+      font-weight: bolder;
+    }
+  }
+
+  .detailsInfo {
+    display: grid;
+    justify-content: left;
+    text-align: center;
+    margin-right: 2rem;
+  }
+
+  .ubication {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    margin: 1em;
+  }
+}
 
-    .titleDetail {
-        text-align: center;
-    }
+.longbutton1 {
+  border: none;
+  margin: 1rem;
+  outline: none;
+  width: 12rem;
+  height: 3rem;
+  background-color: #1eb2a6;
+  color: white;
+  text-align: center;
+  border-radius: 3pt;
+  border-color: #1eb2a6;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 3;
+  bottom: 0;
+  // position: fixed;
+  cursor: pointer;
 
-    .details {
-        display: flex;
-        justify-content: space-evenly;
-        margin: 1rem;
+  &:active {
+    // background-color: #f67575;
+    background: darken($verde, 15%);
+  }
+}
 
-        .infoTab {
-            margin: 0em 1em;
-            text-align: center;
-            font-weight: bolder;
-        }
-    }
+// .bottom-btn {
+//   // z-index: 3;
+//   // display: flex;
+//   flex-direction: row;
+//   justify-content: space-around;
+//   align-items: center;
+//   max-width: 100%;
+//   // position: fixed;
+//   bottom: 0;
+//   width: 100%;
+//   margin-top: 30vmin;
+//   padding: 0px;
+// }
 
-    .detailsInfo {
-        display: grid;
-        justify-content: left;
-        text-align: center;
-        margin-right: 2rem;
-    }
-
-
-    .ubication {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 1em;
-    }
-
-    .longbutton1 {
-        border: none;
-        margin: 1rem;
-        outline: none;
-        width: 12rem;
-        height: 3rem;
-        background-color: #1eb2a6;
-        color: white;
-        text-align: center;
-        border-radius: 3pt;
-        border-color: #1eb2a6;
-        text-decoration: none;
-        font-weight: bold;
-        cursor: pointer;
-
-        &:active {
-            // background-color: #f67575;
-            background: darken($verde, 15%);
-        }
-    }
-
+.transparent-input{
+    display: none;
 }

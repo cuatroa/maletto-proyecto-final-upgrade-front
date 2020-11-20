@@ -43,13 +43,13 @@ export default function UserBookingPage() {
           <h1>Tus reservas</h1>
           <hr />
         </div>
-        <h1>{user.lastName}</h1>
+        <h1>{usuario.lastName}</h1>
         <div className="div-image-title">
-          {user.length
-            ? user.bookings?.map((user) =>
-                user.name && user.bookings ? (
+          {usuario.length
+            ? usuario.bookings?.map((usuario) =>
+                usuario.name && usuario.bookings ? (
                   <div className="image-title" key={user._id}>
-                    <div>{user.bookings?.user}</div>
+                    <div>{usuario.bookings[0]}</div>
                     <hr />
                   </div>
                 ) : null
