@@ -32,7 +32,7 @@ export default function UserBookingPage() {
   return (
     <main>
       <div className="Space">
-        <Link className="icon-atras" to="/guardian">
+        <Link className="icon-atras" to="/user">
           {" "}
         </Link>
         <h1>Tus Reservas</h1>
