@@ -89,20 +89,20 @@ export default function UserPage() {
 
                   <hr />
                 </div>
-                <div>
+                <div className="reserve">
+                  <h3>Tus reservas</h3>
                   <Link
-                    className="icon-proximo"
+                    className="icon-proximo proxUser"
                     to="user/booking"
                   >
                     {' '}
                   </Link>
-                  <h3>Tus reservas</h3>
 
-                  <hr />
                 </div>
                 <div>
+                  <hr />
                   <Link
-                    className="icon-cog icono-user-page"
+                    className="icon-cog UserIcon"
                     to="/user" /*"Poner redirección"*/
                   >
                     {' '}
@@ -112,7 +112,7 @@ export default function UserPage() {
                 </div>
                 <div>
                   <Link
-                    className="icon-info icono-user-page"
+                    className="icon-info UserIcon"
                     to="/user" /*"Poner redirección"*/
                   >
                     {' '}
@@ -120,8 +120,8 @@ export default function UserPage() {
                   <h3>Ayuda</h3>
                   <hr />
                 </div>
-                <div>
-                  <button className="icon-salir icono-user-page icon-exit-log" onClick={logout}>
+                <div className="btnLogOut">
+                  <button className="icon-salir logOut" onClick={logout}>
                     {' '}
                   </button>
                   <h3>Salir</h3>
@@ -135,9 +135,10 @@ export default function UserPage() {
           {/* ); */}
           {/* })} */}
         </div>
-      ) : null}
+      ) : null
+      }
 
       <Navbar />
-    </div>
+    </div >
   );
 }
