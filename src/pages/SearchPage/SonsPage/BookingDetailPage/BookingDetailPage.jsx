@@ -65,8 +65,8 @@ export default function BookingDetailPage() {
                 <td className="infoTab">Equipaje</td>
               </tr>
               <tr className="details">
-                <td className="infoData">30 de Julio</td>
-                <td className="infoData">2 de Agosto</td>
+                <td className="infoData">20 de mayo</td>
+                <td className="infoData">20 de mayo</td>
                 <td className="infoData">2 maletas </td>
               </tr>
             </tbody>
@@ -90,7 +90,9 @@ export default function BookingDetailPage() {
             </tr>
             <tr>
               <th className="detailsInfo">Total:</th>
-              <td>12€</td>
+              <td>
+                <b>12€</b>
+              </td>
             </tr>
           </table>
           <hr className="hrInfo" />
